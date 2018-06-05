@@ -1,4 +1,4 @@
-MODULE := M2M
+MODULE := COAP
 CFLAGS += -I../../Util/Include -Iinclude -I../ -I../../mbed-trace
 
 #CFLAGS += -I../../sal-stack-nanostack-eventloop/nanostack-event-loop -I../../ns-hal-pal

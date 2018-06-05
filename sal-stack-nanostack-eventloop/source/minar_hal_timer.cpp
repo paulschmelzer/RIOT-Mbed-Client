@@ -7,7 +7,7 @@
 #include "ns_types.h"
 
 #include "platform/arm_hal_timer.h"
-#include "platform/arm_hal_interrupt.h"
+#include "arm_hal_interrupt.h"
 
 #if defined(NS_EVENTLOOP_USE_TICK_TIMER) && defined(YOTTA_CFG_MINAR)
 

@@ -27,10 +27,20 @@ CFLAGS += -Wno-missing-field-initializers -Wno-deprecated -Wno-unused-parameter
 CFLAGS += -Isal-stack-nanostack-eventloop/nanostack-event-loop -Ins-hal-pal
 
 DIRS += mbed-client/source
-#DIRS += mbed-coap/source
-#DIRS += mbed-client/mbed-client-coap/source
-#DIRS += mbed-client/mbed-client-riot/source
+DIRS += mbed-coap/source
+DIRS += mbed-client/mbed-client-coap/source
+DIRS += mbed-client/mbed-client-riot/source
+DIRS += Util
+DIRS += sal-stack-nanostack-eventloop/source
+DIRS += mbed-client-pal/Source
+
 USEMODULE += M2M
+USEMODULE += COAP
+USEMODULE += MCOAP
+USEMODULE += M2MRIOT
+USEMODULE += M2MUTIL
+USEMODULE += M2MEventLoop
+USEMODULE += PAL
 
 LINKFLAGS += "-Wl,--print-memory-usage"
 

@@ -40,7 +40,7 @@ int main(void)
 //	TestClass c(9000);
 //	c.printSmTHg();
 	MbedClient client(device);
-	//client.create_interface("123.23.123.23");
+//	client.create_interface("123.23.123.23");
 
 	//client.create_interface()
 

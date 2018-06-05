@@ -18,7 +18,7 @@
 #include "ns_list.h"
 #include "ns_timer.h"
 #include "eventOS_callback_timer.h"
-#include "platform/arm_hal_interrupt.h"
+#include "arm_hal_interrupt.h"
 #include "platform/arm_hal_timer.h"
 #include "nsdynmemLIB.h"
 

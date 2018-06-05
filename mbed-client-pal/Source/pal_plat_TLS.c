@@ -21,7 +21,7 @@
 #include "mbedtls/ssl_internal.h"
 #include "stdlib.h"
 #include "string.h"
-#include "sotp.h"
+//TODO #include "sotp.h"
 
 
 #define SSL_LIB_SUCCESS 0

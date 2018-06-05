@@ -44,6 +44,32 @@ Archive member included to satisfy reference by file (symbol)
                               /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2minterfacefactory.o) (M2MFirmware::get_instance())
 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2minterfaceimpl.o)
                               /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2minterfacefactory.o) (M2MInterfaceImpl::M2MInterfaceImpl(M2MInterfaceObserver&, m2m::String const&, m2m::String const&, int, unsigned short, m2m::String const&, M2MInterface::BindingMode, M2MInterface::NetworkStack, m2m::String const&))
+/home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+                              /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mnsdlinterface.o) (eventOS_event_handler_create)
+/home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+                              /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o) (timer_sys_init)
+/home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(ns_timer.o)
+                              /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o) (eventOS_callback_timer_register)
+/home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimer.o)
+                              /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mreporthandler.o) (M2MTimer::M2MTimer(M2MTimerObserver&))
+/home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+                              /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimer.o) (M2MTimerPimpl::M2MTimerPimpl(M2MTimerObserver&))
+/home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+                              /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2minterfaceimpl.o) (M2MConnectionHandler::M2MConnectionHandler(M2MConnectionObserver&, M2MConnectionSecurity*, M2MInterface::BindingMode, M2MInterface::NetworkStack))
+/home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+                              /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o) (M2MConnectionHandlerPimpl::M2MConnectionHandlerPimpl(M2MConnectionHandler*, M2MConnectionObserver&, M2MConnectionSecurity*, M2MInterface::BindingMode, M2MInterface::NetworkStack))
+/home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+                              /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mtlvserializer.o) (common_write_64_bit)
+/home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(ns_list.o)
+                              /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mnsdlinterface.o) (ns_list_init_)
+/home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(randLIB.o)
+                              /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2minterfaceimpl.o) (randLIB_seed_random)
+/home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(nsdynmemLIB.o)
+                              /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o) (ns_dyn_mem_alloc)
+/home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+                              /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mnsdlinterface.o) (sn_nsdl_destroy)
+/home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_grs.o)
+                              /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o) (sn_grs_destroy)
 /home/paul/RIOT/examples/LwM2M_Port/bin/native/board.a(board_init.o)
                               /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu/startup.o (board_init)
 /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(kernel_init.o)
@@ -72,6 +98,14 @@ Archive member included to satisfy reference by file (symbol)
                               /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(kernel_init.o) (pm_set_lowest)
 /home/paul/RIOT/examples/LwM2M_Port/bin/native/periph_common.a(init.o)
                               /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu/startup.o (periph_init)
+/home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_parser.o)
+                              /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o) (sn_coap_parser_init_message)
+/home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_builder.o)
+                              /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o) (sn_coap_build_response)
+/home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_header_check.o)
+                              /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_builder.o) (sn_coap_header_validity_check)
+/home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_protocol.o)
+                              /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o) (sn_coap_protocol_destroy)
 /home/paul/RIOT/examples/LwM2M_Port/bin/native/auto_init.a(auto_init.o)
                               /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(kernel_init.o) (auto_init)
 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(async_read.o)
@@ -86,7 +120,7 @@ As-needed library included to satisfy reference by file (symbol)
 libdl.so.2                    /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o) (dlsym@@GLIBC_2.0)
 libstdc++.so.6                /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o) (std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()@@GLIBCXX_3.4.21)
 libgcc_s.so.1                 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mstring.o) (__moddi3@@GLIBC_2.0)
-libc.so.6                     /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(irq_cpu.o) (strsignal@@GLIBC_2.0)
+libc.so.6                     /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(randLIB.o) (fopen@@GLIBC_2.1)
 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(tramp.o): dynamic relocation against `_native_isr_ctx' in read-only section `.text'
 
 Discarded input sections
@@ -3305,6 +3339,846 @@ Discarded input sections
                 0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2minterfaceimpl.o)
  .note.GNU-stack
                 0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2minterfaceimpl.o)
+ .group         0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .group         0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .text          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .data          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .bss           0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .data.rel.local.arm_core_tasklet_list
+                0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .data.rel.local.event_queue_active
+                0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .data.rel.local.free_event_entry
+                0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .bss.startup_event_pool
+                0x0000000000000000      0x140 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .bss.curr_tasklet
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .text.event_tasklet_handler_get
+                0x0000000000000000       0x78 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .text.event_tasklet_handler_id_valid
+                0x0000000000000000       0x49 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .text.tasklet_get_free_id
+                0x0000000000000000       0x65 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .text.eventOS_event_handler_create
+                0x0000000000000000      0x11b /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .text.eventOS_event_send
+                0x0000000000000000       0x91 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .text.eventOS_event_send_user_allocated
+                0x0000000000000000       0x4d /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .text.eventOS_event_send_timer_allocated
+                0x0000000000000000       0x4d /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .text.eventOS_event_cancel_critical
+                0x0000000000000000       0x53 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .text.event_dynamically_allocate
+                0x0000000000000000       0x58 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .text.tasklet_dynamically_allocate
+                0x0000000000000000       0x42 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .text.event_core_get
+                0x0000000000000000       0x8a /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .text.event_core_free_push
+                0x0000000000000000       0x9d /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .text.event_core_read
+                0x0000000000000000       0x70 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .text.event_core_write
+                0x0000000000000000       0xc6 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .text.eventOS_event_find_by_id_critical
+                0x0000000000000000       0x8a /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .text.eventOS_scheduler_init
+                0x0000000000000000       0xc5 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .text.eventOS_scheduler_get_active_tasklet
+                0x0000000000000000       0x36 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .text.eventOS_scheduler_set_active_tasklet
+                0x0000000000000000       0x40 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .text.eventOS_scheduler_timer_stop
+                0x0000000000000000       0x4e /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .text.eventOS_scheduler_timer_synch_after_sleep
+                0x0000000000000000       0x72 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .text.eventOS_scheduler_dispatch_event
+                0x0000000000000000       0xa0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .text.eventOS_scheduler_run_until_idle
+                0x0000000000000000       0x39 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .text.eventOS_scheduler_run
+                0x0000000000000000       0x30 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .text.eventOS_cancel
+                0x0000000000000000       0x97 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .group         0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .group         0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .group         0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .text          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .data          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .bss           0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .text.eventOS_event_timer_ticks_to_ms
+                0x0000000000000000       0x40 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .bss.startup_sys_timer_pool
+                0x0000000000000000       0xf0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .bss.timer_sys_ticks
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .data.rel.local.system_timer_free
+                0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .data.rel.local.system_timer_list
+                0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .bss.tick_timer_callback
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .data.tick_timer_id
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .text.tick_timer_eventOS_callback
+                0x0000000000000000       0x6c /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .text.platform_tick_timer_register
+                0x0000000000000000       0x61 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .text.platform_tick_timer_start
+                0x0000000000000000       0x64 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .text.platform_tick_timer_stop
+                0x0000000000000000       0x4b /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .text.timer_sys_init
+                0x0000000000000000       0x94 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .text.timer_sys_disable
+                0x0000000000000000       0x34 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .text.timer_sys_wakeup
+                0x0000000000000000       0x3b /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .text.timer_sys_interrupt
+                0x0000000000000000       0x3c /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .text.sys_timer_dynamically_allocate
+                0x0000000000000000       0x42 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .text.timer_struct_get
+                0x0000000000000000       0x70 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .text.timer_sys_event_free
+                0x0000000000000000       0xb4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .text.timer_sys_event_cancel_critical
+                0x0000000000000000       0x6d /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .text.eventOS_event_timer_ticks
+                0x0000000000000000       0x4a /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .text.timer_sys_add
+                0x0000000000000000       0xa3 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .text.eventOS_event_timer_request_at_
+                0x0000000000000000       0xf5 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .text.eventOS_event_timer_request_at
+                0x0000000000000000       0x62 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .text.eventOS_event_timer_request_in
+                0x0000000000000000       0x6b /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .text.eventOS_event_timer_request_every
+                0x0000000000000000       0x7a /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .text.eventOS_event_timer_request
+                0x0000000000000000       0xda /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .text.eventOS_event_timer_cancel
+                0x0000000000000000       0xe2 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .text.eventOS_event_timer_shortest_active_timer
+                0x0000000000000000       0x9a /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .text.system_timer_tick_update
+                0x0000000000000000       0xba /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .text.__x86.get_pc_thunk.dx
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .group         0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(ns_timer.o)
+ .text          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(ns_timer.o)
+ .data          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(ns_timer.o)
+ .bss           0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(ns_timer.o)
+ .data.rel.local.ns_timer_list
+                0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(ns_timer.o)
+ .bss.ns_timer_state
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(ns_timer.o)
+ .bss.ns_timer_initialized
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(ns_timer.o)
+ .text.eventOS_callback_timer_register
+                0x0000000000000000      0x110 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(ns_timer.o)
+ .text.eventOS_callback_timer_unregister
+                0x0000000000000000       0x8d /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(ns_timer.o)
+ .text.ns_timer_start_pl_timer
+                0x0000000000000000       0x6c /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(ns_timer.o)
+ .text.ns_timer_sleep
+                0x0000000000000000       0x66 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(ns_timer.o)
+ .text.ns_timer_get_next_running_to
+                0x0000000000000000      0x18c /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(ns_timer.o)
+ .text.ns_timer_get_pointer_to_timer_struct
+                0x0000000000000000       0x72 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(ns_timer.o)
+ .text.eventOS_callback_timer_start
+                0x0000000000000000      0x1c9 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(ns_timer.o)
+ .text.ns_timer_interrupt_handler
+                0x0000000000000000      0x108 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(ns_timer.o)
+ .text.eventOS_callback_timer_stop
+                0x0000000000000000      0x1df /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(ns_timer.o)
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(ns_timer.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(ns_timer.o)
+ .group         0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimer.o)
+ .group         0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimer.o)
+ .text          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimer.o)
+ .data          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimer.o)
+ .bss           0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimer.o)
+ .text._ZN8M2MTimerC2ER16M2MTimerObserver
+                0x0000000000000000       0x6f /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimer.o)
+ .text._ZN8M2MTimerD2Ev
+                0x0000000000000000       0x5b /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimer.o)
+ .text._ZN8M2MTimer11start_timerEyN16M2MTimerObserver4TypeEb
+                0x0000000000000000       0x76 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimer.o)
+ .text._ZN8M2MTimer16start_dtls_timerEyyN16M2MTimerObserver4TypeE
+                0x0000000000000000       0x7b /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimer.o)
+ .text._ZN8M2MTimer10stop_timerEv
+                0x0000000000000000       0x4e /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimer.o)
+ .text._ZN8M2MTimer31is_intermediate_interval_passedEv
+                0x0000000000000000       0x4d /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimer.o)
+ .text._ZN8M2MTimer24is_total_interval_passedEv
+                0x0000000000000000       0x4d /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimer.o)
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimer.o)
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimer.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimer.o)
+ .group         0x0000000000000000        0xc /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .group         0x0000000000000000        0xc /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .group         0x0000000000000000        0xc /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .group         0x0000000000000000        0xc /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .group         0x0000000000000000        0xc /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .group         0x0000000000000000        0xc /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .group         0x0000000000000000        0xc /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .group         0x0000000000000000        0xc /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .group         0x0000000000000000        0xc /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .group         0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .group         0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .text          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .data          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .bss           0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .text._ZNK13M2MTimerPimpl12get_timer_idEv
+                0x0000000000000000       0x3b /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .data._ZN13M2MTimerPimpl11_tasklet_idE
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .data._ZN13M2MTimerPimpl14_next_timer_idE
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .text.tasklet_func
+                0x0000000000000000      0x113 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .rodata        0x0000000000000000       0x4a /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .text._ZN13M2MTimerPimplC2ER16M2MTimerObserver
+                0x0000000000000000      0x149 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .text._ZN13M2MTimerPimplD2Ev
+                0x0000000000000000       0xd8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .text._ZN13M2MTimerPimplD0Ev
+                0x0000000000000000       0x57 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .text._ZN13M2MTimerPimpl11start_timerEyN16M2MTimerObserver4TypeEb
+                0x0000000000000000       0xc0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .text._ZN13M2MTimerPimpl16start_dtls_timerEyyN16M2MTimerObserver4TypeE
+                0x0000000000000000       0xaf /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .text._ZN13M2MTimerPimpl5startEv
+                0x0000000000000000       0xf5 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .text._ZN13M2MTimerPimpl6cancelEv
+                0x0000000000000000       0x5d /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .text._ZN13M2MTimerPimpl10stop_timerEv
+                0x0000000000000000       0x6c /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .text._ZN13M2MTimerPimpl13timer_expiredEv
+                0x0000000000000000       0xf6 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .text._ZN13M2MTimerPimpl31is_intermediate_interval_passedEv
+                0x0000000000000000       0x4b /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .text._ZN13M2MTimerPimpl24is_total_interval_passedEv
+                0x0000000000000000       0x4b /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .text._ZNK13M2MTimerPimpl19get_still_left_timeEv
+                0x0000000000000000       0x3d /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .text._ZN13M2MTimerPimpl22start_still_left_timerEv
+                0x0000000000000000      0x176 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .text._ZNK3m2m6VectorIP13M2MTimerPimplE4sizeEv
+                0x0000000000000000       0x39 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .text._ZN3m2m6VectorIP13M2MTimerPimplEixEi
+                0x0000000000000000       0x48 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .text._ZN3m2m6VectorIP13M2MTimerPimplE9push_backERKS2_
+                0x0000000000000000       0x88 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .text._ZN3m2m6VectorIP13M2MTimerPimplE5eraseEi
+                0x0000000000000000       0x91 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .text._ZN3m2m6VectorIP13M2MTimerPimplE7reserveEi
+                0x0000000000000000       0xd7 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .data.rel.ro.local._ZTV13M2MTimerPimpl
+                0x0000000000000000       0x10 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .group         0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .group         0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .text          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .data          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .bss           0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .rodata._ZL16MAX_VALUE_LENGTH
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .rodata._ZL13BUFFER_LENGTH
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .rodata._ZL25MINIMUM_REGISTRATION_TIME
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .rodata._ZL16ONE_SECOND_TIMER
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .rodata._ZL25MAX_ALLOWED_STRING_LENGTH
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .rodata._ZL31MAX_ALLOWED_ERROR_STRING_LENGTH
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .rodata._ZL16OPTIMUM_LIFETIME
+                0x0000000000000000        0x2 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .rodata._ZL15REDUCE_LIFETIME
+                0x0000000000000000        0x2 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .rodata._ZL16REDUCTION_FACTOR
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .rodata._ZL13TYPE_RESOURCE
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .rodata._ZL22TYPE_MULTIPLE_RESOURCE
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .rodata._ZL22TYPE_RESOURCE_INSTANCE
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .rodata._ZL20TYPE_OBJECT_INSTANCE
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .rodata._ZL3ID8
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .rodata._ZL4ID16
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .rodata._ZL7LENGTH8
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .rodata._ZL8LENGTH16
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .rodata._ZL8LENGTH24
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .rodata._ZL32COAP_CONTENT_OMA_PLAIN_TEXT_TYPE
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .rodata._ZL29COAP_CONTENT_OMA_TLV_TYPE_OLD
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .rodata._ZL25COAP_CONTENT_OMA_TLV_TYPE
+                0x0000000000000000        0x2 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .rodata._ZL26COAP_CONTENT_OMA_JSON_TYPE
+                0x0000000000000000        0x2 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .rodata._ZL28COAP_CONTENT_OMA_OPAQUE_TYPE
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .rodata._ZL18MAX_UNINT_16_COUNT
+                0x0000000000000000        0x2 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .text._ZN20M2MConnectionHandlerC2ER21M2MConnectionObserverP21M2MConnectionSecurityN12M2MInterface11BindingModeENS4_12NetworkStackE
+                0x0000000000000000       0x90 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .text._ZN20M2MConnectionHandlerD2Ev
+                0x0000000000000000       0x64 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .text._ZN20M2MConnectionHandler15bind_connectionEt
+                0x0000000000000000       0x5b /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .text._ZN20M2MConnectionHandler22resolve_server_addressERKN3m2m6StringEtN21M2MConnectionObserver10ServerTypeEPK11M2MSecurity
+                0x0000000000000000       0x76 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .text._ZN20M2MConnectionHandler24start_listening_for_dataEv
+                0x0000000000000000       0x4d /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .text._ZN20M2MConnectionHandler14stop_listeningEv
+                0x0000000000000000       0x4e /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .text._ZN20M2MConnectionHandler9send_dataEPhtP13sn_nsdl_addr_
+                0x0000000000000000       0x6a /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .text._ZN20M2MConnectionHandler23handle_connection_errorEi
+                0x0000000000000000       0x57 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .text._ZN20M2MConnectionHandler28set_platform_network_handlerEPv
+                0x0000000000000000       0x57 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .text._ZN20M2MConnectionHandler11claim_mutexEv
+                0x0000000000000000       0x4e /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .text._ZN20M2MConnectionHandler13release_mutexEv
+                0x0000000000000000       0x4e /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .group         0x0000000000000000        0xc /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .group         0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .group         0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .text          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .data          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .bss           0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .text._ZNK3m2m6String5c_strEv
+                0x0000000000000000       0x39 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .rodata._ZL16MAX_VALUE_LENGTH
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .rodata._ZL13BUFFER_LENGTH
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .rodata._ZL25MINIMUM_REGISTRATION_TIME
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .rodata._ZL16ONE_SECOND_TIMER
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .rodata._ZL25MAX_ALLOWED_STRING_LENGTH
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .rodata._ZL31MAX_ALLOWED_ERROR_STRING_LENGTH
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .rodata._ZL16OPTIMUM_LIFETIME
+                0x0000000000000000        0x2 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .rodata._ZL15REDUCE_LIFETIME
+                0x0000000000000000        0x2 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .rodata._ZL16REDUCTION_FACTOR
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .rodata._ZL13TYPE_RESOURCE
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .rodata._ZL22TYPE_MULTIPLE_RESOURCE
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .rodata._ZL22TYPE_RESOURCE_INSTANCE
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .rodata._ZL20TYPE_OBJECT_INSTANCE
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .rodata._ZL3ID8
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .rodata._ZL4ID16
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .rodata._ZL7LENGTH8
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .rodata._ZL8LENGTH16
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .rodata._ZL8LENGTH24
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .rodata._ZL32COAP_CONTENT_OMA_PLAIN_TEXT_TYPE
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .rodata._ZL29COAP_CONTENT_OMA_TLV_TYPE_OLD
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .rodata._ZL25COAP_CONTENT_OMA_TLV_TYPE
+                0x0000000000000000        0x2 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .rodata._ZL26COAP_CONTENT_OMA_JSON_TYPE
+                0x0000000000000000        0x2 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .rodata._ZL28COAP_CONTENT_OMA_OPAQUE_TYPE
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .rodata._ZL18MAX_UNINT_16_COUNT
+                0x0000000000000000        0x2 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .data._ZN25M2MConnectionHandlerPimpl11_tasklet_idE
+                0x0000000000000000        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .bss._ZL18connection_handler
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .text.eventloop_event_handler
+                0x0000000000000000       0x57 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .text._ZN25M2MConnectionHandlerPimpl13event_handlerEP11arm_event_s
+                0x0000000000000000      0x157 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .text.socket_event_handler
+                0x0000000000000000       0x53 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .text._ZN25M2MConnectionHandlerPimpl17send_socket_eventENS_11SocketEventE
+                0x0000000000000000       0x90 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .text._ZN25M2MConnectionHandlerPimplC2EP20M2MConnectionHandlerR21M2MConnectionObserverP21M2MConnectionSecurityN12M2MInterface11BindingModeENS6_12NetworkStackE
+                0x0000000000000000      0x192 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .text._ZN25M2MConnectionHandlerPimplD2Ev
+                0x0000000000000000       0x90 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .text._ZN25M2MConnectionHandlerPimpl15bind_connectionEt
+                0x0000000000000000       0x4d /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .text._ZN25M2MConnectionHandlerPimpl10send_eventENS_11SocketEventE
+                0x0000000000000000       0x9a /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .text._ZN25M2MConnectionHandlerPimpl16address_resolverEv
+                0x0000000000000000       0xa8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .text._ZN25M2MConnectionHandlerPimpl17handle_dns_resultEb
+                0x0000000000000000       0x8a /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .text._ZN25M2MConnectionHandlerPimpl22resolve_server_addressERKN3m2m6StringEtN21M2MConnectionObserver10ServerTypeEPK11M2MSecurity
+                0x0000000000000000      0x13b /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .text._ZN25M2MConnectionHandlerPimpl22socket_connect_handlerEv
+                0x0000000000000000      0x3f2 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .rodata._ZN25M2MConnectionHandlerPimpl22socket_connect_handlerEv
+                0x0000000000000000       0x28 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .text._ZN25M2MConnectionHandlerPimpl9send_dataEPhtP13sn_nsdl_addr_
+                0x0000000000000000      0x29e /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .text._ZN25M2MConnectionHandlerPimpl16send_socket_dataEv
+                0x0000000000000000      0x2e3 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .text._ZN25M2MConnectionHandlerPimpl24start_listening_for_dataEv
+                0x0000000000000000       0x39 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .text._ZN25M2MConnectionHandlerPimpl14stop_listeningEv
+                0x0000000000000000       0x45 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .text._ZN25M2MConnectionHandlerPimpl23handle_connection_errorEi
+                0x0000000000000000       0x60 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .text._ZN25M2MConnectionHandlerPimpl28set_platform_network_handlerEPv
+                0x0000000000000000       0x59 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .text._ZN25M2MConnectionHandlerPimpl25receive_handshake_handlerEv
+                0x0000000000000000      0x1ae /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .text._ZNK25M2MConnectionHandlerPimpl20is_handshake_ongoingEv
+                0x0000000000000000       0x40 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .text._ZN25M2MConnectionHandlerPimpl15receive_handlerEv
+                0x0000000000000000      0x370 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .text._ZN25M2MConnectionHandlerPimpl11claim_mutexEv
+                0x0000000000000000       0x42 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .text._ZN25M2MConnectionHandlerPimpl13release_mutexEv
+                0x0000000000000000       0x42 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .text._ZN25M2MConnectionHandlerPimpl11init_socketEv
+                0x0000000000000000      0x222 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .text._ZNK25M2MConnectionHandlerPimpl17is_tcp_connectionEv
+                0x0000000000000000       0x56 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .text._ZN25M2MConnectionHandlerPimpl12close_socketEv
+                0x0000000000000000      0x106 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .text._ZN25M2MConnectionHandlerPimpl18get_item_from_listEv
+                0x0000000000000000       0x83 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .text._ZN25M2MConnectionHandlerPimpl16add_item_to_listEPNS_15send_data_queueE
+                0x0000000000000000       0x74 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .group         0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+ .text          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+ .data          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+ .bss           0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+ .text.common_write_64_bit
+                0x0000000000000000      0x129 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+ .text.common_read_64_bit
+                0x0000000000000000      0x175 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+ .text.common_write_32_bit
+                0x0000000000000000       0x8a /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+ .text.common_read_32_bit
+                0x0000000000000000       0x88 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+ .text.common_write_32_bit_inverse
+                0x0000000000000000       0x8a /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+ .text.common_read_32_bit_inverse
+                0x0000000000000000       0x88 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+ .text.common_write_24_bit
+                0x0000000000000000       0x75 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+ .text.common_read_24_bit
+                0x0000000000000000       0x73 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+ .text.common_write_16_bit
+                0x0000000000000000       0x64 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+ .text.common_read_16_bit
+                0x0000000000000000       0x61 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+ .text.common_write_16_bit_inverse
+                0x0000000000000000       0x64 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+ .text.common_read_16_bit_inverse
+                0x0000000000000000       0x61 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+ .text.common_count_bits
+                0x0000000000000000       0x79 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+ .text.common_count_leading_zeros
+                0x0000000000000000       0x44 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+ .text.common_count_leading_zeros_8
+                0x0000000000000000       0x4e /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+ .text.common_count_leading_zeros_16
+                0x0000000000000000       0x50 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+ .text.common_count_leading_zeros_32
+                0x0000000000000000       0x48 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+ .text.common_serial_number_greater_8
+                0x0000000000000000       0x7f /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+ .text.common_serial_number_greater_16
+                0x0000000000000000       0x85 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+ .text.common_serial_number_greater_32
+                0x0000000000000000       0x70 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+ .text.bit_test
+                0x0000000000000000       0x6f /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+ .text.bit_set  0x0000000000000000       0x7f /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+ .text.bit_clear
+                0x0000000000000000       0x81 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+ .text.context_split_mask
+                0x0000000000000000       0x45 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+ .text.bitsequal
+                0x0000000000000000       0xbe /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+ .text.bitcopy  0x0000000000000000       0xc5 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+ .text.bitcopy0
+                0x0000000000000000       0xb1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+ .group         0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(ns_list.o)
+ .text          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(ns_list.o)
+ .data          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(ns_list.o)
+ .bss           0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(ns_list.o)
+ .text.ns_list_init_
+                0x0000000000000000       0x47 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(ns_list.o)
+ .text.ns_list_link_init_
+                0x0000000000000000       0x48 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(ns_list.o)
+ .text.ns_list_add_to_start_
+                0x0000000000000000       0xa1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(ns_list.o)
+ .text.ns_list_add_after_
+                0x0000000000000000       0xbc /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(ns_list.o)
+ .text.ns_list_add_before_
+                0x0000000000000000       0x8d /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(ns_list.o)
+ .text.ns_list_add_to_end_
+                0x0000000000000000       0x83 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(ns_list.o)
+ .text.ns_list_get_next_
+                0x0000000000000000       0x45 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(ns_list.o)
+ .text.ns_list_get_previous_
+                0x0000000000000000       0x67 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(ns_list.o)
+ .text.ns_list_get_last_
+                0x0000000000000000       0x5a /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(ns_list.o)
+ .text.ns_list_remove_
+                0x0000000000000000       0x9d /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(ns_list.o)
+ .text.ns_list_replace_
+                0x0000000000000000       0xd1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(ns_list.o)
+ .text.ns_list_concatenate_
+                0x0000000000000000       0x8a /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(ns_list.o)
+ .text.ns_list_count_
+                0x0000000000000000       0x68 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(ns_list.o)
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(ns_list.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(ns_list.o)
+ .group         0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(randLIB.o)
+ .group         0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(randLIB.o)
+ .text          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(randLIB.o)
+ .data          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(randLIB.o)
+ .bss           0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(randLIB.o)
+ .bss.random_file
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(randLIB.o)
+ .rodata        0x0000000000000000       0x10 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(randLIB.o)
+ .text.randLIB_seed_random
+                0x0000000000000000       0x5d /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(randLIB.o)
+ .text.randLIB_add_seed
+                0x0000000000000000       0x3b /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(randLIB.o)
+ .text.randLIB_get_8bit
+                0x0000000000000000       0x51 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(randLIB.o)
+ .text.randLIB_get_16bit
+                0x0000000000000000       0x51 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(randLIB.o)
+ .text.randLIB_get_32bit
+                0x0000000000000000       0x4e /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(randLIB.o)
+ .text.randLIB_get_64bit
+                0x0000000000000000       0x7b /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(randLIB.o)
+ .text.randLIB_get_n_bytes_random
+                0x0000000000000000       0xae /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(randLIB.o)
+ .text.randLIB_get_random_in_range
+                0x0000000000000000       0xa0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(randLIB.o)
+ .text.randLIB_randomise_base
+                0x0000000000000000       0xb8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(randLIB.o)
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(randLIB.o)
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(randLIB.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(randLIB.o)
+ .group         0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(nsdynmemLIB.o)
+ .group         0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(nsdynmemLIB.o)
+ .text          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(nsdynmemLIB.o)
+ .data          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(nsdynmemLIB.o)
+ .bss           0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(nsdynmemLIB.o)
+ .bss.default_book
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(nsdynmemLIB.o)
+ .text.hole_from_block_start
+                0x0000000000000000       0x3a /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(nsdynmemLIB.o)
+ .text.block_start_from_hole
+                0x0000000000000000       0x3a /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(nsdynmemLIB.o)
+ .text.heap_failure
+                0x0000000000000000       0x56 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(nsdynmemLIB.o)
+ .text.ns_dyn_mem_init
+                0x0000000000000000       0x6b /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(nsdynmemLIB.o)
+ .text.ns_dyn_mem_get_mem_stat
+                0x0000000000000000       0x41 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(nsdynmemLIB.o)
+ .text.ns_mem_init
+                0x0000000000000000      0x184 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(nsdynmemLIB.o)
+ .text.ns_mem_get_mem_stat
+                0x0000000000000000       0x3a /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(nsdynmemLIB.o)
+ .text.dev_stat_update
+                0x0000000000000000       0xf6 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(nsdynmemLIB.o)
+ .text.convert_allocation_size
+                0x0000000000000000       0xa0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(nsdynmemLIB.o)
+ .text.ns_mem_block_validate
+                0x0000000000000000       0x78 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(nsdynmemLIB.o)
+ .text.ns_mem_internal_alloc
+                0x0000000000000000      0x318 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(nsdynmemLIB.o)
+ .text.ns_mem_alloc
+                0x0000000000000000       0x52 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(nsdynmemLIB.o)
+ .text.ns_mem_temporary_alloc
+                0x0000000000000000       0x52 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(nsdynmemLIB.o)
+ .text.ns_dyn_mem_alloc
+                0x0000000000000000       0x4d /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(nsdynmemLIB.o)
+ .text.ns_dyn_mem_temporary_alloc
+                0x0000000000000000       0x4d /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(nsdynmemLIB.o)
+ .text.ns_mem_free_and_merge_with_adjacent_blocks
+                0x0000000000000000      0x250 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(nsdynmemLIB.o)
+ .text.ns_mem_free
+                0x0000000000000000      0x13a /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(nsdynmemLIB.o)
+ .text.ns_dyn_mem_free
+                0x0000000000000000       0x4b /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(nsdynmemLIB.o)
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(nsdynmemLIB.o)
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(nsdynmemLIB.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(nsdynmemLIB.o)
+ .group         0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .group         0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .data          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .bss           0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .data.ep_name_parameter_string
+                0x0000000000000000        0x3 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .data.resource_path_ptr
+                0x0000000000000000        0x2 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .data.resource_type_parameter
+                0x0000000000000000        0x3 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .data.obs_parameter
+                0x0000000000000000        0x3 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .data.aobs_parameter
+                0x0000000000000000        0x5 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .data.if_description_parameter
+                0x0000000000000000        0x3 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .data.ep_lifetime_parameter
+                0x0000000000000000        0x3 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .data.ep_domain_parameter
+                0x0000000000000000        0x2 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .data.coap_con_type_parameter
+                0x0000000000000000        0x3 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .data.resource_value
+                0x0000000000000000        0x2 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .data.bs_uri   0x0000000000000000        0x2 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .data.bs_ep_name
+                0x0000000000000000        0x3 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .data.et_parameter
+                0x0000000000000000        0x3 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .data.bs_queue_mode
+                0x0000000000000000        0x2 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_destroy
+                0x0000000000000000      0x191 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_init
+                0x0000000000000000      0x1e6 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_register_endpoint
+                0x0000000000000000      0x298 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_unregister_endpoint
+                0x0000000000000000      0x2aa /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_update_registration
+                0x0000000000000000      0x380 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_set_endpoint_location
+                0x0000000000000000       0xc6 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_nsp_lost
+                0x0000000000000000       0x4a /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_is_ep_registered
+                0x0000000000000000       0x4b /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_send_observation_notification
+                0x0000000000000000      0x1ad /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_oma_bootstrap
+                0x0000000000000000      0x2d9 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .rodata        0x0000000000000000        0x6 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_get_version
+                0x0000000000000000       0x35 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_process_coap
+                0x0000000000000000      0x40b /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_exec
+                0x0000000000000000       0x6f /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_get_resource
+                0x0000000000000000       0x65 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_internal_coap_send
+                0x0000000000000000      0x129 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_resolve_nsp_address
+                0x0000000000000000       0xc1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_build_registration_body
+                0x0000000000000000      0x4db /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_calculate_registration_body_size
+                0x0000000000000000      0x3e9 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_calculate_uri_query_option_len
+                0x0000000000000000      0x1fd /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_fill_uri_query_options
+                0x0000000000000000      0x3d1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.validateParameters
+                0x0000000000000000       0xef /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.validate
+                0x0000000000000000       0x7f /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_local_rx_function
+                0x0000000000000000      0x26c /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_resolve_ep_information
+                0x0000000000000000      0x26f /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.set_NSP_address
+                0x0000000000000000      0x144 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_itoa_len
+                0x0000000000000000       0x5e /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_itoa
+                0x0000000000000000       0xfa /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.set_endpoint_info
+                0x0000000000000000      0x1fb /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_list_resource
+                0x0000000000000000       0x63 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_free_resource_list
+                0x0000000000000000       0x5f /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_send_coap_message
+                0x0000000000000000       0x6f /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_handle_block2_response_internally
+                0x0000000000000000       0x69 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_clear_coap_sent_blockwise_messages
+                0x0000000000000000       0x46 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_send_get_data_request
+                0x0000000000000000       0xea /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_put_resource
+                0x0000000000000000       0x63 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_pop_resource
+                0x0000000000000000       0x63 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_delete_resource
+                0x0000000000000000       0x63 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_get_first_resource
+                0x0000000000000000       0x5a /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_get_next_resource
+                0x0000000000000000       0x63 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_build_response
+                0x0000000000000000       0x72 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_alloc_options_list
+                0x0000000000000000       0x6b /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_release_allocated_coap_msg_mem
+                0x0000000000000000       0x61 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_set_retransmission_parameters
+                0x0000000000000000       0x76 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_set_retransmission_buffer
+                0x0000000000000000       0x77 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_set_block_size
+                0x0000000000000000       0x6a /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_set_duplicate_buffer_size
+                0x0000000000000000       0x69 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_check_uint_overflow
+                0x0000000000000000       0x86 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_set_context
+                0x0000000000000000       0x55 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_get_context
+                0x0000000000000000       0x47 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_clear_coap_resending_queue
+                0x0000000000000000       0x6b /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_print_coap_data
+                0x0000000000000000       0x3d /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.remove_previous_block_data
+                0x0000000000000000       0x41 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.update_last_block_data
+                0x0000000000000000      0x126 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.sn_nsdl_add_token
+                0x0000000000000000       0x83 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .group         0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_grs.o)
+ .group         0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_grs.o)
+ .text          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_grs.o)
+ .data          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_grs.o)
+ .bss           0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_grs.o)
+ .text.sn_grs_destroy
+                0x0000000000000000       0xc1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_grs.o)
+ .text.coap_tx_callback
+                0x0000000000000000       0x7d /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_grs.o)
+ .text.coap_rx_callback
+                0x0000000000000000       0x6a /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_grs.o)
+ .text.sn_grs_init
+                0x0000000000000000       0xea /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_grs.o)
+ .text.sn_grs_list_resource
+                0x0000000000000000      0x1d8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_grs.o)
+ .text.sn_grs_free_resource_list
+                0x0000000000000000       0xf1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_grs.o)
+ .text.sn_grs_get_first_resource
+                0x0000000000000000       0x47 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_grs.o)
+ .text.sn_grs_get_next_resource
+                0x0000000000000000       0x64 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_grs.o)
+ .text.sn_grs_delete_resource
+                0x0000000000000000       0xc3 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_grs.o)
+ .text.sn_grs_put_resource
+                0x0000000000000000       0xd8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_grs.o)
+ .text.sn_grs_pop_resource
+                0x0000000000000000       0xc8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_grs.o)
+ .rodata        0x0000000000000000       0x11 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_grs.o)
+ .text.sn_grs_process_coap
+                0x0000000000000000      0x6aa /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_grs.o)
+ .text.sn_grs_send_coap_message
+                0x0000000000000000      0x164 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_grs.o)
+ .text.sn_grs_core_request
+                0x0000000000000000      0x1b0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_grs.o)
+ .text.sn_grs_search_resource
+                0x0000000000000000      0x1da /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_grs.o)
+ .text.sn_grs_convert_uri
+                0x0000000000000000       0x8c /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_grs.o)
+ .text.sn_grs_resource_info_free
+                0x0000000000000000      0x16d /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_grs.o)
+ .text.sn_grs_mark_resources_as_registered
+                0x0000000000000000       0x90 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_grs.o)
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_grs.o)
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_grs.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_grs.o)
  .group         0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/board.a(board_init.o)
  .text          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/board.a(board_init.o)
  .data          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/board.a(board_init.o)
@@ -3500,6 +4374,151 @@ Discarded input sections
                 0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/periph_common.a(init.o)
  .note.GNU-stack
                 0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/periph_common.a(init.o)
+ .group         0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_parser.o)
+ .group         0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_parser.o)
+ .text          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_parser.o)
+ .data          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_parser.o)
+ .bss           0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_parser.o)
+ .text.sn_coap_parser_init_message
+                0x0000000000000000       0x67 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_parser.o)
+ .text.sn_coap_parser_alloc_message
+                0x0000000000000000       0x61 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_parser.o)
+ .text.sn_coap_parser_alloc_options
+                0x0000000000000000       0xfc /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_parser.o)
+ .text.sn_coap_parser
+                0x0000000000000000      0x103 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_parser.o)
+ .text.sn_coap_parser_release_allocated_coap_msg_mem
+                0x0000000000000000      0x1a1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_parser.o)
+ .text.sn_coap_parser_header_parse
+                0x0000000000000000       0xd9 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_parser.o)
+ .text.sn_coap_parser_options_parse_uint
+                0x0000000000000000       0x70 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_parser.o)
+ .text.sn_coap_parser_options_parse
+                0x0000000000000000      0x93a /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_parser.o)
+ .rodata.sn_coap_parser_options_parse
+                0x0000000000000000      0x1d0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_parser.o)
+ .text.sn_coap_parser_options_parse_multiple_options
+                0x0000000000000000      0x270 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_parser.o)
+ .text.sn_coap_parser_options_count_needed_memory_multiple_option
+                0x0000000000000000      0x23f /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_parser.o)
+ .text.sn_coap_parser_payload_parse
+                0x0000000000000000       0xbf /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_parser.o)
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_parser.o)
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_parser.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_parser.o)
+ .group         0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_builder.o)
+ .group         0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_builder.o)
+ .text          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_builder.o)
+ .data          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_builder.o)
+ .bss           0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_builder.o)
+ .text.sn_coap_build_response
+                0x0000000000000000      0x17d /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_builder.o)
+ .text.sn_coap_builder
+                0x0000000000000000       0x4d /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_builder.o)
+ .text.sn_coap_builder_2
+                0x0000000000000000       0xff /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_builder.o)
+ .text.sn_coap_builder_calc_needed_packet_data_size
+                0x0000000000000000       0x44 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_builder.o)
+ .text.sn_coap_builder_calc_needed_packet_data_size_2
+                0x0000000000000000      0x5e4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_builder.o)
+ .text.sn_coap_builder_options_calculate_jump_need
+                0x0000000000000000      0x2ef /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_builder.o)
+ .text.sn_coap_builder_header_build
+                0x0000000000000000      0x109 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_builder.o)
+ .text.sn_coap_builder_options_build
+                0x0000000000000000      0x386 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_builder.o)
+ .text.sn_coap_builder_options_build_add_one_option
+                0x0000000000000000      0x221 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_builder.o)
+ .text.sn_coap_builder_options_build_add_uint_option
+                0x0000000000000000       0xcc /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_builder.o)
+ .text.sn_coap_builder_options_build_add_multiple_option
+                0x0000000000000000      0x10d /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_builder.o)
+ .text.sn_coap_builder_options_calc_option_size
+                0x0000000000000000      0x153 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_builder.o)
+ .rodata.sn_coap_builder_options_calc_option_size
+                0x0000000000000000       0x44 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_builder.o)
+ .text.sn_coap_builder_options_get_option_part_count
+                0x0000000000000000       0xaa /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_builder.o)
+ .text.sn_coap_builder_options_get_option_part_length_from_whole_option_string
+                0x0000000000000000       0xe0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_builder.o)
+ .text.sn_coap_builder_options_get_option_part_position
+                0x0000000000000000      0x102 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_builder.o)
+ .text.sn_coap_builder_payload_build
+                0x0000000000000000       0xa6 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_builder.o)
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_builder.o)
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_builder.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_builder.o)
+ .group         0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_header_check.o)
+ .text          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_header_check.o)
+ .data          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_header_check.o)
+ .bss           0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_header_check.o)
+ .text.sn_coap_header_validity_check
+                0x0000000000000000       0xda /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_header_check.o)
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_header_check.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_header_check.o)
+ .group         0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_protocol.o)
+ .group         0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_protocol.o)
+ .text          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_protocol.o)
+ .data          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_protocol.o)
+ .bss           0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_protocol.o)
+ .bss.message_id
+                0x0000000000000000        0x2 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_protocol.o)
+ .text.sn_coap_protocol_destroy
+                0x0000000000000000       0x6c /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_protocol.o)
+ .text.sn_coap_protocol_init
+                0x0000000000000000      0x11d /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_protocol.o)
+ .text.sn_coap_protocol_handle_block2_response_internally
+                0x0000000000000000       0x58 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_protocol.o)
+ .text.sn_coap_protocol_set_block_size
+                0x0000000000000000       0x42 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_protocol.o)
+ .text.sn_coap_protocol_clear_sent_blockwise_messages
+                0x0000000000000000       0x35 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_protocol.o)
+ .text.sn_coap_protocol_set_duplicate_buffer_size
+                0x0000000000000000       0x41 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_protocol.o)
+ .text.sn_coap_protocol_set_retransmission_parameters
+                0x0000000000000000       0x8c /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_protocol.o)
+ .text.sn_coap_protocol_set_retransmission_buffer
+                0x0000000000000000       0x80 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_protocol.o)
+ .text.sn_coap_protocol_clear_retransmission_buffer
+                0x0000000000000000       0xa5 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_protocol.o)
+ .text.sn_coap_protocol_delete_retransmission
+                0x0000000000000000      0x119 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_protocol.o)
+ .text.sn_coap_protocol_build
+                0x0000000000000000      0x16f /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_protocol.o)
+ .text.sn_coap_protocol_parse
+                0x0000000000000000      0x25e /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_protocol.o)
+ .text.sn_coap_protocol_exec
+                0x0000000000000000      0x22c /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_protocol.o)
+ .text.sn_coap_protocol_linked_list_send_msg_store
+                0x0000000000000000      0x1fc /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_protocol.o)
+ .text.sn_coap_protocol_linked_list_send_msg_search
+                0x0000000000000000       0xfd /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_protocol.o)
+ .text.sn_coap_protocol_linked_list_send_msg_remove
+                0x0000000000000000      0x12b /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_protocol.o)
+ .text.sn_coap_calculate_new_resend_time
+                0x0000000000000000       0x89 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_protocol.o)
+ .text.sn_coap_protocol_send_rst
+                0x0000000000000000       0x85 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_protocol.o)
+ .text.sn_coap_protocol_allocate_mem_for_msg
+                0x0000000000000000      0x129 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_protocol.o)
+ .text.sn_coap_protocol_release_allocated_send_msg_mem
+                0x0000000000000000       0x78 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_protocol.o)
+ .text.sn_coap_count_linked_list_size
+                0x0000000000000000       0x7e /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_protocol.o)
+ .text.__x86.get_pc_thunk.ax
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_protocol.o)
+ .text.__x86.get_pc_thunk.bx
+                0x0000000000000000        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_protocol.o)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_protocol.o)
  .group         0x0000000000000000        0x8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/auto_init.a(auto_init.o)
  .text          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/auto_init.a(auto_init.o)
  .data          0x0000000000000000        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/auto_init.a(auto_init.o)
@@ -3574,7 +4593,12 @@ LOAD /usr/lib/gcc/x86_64-linux-gnu/7/32/crtbeginS.o
 LOAD /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu/startup.o
 START GROUP
 LOAD /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a
+LOAD /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a
 LOAD /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a
+LOAD /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a
+LOAD /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a
+LOAD /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a
+LOAD /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a
 LOAD /home/paul/RIOT/examples/LwM2M_Port/bin/native/auto_init.a
 LOAD /home/paul/RIOT/examples/LwM2M_Port/bin/native/board.a
 LOAD /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a
@@ -3630,530 +4654,579 @@ LOAD /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/crtn.o
  *(.gnu.hash)
  .gnu.hash      0x00000000000001ac       0xb4 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
 
-.dynsym         0x0000000000000260      0x400
+.dynsym         0x0000000000000260      0x420
  *(.dynsym)
- .dynsym        0x0000000000000260      0x400 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+ .dynsym        0x0000000000000260      0x420 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
 
-.dynstr         0x0000000000000660      0x3e5
+.dynstr         0x0000000000000680      0x3f2
  *(.dynstr)
- .dynstr        0x0000000000000660      0x3e5 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+ .dynstr        0x0000000000000680      0x3f2 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
 
-.gnu.version    0x0000000000000a46       0x80
+.gnu.version    0x0000000000000a72       0x84
  *(.gnu.version)
- .gnu.version   0x0000000000000a46       0x80 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+ .gnu.version   0x0000000000000a72       0x84 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
 
-.gnu.version_d  0x0000000000000ac8        0x0
+.gnu.version_d  0x0000000000000af8        0x0
  *(.gnu.version_d)
  .gnu.version_d
-                0x0000000000000ac8        0x0 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+                0x0000000000000af8        0x0 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
 
-.gnu.version_r  0x0000000000000ac8       0xb0
+.gnu.version_r  0x0000000000000af8       0xb0
  *(.gnu.version_r)
  .gnu.version_r
-                0x0000000000000ac8       0xb0 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+                0x0000000000000af8       0xb0 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
 
-.rel.dyn        0x0000000000000b78      0x188
+.rel.dyn        0x0000000000000ba8      0x190
  *(.rel.init)
  *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
  .rel.text._ZN10MbedClientC2E16MbedClientDevice
-                0x0000000000000b78        0x0 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+                0x0000000000000ba8        0x0 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
  .rel.text._ZN10MbedClient14bootstrap_doneEP11M2MSecurity
-                0x0000000000000b78        0x0 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+                0x0000000000000ba8        0x0 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
  .rel.text._ZN10MbedClient17object_registeredEP11M2MSecurityRK9M2MServer
-                0x0000000000000b78        0x0 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+                0x0000000000000ba8        0x0 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
  .rel.text._ZN10MbedClient19object_unregisteredEP11M2MSecurity
-                0x0000000000000b78        0x0 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+                0x0000000000000ba8        0x0 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
  .rel.text._ZN10MbedClient5errorEN12M2MInterface5ErrorE
-                0x0000000000000b78        0x0 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+                0x0000000000000ba8        0x0 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
  .rel.text.main
-                0x0000000000000b78        0x0 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+                0x0000000000000ba8        0x0 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+ .rel.text._Z41__static_initialization_and_destruction_0ii
+                0x0000000000000ba8        0x0 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
  .rel.text.core_panic
-                0x0000000000000b78        0x0 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
- .rel.text      0x0000000000000b78       0x38 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+                0x0000000000000ba8        0x0 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+ .rel.text      0x0000000000000ba8       0x38 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
  *(.rel.fini)
  *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
  *(.rel.data.rel.ro .rel.data.rel.ro.* .rel.gnu.linkonce.d.rel.ro.*)
  .rel.data.rel.ro
-                0x0000000000000bb0        0x0 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+                0x0000000000000be0        0x0 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
  .rel.data.rel.ro.local.long_opts
-                0x0000000000000bb0       0x40 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+                0x0000000000000be0       0x40 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
  .rel.data.rel.ro.local._ZTV10MbedClient
-                0x0000000000000bf0       0x30 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
- .rel.data.rel.ro._ZTV20M2MInterfaceObserver
                 0x0000000000000c20       0x30 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+ .rel.data.rel.ro._ZTV20M2MInterfaceObserver
+                0x0000000000000c50       0x30 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
  *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
  .rel.data.rel.local
-                0x0000000000000c50        0x8 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
- .rel.data.rel.local.device
-                0x0000000000000c58       0x20 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
- .rel.data.rel.local.main_name
-                0x0000000000000c78        0x8 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
- .rel.data.rel.local.idle_name
                 0x0000000000000c80        0x8 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+ .rel.data.rel.local.device
+                0x0000000000000c88       0x20 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+ .rel.data.rel.local.main_name
+                0x0000000000000ca8        0x8 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+ .rel.data.rel.local.idle_name
+                0x0000000000000cb0        0x8 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
  *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)
  *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)
  *(.rel.ctors)
  *(.rel.dtors)
  *(.rel.got)
- .rel.got       0x0000000000000c88       0x58 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+ .rel.got       0x0000000000000cb8       0x58 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
  *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
- .rel.bss       0x0000000000000ce0        0x0 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+ .rel.bss       0x0000000000000d10        0x0 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
  *(.rel.ifunc)
- .rel.ifunc     0x0000000000000ce0        0x0 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+ .rel.ifunc     0x0000000000000d10        0x0 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
  .rel.fini_array
-                0x0000000000000ce0        0x8 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+                0x0000000000000d10        0x8 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
  .rel.init_array
-                0x0000000000000ce8       0x18 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+                0x0000000000000d18       0x20 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
 
-.rel.plt        0x0000000000000d00      0x100
+.rel.plt        0x0000000000000d38      0x110
  *(.rel.plt)
- .rel.plt       0x0000000000000d00      0x100 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+ .rel.plt       0x0000000000000d38      0x110 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
                 [!provide]                        PROVIDE (__rel_iplt_start = .)
  *(.rel.iplt)
                 [!provide]                        PROVIDE (__rel_iplt_end = .)
 
-.init           0x0000000000000e00       0x23
+.init           0x0000000000000e48       0x23
  *(SORT_NONE(.init))
- .init          0x0000000000000e00       0x1e /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/crti.o
-                0x0000000000000e00                _init
- .init          0x0000000000000e1e        0x5 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/crtn.o
+ .init          0x0000000000000e48       0x1e /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/crti.o
+                0x0000000000000e48                _init
+ .init          0x0000000000000e66        0x5 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/crtn.o
 
-.plt            0x0000000000000e30      0x210
+.plt            0x0000000000000e70      0x230
  *(.plt)
- .plt           0x0000000000000e30      0x210 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+ .plt           0x0000000000000e70      0x230 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
  *(.iplt)
 
-.plt.got        0x0000000000001040       0x10
+.plt.got        0x00000000000010a0       0x10
  *(.plt.got)
- .plt.got       0x0000000000001040       0x10 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+ .plt.got       0x00000000000010a0       0x10 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
 
 .plt.sec
  *(.plt.sec)
 
-.text           0x0000000000001050     0x3e24
+.text           0x00000000000010b0     0x3fd4
  *(.text.unlikely .text.*_unlikely .text.unlikely.*)
  *(.text.exit .text.exit.*)
  *(.text.startup .text.startup.*)
- .text.startup  0x0000000000001050      0x315 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu/startup.o
+ .text.startup  0x00000000000010b0      0x315 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu/startup.o
  *(.text.hot .text.hot.*)
  *(.text .stub .text.* .gnu.linkonce.t.*)
- .text          0x0000000000001365       0x36 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
-                0x0000000000001365                _start
- *fill*         0x000000000000139b        0x5 
+ .text          0x00000000000013c5       0x36 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+                0x00000000000013c5                _start
+ *fill*         0x00000000000013fb        0x5 
  .gnu.linkonce.t.__x86.get_pc_thunk.bx
-                0x00000000000013a0        0x4 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/crti.o
-                0x00000000000013a0                __x86.get_pc_thunk.bx
- *fill*         0x00000000000013a4        0xc 
- .text          0x00000000000013b0       0xe9 /usr/lib/gcc/x86_64-linux-gnu/7/32/crtbeginS.o
+                0x0000000000001400        0x4 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/crti.o
+                0x0000000000001400                __x86.get_pc_thunk.bx
+ *fill*         0x0000000000001404        0xc 
+ .text          0x0000000000001410       0xe9 /usr/lib/gcc/x86_64-linux-gnu/7/32/crtbeginS.o
  .text.__x86.get_pc_thunk.dx
-                0x0000000000001499        0x4 /usr/lib/gcc/x86_64-linux-gnu/7/32/crtbeginS.o
-                0x0000000000001499                __x86.get_pc_thunk.dx
+                0x00000000000014f9        0x4 /usr/lib/gcc/x86_64-linux-gnu/7/32/crtbeginS.o
+                0x00000000000014f9                __x86.get_pc_thunk.dx
  .text._native_input
-                0x000000000000149d       0x9c /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu/startup.o
-                0x000000000000149d                _native_input
+                0x00000000000014fd       0x9c /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu/startup.o
+                0x00000000000014fd                _native_input
  .text._native_log_output
-                0x0000000000001539      0x162 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu/startup.o
-                0x0000000000001539                _native_log_output
+                0x0000000000001599      0x162 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu/startup.o
+                0x0000000000001599                _native_log_output
  .text.daemonize
-                0x000000000000169b      0x106 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu/startup.o
-                0x000000000000169b                daemonize
+                0x00000000000016fb      0x106 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu/startup.o
+                0x00000000000016fb                daemonize
  .text.filter_daemonize_argv
-                0x00000000000017a1       0xba /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu/startup.o
+                0x0000000000001801       0xba /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu/startup.o
  .text.usage_exit
-                0x000000000000185b       0x9d /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu/startup.o
-                0x000000000000185b                usage_exit
+                0x00000000000018bb       0x9d /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu/startup.o
+                0x00000000000018bb                usage_exit
  .text._ZN20M2MInterfaceObserverC2Ev
-                0x00000000000018f8       0x41 /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
-                0x00000000000018f8                M2MInterfaceObserver::M2MInterfaceObserver()
-                0x00000000000018f8                M2MInterfaceObserver::M2MInterfaceObserver()
- *fill*         0x0000000000001939        0x1 
+                0x0000000000001958       0x41 /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
+                0x0000000000001958                M2MInterfaceObserver::M2MInterfaceObserver()
+                0x0000000000001958                M2MInterfaceObserver::M2MInterfaceObserver()
+ *fill*         0x0000000000001999        0x1 
  .text._ZN10MbedClientC2E16MbedClientDevice
-                0x000000000000193a       0xdd /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
-                0x000000000000193a                MbedClient::MbedClient(MbedClientDevice)
-                0x000000000000193a                MbedClient::MbedClient(MbedClientDevice)
- *fill*         0x0000000000001a17        0x1 
+                0x000000000000199a       0xdd /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
+                0x000000000000199a                MbedClient::MbedClient(MbedClientDevice)
+                0x000000000000199a                MbedClient::MbedClient(MbedClientDevice)
+ *fill*         0x0000000000001a77        0x1 
  .text._ZN10MbedClientD2Ev
-                0x0000000000001a18       0x96 /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
-                0x0000000000001a18                MbedClient::~MbedClient()
-                0x0000000000001a18                MbedClient::~MbedClient()
+                0x0000000000001a78       0x96 /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
+                0x0000000000001a78                MbedClient::~MbedClient()
+                0x0000000000001a78                MbedClient::~MbedClient()
  .text._ZN10MbedClient13trace_printerEPKc
-                0x0000000000001aae       0x57 /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
-                0x0000000000001aae                MbedClient::trace_printer(char const*)
- *fill*         0x0000000000001b05        0x1 
+                0x0000000000001b0e       0x57 /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
+                0x0000000000001b0e                MbedClient::trace_printer(char const*)
+ *fill*         0x0000000000001b65        0x1 
  .text._ZN10MbedClient14bootstrap_doneEP11M2MSecurity
-                0x0000000000001b06       0x65 /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
-                0x0000000000001b06                MbedClient::bootstrap_done(M2MSecurity*)
- *fill*         0x0000000000001b6b        0x1 
+                0x0000000000001b66       0x65 /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
+                0x0000000000001b66                MbedClient::bootstrap_done(M2MSecurity*)
+ *fill*         0x0000000000001bcb        0x1 
  .text._ZN10MbedClient17object_registeredEP11M2MSecurityRK9M2MServer
-                0x0000000000001b6c       0x65 /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
-                0x0000000000001b6c                MbedClient::object_registered(M2MSecurity*, M2MServer const&)
- *fill*         0x0000000000001bd1        0x1 
- .text._ZN10MbedClient19object_unregisteredEP11M2MSecurity
-                0x0000000000001bd2       0x5f /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
-                0x0000000000001bd2                MbedClient::object_unregistered(M2MSecurity*)
+                0x0000000000001bcc       0x65 /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
+                0x0000000000001bcc                MbedClient::object_registered(M2MSecurity*, M2MServer const&)
  *fill*         0x0000000000001c31        0x1 
+ .text._ZN10MbedClient19object_unregisteredEP11M2MSecurity
+                0x0000000000001c32       0x5f /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
+                0x0000000000001c32                MbedClient::object_unregistered(M2MSecurity*)
+ *fill*         0x0000000000001c91        0x1 
  .text._ZN10MbedClient20registration_updatedEP11M2MSecurityRK9M2MServer
-                0x0000000000001c32       0x41 /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
-                0x0000000000001c32                MbedClient::registration_updated(M2MSecurity*, M2MServer const&)
- *fill*         0x0000000000001c73        0x1 
+                0x0000000000001c92       0x41 /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
+                0x0000000000001c92                MbedClient::registration_updated(M2MSecurity*, M2MServer const&)
+ *fill*         0x0000000000001cd3        0x1 
  .text._ZN10MbedClient5errorEN12M2MInterface5ErrorE
-                0x0000000000001c74      0x184 /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
-                0x0000000000001c74                MbedClient::error(M2MInterface::Error)
+                0x0000000000001cd4      0x184 /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
+                0x0000000000001cd4                MbedClient::error(M2MInterface::Error)
  .text._ZN10MbedClient13value_updatedEP7M2MBaseNS0_8BaseTypeE
-                0x0000000000001df8       0xa7 /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
-                0x0000000000001df8                MbedClient::value_updated(M2MBase*, M2MBase::BaseType)
- .text.main     0x0000000000001e9f      0x138 /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
-                0x0000000000001e9f                main
+                0x0000000000001e58       0xa7 /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
+                0x0000000000001e58                MbedClient::value_updated(M2MBase*, M2MBase::BaseType)
+ .text.main     0x0000000000001eff      0x138 /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
+                0x0000000000001eff                main
  .text._Z41__static_initialization_and_destruction_0ii
-                0x0000000000001fd7       0x81 /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
+                0x0000000000002037       0x81 /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
  .text._GLOBAL__sub_I_NETWORK_STACK
-                0x0000000000002058       0x40 /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
+                0x00000000000020b8       0x40 /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
  .text.__x86.get_pc_thunk.ax
-                0x0000000000002098        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
-                0x0000000000002098                __x86.get_pc_thunk.ax
+                0x00000000000020f8        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
+                0x00000000000020f8                __x86.get_pc_thunk.ax
  .text._ZN3m2m6String6strdupEPKc
-                0x000000000000209c       0x96 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mstring.o)
-                0x000000000000209c                m2m::String::strdup(char const*)
+                0x00000000000020fc       0x96 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mstring.o)
+                0x00000000000020fc                m2m::String::strdup(char const*)
  .text._ZN3m2m6StringC2Ev
-                0x0000000000002132       0x52 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mstring.o)
-                0x0000000000002132                m2m::String::String()
-                0x0000000000002132                m2m::String::String()
+                0x0000000000002192       0x52 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mstring.o)
+                0x0000000000002192                m2m::String::String()
+                0x0000000000002192                m2m::String::String()
  .text._ZN3m2m6StringD2Ev
-                0x0000000000002184       0x56 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mstring.o)
-                0x0000000000002184                m2m::String::~String()
-                0x0000000000002184                m2m::String::~String()
+                0x00000000000021e4       0x56 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mstring.o)
+                0x00000000000021e4                m2m::String::~String()
+                0x00000000000021e4                m2m::String::~String()
  .text._ZNK7M2MBase4nameEv
-                0x00000000000021da       0x69 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mbase.o)
-                0x00000000000021da                M2MBase::name() const
- *fill*         0x0000000000002243        0x1 
+                0x000000000000223a       0x69 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mbase.o)
+                0x000000000000223a                M2MBase::name() const
+ *fill*         0x00000000000022a3        0x1 
  .text._ZNK7M2MBase13resource_typeEv
-                0x0000000000002244       0x42 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mbase.o)
-                0x0000000000002244                M2MBase::resource_type() const
+                0x00000000000022a4       0x42 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mbase.o)
+                0x00000000000022a4                M2MBase::resource_type() const
  .text._ZNK7M2MBase8uri_pathEv
-                0x0000000000002286       0x43 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mbase.o)
-                0x0000000000002286                M2MBase::uri_path() const
- *fill*         0x00000000000022c9        0x1 
+                0x00000000000022e6       0x43 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mbase.o)
+                0x00000000000022e6                M2MBase::uri_path() const
+ *fill*         0x0000000000002329        0x1 
  .text._ZN11M2MSecurity15delete_instanceEv
-                0x00000000000022ca       0x64 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2msecurity.o)
-                0x00000000000022ca                M2MSecurity::delete_instance()
+                0x000000000000232a       0x64 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2msecurity.o)
+                0x000000000000232a                M2MSecurity::delete_instance()
+ .text._ZN3m2m6VectorIP13M2MTimerPimplEC2Ei
+                0x000000000000238e       0x8c /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+                0x000000000000238e                m2m::Vector<M2MTimerPimpl*>::Vector(int)
+                0x000000000000238e                m2m::Vector<M2MTimerPimpl*>::Vector(int)
+ .text._Z41__static_initialization_and_destruction_0ii
+                0x000000000000241a       0x83 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ *fill*         0x000000000000249d        0x1 
+ .text._ZN3m2m6VectorIP13M2MTimerPimplED2Ev
+                0x000000000000249e       0x58 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+                0x000000000000249e                m2m::Vector<M2MTimerPimpl*>::~Vector()
+                0x000000000000249e                m2m::Vector<M2MTimerPimpl*>::~Vector()
+ .text._GLOBAL__sub_I__ZN13M2MTimerPimpl11_tasklet_idE
+                0x00000000000024f6       0x40 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
  .text.board_init
-                0x000000000000232e       0x50 /home/paul/RIOT/examples/LwM2M_Port/bin/native/board.a(board_init.o)
-                0x000000000000232e                board_init
+                0x0000000000002536       0x50 /home/paul/RIOT/examples/LwM2M_Port/bin/native/board.a(board_init.o)
+                0x0000000000002536                board_init
  .text.main_trampoline
-                0x000000000000237e       0x5a /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(kernel_init.o)
+                0x0000000000002586       0x5a /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(kernel_init.o)
  .text.idle_thread
-                0x00000000000023d8       0x2a /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(kernel_init.o)
+                0x00000000000025e0       0x2a /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(kernel_init.o)
  .text.kernel_init
-                0x0000000000002402       0x7d /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(kernel_init.o)
-                0x0000000000002402                kernel_init
+                0x000000000000260a       0x7d /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(kernel_init.o)
+                0x000000000000260a                kernel_init
  .text._assert_failure
-                0x000000000000247f       0x52 /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(assert.o)
-                0x000000000000247f                _assert_failure
+                0x0000000000002687       0x52 /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(assert.o)
+                0x0000000000002687                _assert_failure
  .text.cib_init
-                0x00000000000024d1       0x8b /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(thread.o)
+                0x00000000000026d9       0x8b /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(thread.o)
  .text.thread_create
-                0x000000000000255c      0x274 /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(thread.o)
-                0x000000000000255c                thread_create
+                0x0000000000002764      0x274 /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(thread.o)
+                0x0000000000002764                thread_create
  .text.panic_arch
-                0x00000000000027d0       0x2f /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(panic.o)
-                0x00000000000027d0                panic_arch
+                0x00000000000029d8       0x2f /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(panic.o)
+                0x00000000000029d8                panic_arch
  .text.core_panic
-                0x00000000000027ff       0x8f /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(panic.o)
-                0x00000000000027ff                core_panic
+                0x0000000000002a07       0x8f /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(panic.o)
+                0x0000000000002a07                core_panic
  .text.bitarithm_lsb
-                0x000000000000288e       0x51 /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(sched.o)
+                0x0000000000002a96       0x51 /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(sched.o)
  .text.clist_rpush
-                0x00000000000028df       0x6c /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(sched.o)
+                0x0000000000002ae7       0x6c /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(sched.o)
  .text.clist_lpop
-                0x000000000000294b       0x72 /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(sched.o)
+                0x0000000000002b53       0x72 /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(sched.o)
  .text.sched_run
-                0x00000000000029bd       0xbd /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(sched.o)
-                0x00000000000029bd                sched_run
+                0x0000000000002bc5       0xbd /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(sched.o)
+                0x0000000000002bc5                sched_run
  .text.sched_set_status
-                0x0000000000002a7a      0x11f /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(sched.o)
-                0x0000000000002a7a                sched_set_status
+                0x0000000000002c82      0x11f /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(sched.o)
+                0x0000000000002c82                sched_set_status
  .text.sched_switch
-                0x0000000000002b99       0x90 /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(sched.o)
-                0x0000000000002b99                sched_switch
+                0x0000000000002da1       0x90 /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(sched.o)
+                0x0000000000002da1                sched_switch
  .text.sched_task_exit
-                0x0000000000002c29       0x67 /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(sched.o)
-                0x0000000000002c29                sched_task_exit
+                0x0000000000002e31       0x67 /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(sched.o)
+                0x0000000000002e31                sched_task_exit
  .text._native_syscall_enter
-                0x0000000000002c90       0x43 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
-                0x0000000000002c90                _native_syscall_enter
+                0x0000000000002e98       0x43 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
+                0x0000000000002e98                _native_syscall_enter
  .text._native_syscall_leave
-                0x0000000000002cd3      0x137 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
-                0x0000000000002cd3                _native_syscall_leave
- .text.malloc   0x0000000000002e0a       0xa8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
-                0x0000000000002e0a                malloc
- .text.free     0x0000000000002eb2       0x55 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
-                0x0000000000002eb2                free
- .text.calloc   0x0000000000002f07       0xb1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
-                0x0000000000002f07                calloc
- .text.realloc  0x0000000000002fb8       0x63 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
-                0x0000000000002fb8                realloc
+                0x0000000000002edb      0x137 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
+                0x0000000000002edb                _native_syscall_leave
+ .text.malloc   0x0000000000003012       0xa8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
+                0x0000000000003012                malloc
+ .text.free     0x00000000000030ba       0x55 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
+                0x00000000000030ba                free
+ .text.calloc   0x000000000000310f       0xb1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
+                0x000000000000310f                calloc
+ .text.realloc  0x00000000000031c0       0x63 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
+                0x00000000000031c0                realloc
  .text._native_write
-                0x000000000000301b       0x6c /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
-                0x000000000000301b                _native_write
- .text.putchar  0x0000000000003087       0x4c /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
-                0x0000000000003087                putchar
- .text.puts     0x00000000000030d3       0x6d /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
-                0x00000000000030d3                puts
+                0x0000000000003223       0x6c /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
+                0x0000000000003223                _native_write
+ .text.putchar  0x000000000000328f       0x4c /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
+                0x000000000000328f                putchar
+ .text.puts     0x00000000000032db       0x6d /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
+                0x00000000000032db                puts
  .text.make_message
-                0x0000000000003140       0xd8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
-                0x0000000000003140                make_message
- .text.printf   0x0000000000003218       0x5c /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
-                0x0000000000003218                printf
- .text.vprintf  0x0000000000003274       0x55 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
-                0x0000000000003274                vprintf
- .text.fprintf  0x00000000000032c9       0x5b /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
-                0x00000000000032c9                fprintf
+                0x0000000000003348       0xd8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
+                0x0000000000003348                make_message
+ .text.printf   0x0000000000003420       0x5c /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
+                0x0000000000003420                printf
+ .text.vprintf  0x000000000000347c       0x55 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
+                0x000000000000347c                vprintf
+ .text.fprintf  0x00000000000034d1       0x5b /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
+                0x00000000000034d1                fprintf
  .text.vfprintf
-                0x0000000000003324       0xb5 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
-                0x0000000000003324                vfprintf
- .text.vwarn    0x00000000000033d9      0x14e /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
-                0x00000000000033d9                vwarn
- .text.vwarnx   0x0000000000003527      0x103 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
-                0x0000000000003527                vwarnx
- .text.verr     0x000000000000362a       0x4e /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
-                0x000000000000362a                verr
- .text.verrx    0x0000000000003678       0x4e /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
-                0x0000000000003678                verrx
- .text.warn     0x00000000000036c6       0x4d /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
-                0x00000000000036c6                warn
- .text.warnx    0x0000000000003713       0x4d /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
-                0x0000000000003713                warnx
- .text.err      0x0000000000003760       0x3f /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
-                0x0000000000003760                err
- .text.errx     0x000000000000379f       0x3f /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
-                0x000000000000379f                errx
- .text.getpid   0x00000000000037de       0x46 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
-                0x00000000000037de                getpid
+                0x000000000000352c       0xb5 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
+                0x000000000000352c                vfprintf
+ .text.vwarn    0x00000000000035e1      0x14e /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
+                0x00000000000035e1                vwarn
+ .text.vwarnx   0x000000000000372f      0x103 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
+                0x000000000000372f                vwarnx
+ .text.verr     0x0000000000003832       0x4e /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
+                0x0000000000003832                verr
+ .text.verrx    0x0000000000003880       0x4e /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
+                0x0000000000003880                verrx
+ .text.warn     0x00000000000038ce       0x4d /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
+                0x00000000000038ce                warn
+ .text.warnx    0x000000000000391b       0x4d /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
+                0x000000000000391b                warnx
+ .text.err      0x0000000000003968       0x3f /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
+                0x0000000000003968                err
+ .text.errx     0x00000000000039a7       0x3f /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
+                0x00000000000039a7                errx
+ .text.getpid   0x00000000000039e6       0x46 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
+                0x00000000000039e6                getpid
  .text._native_init_syscalls
-                0x0000000000003824      0x5af /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
-                0x0000000000003824                _native_init_syscalls
+                0x0000000000003a2c      0x5af /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
+                0x0000000000003a2c                _native_init_syscalls
  .text.irq_disable
-                0x0000000000003dd3       0x85 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(irq_cpu.o)
-                0x0000000000003dd3                irq_disable
+                0x0000000000003fdb       0x85 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(irq_cpu.o)
+                0x0000000000003fdb                irq_disable
  .text.irq_enable
-                0x0000000000003e58       0xa5 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(irq_cpu.o)
-                0x0000000000003e58                irq_enable
+                0x0000000000004060       0xa5 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(irq_cpu.o)
+                0x0000000000004060                irq_enable
  .text.irq_restore
-                0x0000000000003efd       0x47 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(irq_cpu.o)
-                0x0000000000003efd                irq_restore
+                0x0000000000004105       0x47 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(irq_cpu.o)
+                0x0000000000004105                irq_restore
  .text.irq_is_in
-                0x0000000000003f44       0x35 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(irq_cpu.o)
-                0x0000000000003f44                irq_is_in
+                0x000000000000414c       0x35 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(irq_cpu.o)
+                0x000000000000414c                irq_is_in
  .text._native_popsig
-                0x0000000000003f79       0x9f /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(irq_cpu.o)
-                0x0000000000003f79                _native_popsig
+                0x0000000000004181       0x9f /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(irq_cpu.o)
+                0x0000000000004181                _native_popsig
  .text.native_irq_handler
-                0x0000000000004018       0x8f /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(irq_cpu.o)
-                0x0000000000004018                native_irq_handler
+                0x0000000000004220       0x8f /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(irq_cpu.o)
+                0x0000000000004220                native_irq_handler
  .text.isr_set_sigmask
-                0x00000000000040a7       0x60 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(irq_cpu.o)
-                0x00000000000040a7                isr_set_sigmask
+                0x00000000000042af       0x60 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(irq_cpu.o)
+                0x00000000000042af                isr_set_sigmask
  .text.native_isr_entry
-                0x0000000000004107      0x18f /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(irq_cpu.o)
-                0x0000000000004107                native_isr_entry
+                0x000000000000430f      0x18f /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(irq_cpu.o)
+                0x000000000000430f                native_isr_entry
  .text.native_shutdown
-                0x0000000000004296       0x4e /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(irq_cpu.o)
+                0x000000000000449e       0x4e /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(irq_cpu.o)
  .text.native_interrupt_init
-                0x00000000000042e4      0x3bc /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(irq_cpu.o)
-                0x00000000000042e4                native_interrupt_init
+                0x00000000000044ec      0x3bc /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(irq_cpu.o)
+                0x00000000000044ec                native_interrupt_init
  .text._native_mod_ctx_leave_sigh
-                0x00000000000046a0       0x54 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(native_cpu.o)
+                0x00000000000048a8       0x54 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(native_cpu.o)
  .text.thread_stack_init
-                0x00000000000046f4      0x106 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(native_cpu.o)
-                0x00000000000046f4                thread_stack_init
+                0x00000000000048fc      0x106 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(native_cpu.o)
+                0x00000000000048fc                thread_stack_init
  .text.isr_cpu_switch_context_exit
-                0x00000000000047fa       0x97 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(native_cpu.o)
-                0x00000000000047fa                isr_cpu_switch_context_exit
+                0x0000000000004a02       0x97 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(native_cpu.o)
+                0x0000000000004a02                isr_cpu_switch_context_exit
  .text.cpu_switch_context_exit
-                0x0000000000004891       0xd1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(native_cpu.o)
-                0x0000000000004891                cpu_switch_context_exit
+                0x0000000000004a99       0xd1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(native_cpu.o)
+                0x0000000000004a99                cpu_switch_context_exit
  .text.isr_thread_yield
-                0x0000000000004962       0x95 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(native_cpu.o)
-                0x0000000000004962                isr_thread_yield
+                0x0000000000004b6a       0x95 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(native_cpu.o)
+                0x0000000000004b6a                isr_thread_yield
  .text.thread_yield_higher
-                0x00000000000049f7      0x102 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(native_cpu.o)
-                0x00000000000049f7                thread_yield_higher
+                0x0000000000004bff      0x102 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(native_cpu.o)
+                0x0000000000004bff                thread_yield_higher
  .text.native_cpu_init
-                0x0000000000004af9       0xa2 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(native_cpu.o)
-                0x0000000000004af9                native_cpu_init
- .text          0x0000000000004b9b       0x3f /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(tramp.o)
-                0x0000000000004b9b                _native_sig_leave_tramp
-                0x0000000000004bc9                _native_sig_leave_handler
+                0x0000000000004d01       0xa2 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(native_cpu.o)
+                0x0000000000004d01                native_cpu_init
+ .text          0x0000000000004da3       0x3f /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(tramp.o)
+                0x0000000000004da3                _native_sig_leave_tramp
+                0x0000000000004dd1                _native_sig_leave_handler
  .text._native_LED_GREEN_ON
-                0x0000000000004bda       0x48 /home/paul/RIOT/examples/LwM2M_Port/bin/native/native-drivers.a(native-led.o)
-                0x0000000000004bda                _native_LED_GREEN_ON
+                0x0000000000004de2       0x48 /home/paul/RIOT/examples/LwM2M_Port/bin/native/native-drivers.a(native-led.o)
+                0x0000000000004de2                _native_LED_GREEN_ON
  .text._native_LED_RED_OFF
-                0x0000000000004c22       0x48 /home/paul/RIOT/examples/LwM2M_Port/bin/native/native-drivers.a(native-led.o)
-                0x0000000000004c22                _native_LED_RED_OFF
+                0x0000000000004e2a       0x48 /home/paul/RIOT/examples/LwM2M_Port/bin/native/native-drivers.a(native-led.o)
+                0x0000000000004e2a                _native_LED_RED_OFF
  .text.tty_uart_setup
-                0x0000000000004c6a       0x5f /home/paul/RIOT/examples/LwM2M_Port/bin/native/periph.a(uart.o)
-                0x0000000000004c6a                tty_uart_setup
+                0x0000000000004e72       0x5f /home/paul/RIOT/examples/LwM2M_Port/bin/native/periph.a(uart.o)
+                0x0000000000004e72                tty_uart_setup
  .text.pm_set_lowest
-                0x0000000000004cc9       0x89 /home/paul/RIOT/examples/LwM2M_Port/bin/native/periph.a(pm.o)
-                0x0000000000004cc9                pm_set_lowest
- .text.pm_off   0x0000000000004d52       0x3e /home/paul/RIOT/examples/LwM2M_Port/bin/native/periph.a(pm.o)
-                0x0000000000004d52                pm_off
+                0x0000000000004ed1       0x89 /home/paul/RIOT/examples/LwM2M_Port/bin/native/periph.a(pm.o)
+                0x0000000000004ed1                pm_set_lowest
+ .text.pm_off   0x0000000000004f5a       0x3e /home/paul/RIOT/examples/LwM2M_Port/bin/native/periph.a(pm.o)
+                0x0000000000004f5a                pm_off
  .text.periph_init
-                0x0000000000004d90       0x2f /home/paul/RIOT/examples/LwM2M_Port/bin/native/periph_common.a(init.o)
-                0x0000000000004d90                periph_init
+                0x0000000000004f98       0x2f /home/paul/RIOT/examples/LwM2M_Port/bin/native/periph_common.a(init.o)
+                0x0000000000004f98                periph_init
  .text.auto_init
-                0x0000000000004dbf       0x2f /home/paul/RIOT/examples/LwM2M_Port/bin/native/auto_init.a(auto_init.o)
-                0x0000000000004dbf                auto_init
- *fill*         0x0000000000004dee        0x2 
- .text          0x0000000000004df0       0x62 /usr/lib32/libc_nonshared.a(elf-init.oS)
-                0x0000000000004df0                __libc_csu_init
-                0x0000000000004e50                __libc_csu_fini
- *fill*         0x0000000000004e52        0xe 
- .text          0x0000000000004e60       0x14 /usr/lib32/libc_nonshared.a(stack_chk_fail_local.oS)
-                0x0000000000004e60                __stack_chk_fail_local
+                0x0000000000004fc7       0x2f /home/paul/RIOT/examples/LwM2M_Port/bin/native/auto_init.a(auto_init.o)
+                0x0000000000004fc7                auto_init
+ *fill*         0x0000000000004ff6        0xa 
+ .text          0x0000000000005000       0x62 /usr/lib32/libc_nonshared.a(elf-init.oS)
+                0x0000000000005000                __libc_csu_init
+                0x0000000000005060                __libc_csu_fini
+ *fill*         0x0000000000005062        0xe 
+ .text          0x0000000000005070       0x14 /usr/lib32/libc_nonshared.a(stack_chk_fail_local.oS)
+                0x0000000000005070                __stack_chk_fail_local
  *(.gnu.warning)
 
-.fini           0x0000000000004e74       0x14
+.fini           0x0000000000005084       0x14
  *(SORT_NONE(.fini))
- .fini          0x0000000000004e74        0xf /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/crti.o
-                0x0000000000004e74                _fini
- .fini          0x0000000000004e83        0x5 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/crtn.o
+ .fini          0x0000000000005084        0xf /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/crti.o
+                0x0000000000005084                _fini
+ .fini          0x0000000000005093        0x5 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/crtn.o
                 [!provide]                        PROVIDE (__etext = .)
                 [!provide]                        PROVIDE (_etext = .)
                 [!provide]                        PROVIDE (etext = .)
 
-.rodata         0x0000000000004e88     0x113a
+.rodata         0x0000000000005098     0x113a
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata.cst4   0x0000000000004e88        0x4 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
-                0x0000000000004e88                _IO_stdin_used
+ .rodata.cst4   0x0000000000005098        0x4 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+                0x0000000000005098                _IO_stdin_used
  .rodata.short_opts
-                0x0000000000004e8c        0xd /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu/startup.o
- *fill*         0x0000000000004e99        0x3 
- .rodata        0x0000000000004e9c      0x4cb /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu/startup.o
- *fill*         0x0000000000005367        0x1 
- .rodata        0x0000000000005368      0x356 /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
- *fill*         0x00000000000056be        0x2 
+                0x000000000000509c        0xd /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu/startup.o
+ *fill*         0x00000000000050a9        0x3 
+ .rodata        0x00000000000050ac      0x4cb /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu/startup.o
+ *fill*         0x0000000000005577        0x1 
+ .rodata        0x0000000000005578      0x356 /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
+ *fill*         0x00000000000058ce        0x2 
  .rodata._ZN10MbedClient5errorEN12M2MInterface5ErrorE
-                0x00000000000056c0       0x34 /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
- .rodata        0x00000000000056f4        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mstring.o)
- *fill*         0x00000000000056f5        0x3 
- .rodata        0x00000000000056f8       0x33 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mbase.o)
- *fill*         0x000000000000572b        0x1 
- .rodata        0x000000000000572c       0x1f /home/paul/RIOT/examples/LwM2M_Port/bin/native/board.a(board_init.o)
- *fill*         0x000000000000574b        0x1 
- .rodata        0x000000000000574c       0x55 /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(kernel_init.o)
- .rodata        0x00000000000057a1        0xa /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(assert.o)
- .rodata        0x00000000000057ab        0xe /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(thread.o)
- *fill*         0x00000000000057b9        0x3 
+                0x00000000000058d0       0x34 /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
+ .rodata        0x0000000000005904        0x1 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mstring.o)
+ *fill*         0x0000000000005905        0x3 
+ .rodata        0x0000000000005908       0x33 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mbase.o)
+ *fill*         0x000000000000593b        0x1 
+ .rodata        0x000000000000593c       0x1f /home/paul/RIOT/examples/LwM2M_Port/bin/native/board.a(board_init.o)
+ *fill*         0x000000000000595b        0x1 
+ .rodata        0x000000000000595c       0x55 /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(kernel_init.o)
+ .rodata        0x00000000000059b1        0xa /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(assert.o)
+ .rodata        0x00000000000059bb        0xe /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(thread.o)
+ *fill*         0x00000000000059c9        0x3 
  .rodata.assert_crash_message
-                0x00000000000057bc       0x12 /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(panic.o)
-                0x00000000000057bc                assert_crash_message
- .rodata        0x00000000000057ce       0x2d /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(panic.o)
- *fill*         0x00000000000057fb        0x1 
- .rodata        0x00000000000057fc      0x1b2 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
- *fill*         0x00000000000059ae        0x2 
- .rodata        0x00000000000059b0      0x3bc /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(irq_cpu.o)
- .rodata        0x0000000000005d6c      0x1a5 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(native_cpu.o)
- .rodata        0x0000000000005f11       0x52 /home/paul/RIOT/examples/LwM2M_Port/bin/native/native-drivers.a(native-led.o)
- *fill*         0x0000000000005f63        0x1 
- .rodata        0x0000000000005f64       0x5e /home/paul/RIOT/examples/LwM2M_Port/bin/native/periph.a(pm.o)
+                0x00000000000059cc       0x12 /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(panic.o)
+                0x00000000000059cc                assert_crash_message
+ .rodata        0x00000000000059de       0x2d /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(panic.o)
+ *fill*         0x0000000000005a0b        0x1 
+ .rodata        0x0000000000005a0c      0x1b2 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
+ *fill*         0x0000000000005bbe        0x2 
+ .rodata        0x0000000000005bc0      0x3bc /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(irq_cpu.o)
+ .rodata        0x0000000000005f7c      0x1a5 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(native_cpu.o)
+ .rodata        0x0000000000006121       0x52 /home/paul/RIOT/examples/LwM2M_Port/bin/native/native-drivers.a(native-led.o)
+ *fill*         0x0000000000006173        0x1 
+ .rodata        0x0000000000006174       0x5e /home/paul/RIOT/examples/LwM2M_Port/bin/native/periph.a(pm.o)
 
 .rodata1
  *(.rodata1)
 
-.eh_frame_hdr   0x0000000000005fc4      0x30c
+.eh_frame_hdr   0x00000000000061d4      0x32c
  *(.eh_frame_hdr)
- .eh_frame_hdr  0x0000000000005fc4      0x30c /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu/startup.o
-                0x0000000000005fc4                __GNU_EH_FRAME_HDR
+ .eh_frame_hdr  0x00000000000061d4      0x32c /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu/startup.o
+                0x00000000000061d4                __GNU_EH_FRAME_HDR
  *(.eh_frame_entry .eh_frame_entry.*)
 
-.eh_frame       0x00000000000062d0      0xcf8
+.eh_frame       0x0000000000006500      0xd84
  *(.eh_frame)
- .eh_frame      0x00000000000062d0       0x3c /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+ .eh_frame      0x0000000000006500       0x3c /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
                                          0x40 (size before relaxing)
- .eh_frame      0x000000000000630c       0x14 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+ .eh_frame      0x000000000000653c       0x14 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
                                          0x2c (size before relaxing)
- .eh_frame      0x0000000000006320       0xd0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu/startup.o
+ .eh_frame      0x0000000000006550       0xd0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu/startup.o
                                          0xfc (size before relaxing)
- .eh_frame      0x00000000000063f0      0x1ec /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
+ .eh_frame      0x0000000000006620      0x1ec /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
                                         0x218 (size before relaxing)
- .eh_frame      0x00000000000065dc       0x68 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mstring.o)
+ .eh_frame      0x000000000000680c       0x68 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mstring.o)
                                         0x5dc (size before relaxing)
- .eh_frame      0x0000000000006644       0x64 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mbase.o)
+ .eh_frame      0x0000000000006874       0x64 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mbase.o)
                                         0xf04 (size before relaxing)
- .eh_frame      0x00000000000066a8        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mstringbufferbase.o)
+ .eh_frame      0x00000000000068d8        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mstringbufferbase.o)
                                         0x124 (size before relaxing)
- .eh_frame      0x00000000000066a8       0x24 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2msecurity.o)
+ .eh_frame      0x00000000000068d8       0x24 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2msecurity.o)
                                         0x4d4 (size before relaxing)
- .eh_frame      0x00000000000066cc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mcallbackstorage.o)
+ .eh_frame      0x00000000000068fc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mcallbackstorage.o)
                                         0x3c4 (size before relaxing)
- .eh_frame      0x00000000000066cc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mobjectinstance.o)
+ .eh_frame      0x00000000000068fc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mobjectinstance.o)
                                         0x798 (size before relaxing)
- .eh_frame      0x00000000000066cc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mtlvserializer.o)
+ .eh_frame      0x00000000000068fc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mtlvserializer.o)
                                         0x3e8 (size before relaxing)
- .eh_frame      0x00000000000066cc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mresourceinstance.o)
+ .eh_frame      0x00000000000068fc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mresourceinstance.o)
                                         0x1e8 (size before relaxing)
- .eh_frame      0x00000000000066cc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(nsdlaccesshelper.o)
+ .eh_frame      0x00000000000068fc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(nsdlaccesshelper.o)
                                         0x160 (size before relaxing)
- .eh_frame      0x00000000000066cc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mresourcebase.o)
+ .eh_frame      0x00000000000068fc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mresourcebase.o)
                                         0x704 (size before relaxing)
- .eh_frame      0x00000000000066cc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mreporthandler.o)
+ .eh_frame      0x00000000000068fc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mreporthandler.o)
                                         0x4d4 (size before relaxing)
- .eh_frame      0x00000000000066cc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mtlvdeserializer.o)
+ .eh_frame      0x00000000000068fc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mtlvdeserializer.o)
                                         0x420 (size before relaxing)
- .eh_frame      0x00000000000066cc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mobject.o)
+ .eh_frame      0x00000000000068fc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mobject.o)
                                         0x588 (size before relaxing)
- .eh_frame      0x00000000000066cc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mblockmessage.o)
+ .eh_frame      0x00000000000068fc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mblockmessage.o)
                                         0x1d0 (size before relaxing)
- .eh_frame      0x00000000000066cc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mnsdlinterface.o)
+ .eh_frame      0x00000000000068fc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mnsdlinterface.o)
                                        0x1384 (size before relaxing)
- .eh_frame      0x00000000000066cc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mdevice.o)
+ .eh_frame      0x00000000000068fc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mdevice.o)
                                         0x418 (size before relaxing)
- .eh_frame      0x00000000000066cc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mresource.o)
+ .eh_frame      0x00000000000068fc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mresource.o)
                                         0x678 (size before relaxing)
- .eh_frame      0x00000000000066cc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mserver.o)
+ .eh_frame      0x00000000000068fc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mserver.o)
                                         0x2b0 (size before relaxing)
- .eh_frame      0x00000000000066cc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2minterfacefactory.o)
+ .eh_frame      0x00000000000068fc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2minterfacefactory.o)
                                         0x188 (size before relaxing)
- .eh_frame      0x00000000000066cc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mfirmware.o)
+ .eh_frame      0x00000000000068fc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mfirmware.o)
                                         0x4d0 (size before relaxing)
- .eh_frame      0x00000000000066cc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2minterfaceimpl.o)
+ .eh_frame      0x00000000000068fc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2minterfaceimpl.o)
                                         0xf04 (size before relaxing)
- .eh_frame      0x00000000000066cc       0x24 /home/paul/RIOT/examples/LwM2M_Port/bin/native/board.a(board_init.o)
+ .eh_frame      0x00000000000068fc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+                                        0x378 (size before relaxing)
+ .eh_frame      0x00000000000068fc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+                                        0x380 (size before relaxing)
+ .eh_frame      0x00000000000068fc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(ns_timer.o)
+                                        0x170 (size before relaxing)
+ .eh_frame      0x00000000000068fc        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimer.o)
+                                        0x13c (size before relaxing)
+ .eh_frame      0x00000000000068fc       0x8c /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+                                        0x37c (size before relaxing)
+ .eh_frame      0x0000000000006988        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+                                        0x1d4 (size before relaxing)
+ .eh_frame      0x0000000000006988        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+                                        0x460 (size before relaxing)
+ .eh_frame      0x0000000000006988        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+                                        0x3c0 (size before relaxing)
+ .eh_frame      0x0000000000006988        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(ns_list.o)
+                                        0x1cc (size before relaxing)
+ .eh_frame      0x0000000000006988        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(randLIB.o)
+                                        0x178 (size before relaxing)
+ .eh_frame      0x0000000000006988        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(nsdynmemLIB.o)
+                                        0x294 (size before relaxing)
+ .eh_frame      0x0000000000006988        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+                                        0x7c8 (size before relaxing)
+ .eh_frame      0x0000000000006988        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_grs.o)
+                                        0x2b4 (size before relaxing)
+ .eh_frame      0x0000000000006988       0x24 /home/paul/RIOT/examples/LwM2M_Port/bin/native/board.a(board_init.o)
                                          0x50 (size before relaxing)
- .eh_frame      0x00000000000066f0       0x5c /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(kernel_init.o)
+ .eh_frame      0x00000000000069ac       0x5c /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(kernel_init.o)
                                          0x88 (size before relaxing)
- .eh_frame      0x000000000000674c       0x1c /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(assert.o)
+ .eh_frame      0x0000000000006a08       0x1c /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(assert.o)
                                          0x48 (size before relaxing)
- .eh_frame      0x0000000000006768       0x48 /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(thread.o)
+ .eh_frame      0x0000000000006a24       0x48 /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(thread.o)
                                         0x1dc (size before relaxing)
- .eh_frame      0x00000000000067b0       0x3c /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(panic.o)
+ .eh_frame      0x0000000000006a6c       0x3c /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(panic.o)
                                          0x7c (size before relaxing)
- .eh_frame      0x00000000000067ec       0xe8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(sched.o)
+ .eh_frame      0x0000000000006aa8       0xe8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(sched.o)
                                         0x128 (size before relaxing)
- .eh_frame      0x00000000000068d4      0x334 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
+ .eh_frame      0x0000000000006b90      0x334 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(syscalls.o)
                                         0x3bc (size before relaxing)
- .eh_frame      0x0000000000006c08      0x16c /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(irq_cpu.o)
+ .eh_frame      0x0000000000006ec4      0x16c /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(irq_cpu.o)
                                         0x2e0 (size before relaxing)
- .eh_frame      0x0000000000006d74       0xe8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(native_cpu.o)
+ .eh_frame      0x0000000000007030       0xe8 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(native_cpu.o)
                                         0x168 (size before relaxing)
- .eh_frame      0x0000000000006e5c       0x48 /home/paul/RIOT/examples/LwM2M_Port/bin/native/native-drivers.a(native-led.o)
+ .eh_frame      0x0000000000007118       0x48 /home/paul/RIOT/examples/LwM2M_Port/bin/native/native-drivers.a(native-led.o)
                                         0x104 (size before relaxing)
- .eh_frame      0x0000000000006ea4       0x24 /home/paul/RIOT/examples/LwM2M_Port/bin/native/periph.a(uart.o)
+ .eh_frame      0x0000000000007160       0x24 /home/paul/RIOT/examples/LwM2M_Port/bin/native/periph.a(uart.o)
                                         0x110 (size before relaxing)
- .eh_frame      0x0000000000006ec8       0x40 /home/paul/RIOT/examples/LwM2M_Port/bin/native/periph.a(pm.o)
+ .eh_frame      0x0000000000007184       0x40 /home/paul/RIOT/examples/LwM2M_Port/bin/native/periph.a(pm.o)
                                          0x88 (size before relaxing)
- .eh_frame      0x0000000000006f08       0x20 /home/paul/RIOT/examples/LwM2M_Port/bin/native/periph_common.a(init.o)
+ .eh_frame      0x00000000000071c4       0x20 /home/paul/RIOT/examples/LwM2M_Port/bin/native/periph_common.a(init.o)
                                          0x4c (size before relaxing)
- .eh_frame      0x0000000000006f28       0x20 /home/paul/RIOT/examples/LwM2M_Port/bin/native/auto_init.a(auto_init.o)
+ .eh_frame      0x00000000000071e4        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_parser.o)
+                                        0x1b8 (size before relaxing)
+ .eh_frame      0x00000000000071e4        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_builder.o)
+                                        0x25c (size before relaxing)
+ .eh_frame      0x00000000000071e4        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_header_check.o)
                                          0x4c (size before relaxing)
- .eh_frame      0x0000000000006f48        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(async_read.o)
+ .eh_frame      0x00000000000071e4        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_protocol.o)
+                                        0x31c (size before relaxing)
+ .eh_frame      0x00000000000071e4       0x20 /home/paul/RIOT/examples/LwM2M_Port/bin/native/auto_init.a(auto_init.o)
+                                         0x4c (size before relaxing)
+ .eh_frame      0x0000000000007204        0x0 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(async_read.o)
                                          0xfc (size before relaxing)
- .eh_frame      0x0000000000006f48       0x60 /usr/lib32/libc_nonshared.a(elf-init.oS)
+ .eh_frame      0x0000000000007204       0x60 /usr/lib32/libc_nonshared.a(elf-init.oS)
                                          0x8c (size before relaxing)
- .eh_frame      0x0000000000006fa8       0x1c /usr/lib32/libc_nonshared.a(stack_chk_fail_local.oS)
+ .eh_frame      0x0000000000007264       0x1c /usr/lib32/libc_nonshared.a(stack_chk_fail_local.oS)
                                          0x48 (size before relaxing)
- .eh_frame      0x0000000000006fc4        0x4 /usr/lib/gcc/x86_64-linux-gnu/7/32/crtendS.o
+ .eh_frame      0x0000000000007280        0x4 /usr/lib/gcc/x86_64-linux-gnu/7/32/crtendS.o
  *(.eh_frame.*)
 
 .gcc_except_table
@@ -4164,7 +5237,7 @@ LOAD /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/crtn.o
 
 .exception_ranges
  *(.exception_ranges .exception_ranges*)
-                0x0000000000008d50                . = DATA_SEGMENT_ALIGN (CONSTANT (MAXPAGESIZE), CONSTANT (COMMONPAGESIZE))
+                0x0000000000008d2c                . = DATA_SEGMENT_ALIGN (CONSTANT (MAXPAGESIZE), CONSTANT (COMMONPAGESIZE))
 
 .eh_frame
  *(.eh_frame)
@@ -4186,25 +5259,26 @@ LOAD /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/crtn.o
  *(.tbss .tbss.* .gnu.linkonce.tb.*)
  *(.tcommon)
 
-.preinit_array  0x0000000000008d50        0x0
+.preinit_array  0x0000000000008d2c        0x0
                 [!provide]                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array)
                 [!provide]                        PROVIDE (__preinit_array_end = .)
 
-.init_array     0x0000000000008d50        0xc
-                0x0000000000008d50                PROVIDE (__init_array_start = .)
+.init_array     0x0000000000008d2c       0x10
+                0x0000000000008d2c                PROVIDE (__init_array_start = .)
  *(SORT_BY_INIT_PRIORITY(.init_array.*) SORT_BY_INIT_PRIORITY(.ctors.*))
  *(.init_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .ctors)
- .init_array    0x0000000000008d50        0x4 /usr/lib/gcc/x86_64-linux-gnu/7/32/crtbeginS.o
- .init_array    0x0000000000008d54        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu/startup.o
- .init_array    0x0000000000008d58        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
-                0x0000000000008d5c                PROVIDE (__init_array_end = .)
+ .init_array    0x0000000000008d2c        0x4 /usr/lib/gcc/x86_64-linux-gnu/7/32/crtbeginS.o
+ .init_array    0x0000000000008d30        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu/startup.o
+ .init_array    0x0000000000008d34        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
+ .init_array    0x0000000000008d38        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+                0x0000000000008d3c                PROVIDE (__init_array_end = .)
 
-.fini_array     0x0000000000008d5c        0x4
+.fini_array     0x0000000000008d3c        0x4
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_INIT_PRIORITY(.fini_array.*) SORT_BY_INIT_PRIORITY(.dtors.*))
  *(.fini_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .dtors)
- .fini_array    0x0000000000008d5c        0x4 /usr/lib/gcc/x86_64-linux-gnu/7/32/crtbeginS.o
+ .fini_array    0x0000000000008d3c        0x4 /usr/lib/gcc/x86_64-linux-gnu/7/32/crtbeginS.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
 
 .ctors
@@ -4224,31 +5298,31 @@ LOAD /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/crtn.o
 .jcr
  *(.jcr)
 
-.data.rel.ro    0x0000000000008d60       0xd0
+.data.rel.ro    0x0000000000008d40       0xd0
  *(.data.rel.ro.local* .gnu.linkonce.d.rel.ro.local.*)
  .data.rel.ro.local.long_opts
-                0x0000000000008d60       0x90 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu/startup.o
+                0x0000000000008d40       0x90 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu/startup.o
  .data.rel.ro.local._ZTV10MbedClient
-                0x0000000000008df0       0x20 /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
-                0x0000000000008df0                vtable for MbedClient
+                0x0000000000008dd0       0x20 /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
+                0x0000000000008dd0                vtable for MbedClient
  *(.data.rel.ro .data.rel.ro.* .gnu.linkonce.d.rel.ro.*)
- .data.rel.ro   0x0000000000008e10        0x0 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+ .data.rel.ro   0x0000000000008df0        0x0 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
  .data.rel.ro._ZTV20M2MInterfaceObserver
-                0x0000000000008e10       0x20 /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
-                0x0000000000008e10                vtable for M2MInterfaceObserver
+                0x0000000000008df0       0x20 /home/paul/RIOT/examples/LwM2M_Port/bin/native/application_LwM2M.a(main.o)
+                0x0000000000008df0                vtable for M2MInterfaceObserver
 
-.dynamic        0x0000000000008e30      0x118
+.dynamic        0x0000000000008e10      0x118
  *(.dynamic)
- .dynamic       0x0000000000008e30      0x118 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
-                0x0000000000008e30                _DYNAMIC
+ .dynamic       0x0000000000008e10      0x118 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+                0x0000000000008e10                _DYNAMIC
 
-.got            0x0000000000008f48       0xb8
+.got            0x0000000000008f28       0xc0
  *(.got.plt)
- .got.plt       0x0000000000008f48       0x8c /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
-                0x0000000000008f48                _GLOBAL_OFFSET_TABLE_
+ .got.plt       0x0000000000008f28       0x94 /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+                0x0000000000008f28                _GLOBAL_OFFSET_TABLE_
  *(.igot.plt)
  *(.got)
- .got           0x0000000000008fd4       0x2c /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
+ .got           0x0000000000008fbc       0x2c /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/Scrt1.o
  *(.igot)
                 0x0000000000009000                . = DATA_SEGMENT_RELRO_END (., 0x0)
 
@@ -4317,7 +5391,9 @@ LOAD /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/crtn.o
  .bss._ZN11M2MSecurity9_instanceE
                 0x000000000000904c        0x4 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2msecurity.o)
                 0x000000000000904c                M2MSecurity::_instance
- *fill*         0x0000000000009050       0x10 
+ .bss._ZL15timer_impl_list
+                0x0000000000009050        0xc /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ *fill*         0x000000000000905c        0x4 
  .bss.main_stack
                 0x0000000000009060     0x3000 /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(kernel_init.o)
  .bss.idle_stack
@@ -4608,6 +5684,19 @@ LOAD /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/crtn.o
  .comment       0x0000000000000024       0x25 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2minterfacefactory.o)
  .comment       0x0000000000000024       0x25 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2mfirmware.o)
  .comment       0x0000000000000024       0x25 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2M.a(m2minterfaceimpl.o)
+ .comment       0x0000000000000024       0x25 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(event.o)
+ .comment       0x0000000000000024       0x25 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(system_timer.o)
+ .comment       0x0000000000000024       0x25 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MEventLoop.a(ns_timer.o)
+ .comment       0x0000000000000024       0x25 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimer.o)
+ .comment       0x0000000000000024       0x25 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mtimerpimpl.o)
+ .comment       0x0000000000000024       0x25 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandler.o)
+ .comment       0x0000000000000024       0x25 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MRIOT.a(m2mconnectionhandlerpimpl.o)
+ .comment       0x0000000000000024       0x25 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(common_functions.o)
+ .comment       0x0000000000000024       0x25 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(ns_list.o)
+ .comment       0x0000000000000024       0x25 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(randLIB.o)
+ .comment       0x0000000000000024       0x25 /home/paul/RIOT/examples/LwM2M_Port/bin/native/M2MUTIL.a(nsdynmemLIB.o)
+ .comment       0x0000000000000024       0x25 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_nsdl.o)
+ .comment       0x0000000000000024       0x25 /home/paul/RIOT/examples/LwM2M_Port/bin/native/MCOAP.a(sn_grs.o)
  .comment       0x0000000000000024       0x25 /home/paul/RIOT/examples/LwM2M_Port/bin/native/board.a(board_init.o)
  .comment       0x0000000000000024       0x25 /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(kernel_init.o)
  .comment       0x0000000000000024       0x25 /home/paul/RIOT/examples/LwM2M_Port/bin/native/core.a(assert.o)
@@ -4621,6 +5710,10 @@ LOAD /usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib32/crtn.o
  .comment       0x0000000000000024       0x25 /home/paul/RIOT/examples/LwM2M_Port/bin/native/periph.a(uart.o)
  .comment       0x0000000000000024       0x25 /home/paul/RIOT/examples/LwM2M_Port/bin/native/periph.a(pm.o)
  .comment       0x0000000000000024       0x25 /home/paul/RIOT/examples/LwM2M_Port/bin/native/periph_common.a(init.o)
+ .comment       0x0000000000000024       0x25 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_parser.o)
+ .comment       0x0000000000000024       0x25 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_builder.o)
+ .comment       0x0000000000000024       0x25 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_header_check.o)
+ .comment       0x0000000000000024       0x25 /home/paul/RIOT/examples/LwM2M_Port/bin/native/COAP.a(sn_coap_protocol.o)
  .comment       0x0000000000000024       0x25 /home/paul/RIOT/examples/LwM2M_Port/bin/native/auto_init.a(auto_init.o)
  .comment       0x0000000000000024       0x25 /home/paul/RIOT/examples/LwM2M_Port/bin/native/cpu.a(async_read.o)
  .comment       0x0000000000000024       0x25 /usr/lib/gcc/x86_64-linux-gnu/7/32/crtendS.o

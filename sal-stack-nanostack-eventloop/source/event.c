@@ -22,7 +22,7 @@
 #include "nsdynmemLIB.h"
 #include "ns_timer.h"
 #include "event.h"
-#include "platform/arm_hal_interrupt.h"
+#include "arm_hal_interrupt.h"
 
 
 typedef struct arm_core_tasklet {
