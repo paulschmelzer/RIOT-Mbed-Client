@@ -18,7 +18,7 @@
 #include "pal.h"
 #include "pal_plat_network.h"
 
-#include "mbed.h"
+
 
 typedef void(*palSelectCallbackFunction_t)();
 
@@ -441,8 +441,8 @@ PAL_PRIVATE palStatus_t translateErrorToPALError(int errnoValue)
 
 palStatus_t pal_plat_socketsInit(void* context)
 {
-    (void)context; // replace with macro
-    int result = PAL_SUCCESS;
+    PAL_UNUSED_ARG(context); // replace with macro
+    palStatus_t result = PAL_SUCCESS;
     if (s_pal_network_initialized == 1)
     {
         return PAL_SUCCESS; // already initialized.

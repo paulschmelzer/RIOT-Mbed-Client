@@ -34,6 +34,10 @@ DIRS += Util
 DIRS += sal-stack-nanostack-eventloop/source
 DIRS += mbed-client-pal/Source
 
+USEMODULE += gnrc_netdev_default
+USEMODULE += auto_init_gnrc_netif
+
+
 USEMODULE += M2M
 USEMODULE += COAP
 USEMODULE += MCOAP
