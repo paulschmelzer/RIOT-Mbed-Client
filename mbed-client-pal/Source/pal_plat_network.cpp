@@ -17,6 +17,11 @@
 
 #include "pal.h"
 #include "pal_plat_network.h"
+#include "net/gnrc/netif.h"
+#include "net/sock/udp.h"
+#include "net/af.h"
+#include "net/protnum.h"
+#include "net/ipv6/addr.h"
 
 
 
@@ -381,7 +386,7 @@ void palConnectCallBack()
 
 
 
-PAL_PRIVATE NetworkInterface* s_pal_networkInterfacesSupported[PAL_MAX_SUPORTED_NET_INTERFACES] = { 0 };
+PAL_PRIVATE gnrc_netif_t* s_pal_networkInterfacesSupported[PAL_MAX_SUPORTED_NET_INTERFACES] = { 0 };
 
 PAL_PRIVATE  uint32_t s_pal_numberOFInterfaces = 0;
 
@@ -473,7 +478,7 @@ palStatus_t pal_plat_registerNetworkInterface(void* context, uint32_t* interface
     {
         if (s_pal_numberOFInterfaces < PAL_MAX_SUPORTED_NET_INTERFACES)
         {
-            s_pal_networkInterfacesSupported[s_pal_numberOFInterfaces] = (NetworkInterface*)context;
+            s_pal_networkInterfacesSupported[s_pal_numberOFInterfaces] = (gnrc_netif_t*)context;
             *interfaceIndex = s_pal_numberOFInterfaces;
             ++s_pal_numberOFInterfaces;
         }
@@ -488,7 +493,7 @@ palStatus_t pal_plat_registerNetworkInterface(void* context, uint32_t* interface
 
 palStatus_t pal_plat_socketsTerminate(void* context)
 {
-    (void)context; // replace with macro
+	PAL_UNUSED_ARG(context); // TODO Cleanup
     return PAL_SUCCESS;
 }
 
@@ -614,8 +619,7 @@ PAL_PRIVATE palStatus_t socketAddressToPalSockAddr(SocketAddress& input, palSock
 palStatus_t pal_plat_socket(palSocketDomain_t domain, palSocketType_t type, bool nonBlockingSocket, uint32_t interfaceNum, palSocket_t* socket)
 {
     int result = PAL_SUCCESS;
-    PALSocketWrapper* socketObj = NULL;
-    Socket* internalSocket = NULL;
+    sock_udp_ep_t = SOCK_IPV4_EP_ANY
 
     PAL_VALIDATE_ARGUMENTS((NULL == socket))
 
@@ -631,11 +635,11 @@ palStatus_t pal_plat_socket(palSocketDomain_t domain, palSocketType_t type, bool
 #if PAL_NET_TCP_AND_TLS_SUPPORT // functionality below supported only in case TCP is supported.
     else if ((s_pal_numberOFInterfaces > interfaceNum) && (PAL_SOCK_STREAM == type) && ((PAL_AF_INET == domain) || (PAL_AF_INET6 == domain) || (PAL_AF_UNSPEC == domain))) // check correct parameters for TCP socket
     {
-        internalSocket = new TCPSocket(s_pal_networkInterfacesSupported[interfaceNum]);
+        //internalSocket = new TCPSocket(s_pal_networkInterfacesSupported[interfaceNum]);
     }
     else if ((s_pal_numberOFInterfaces > interfaceNum) && (PAL_SOCK_STREAM_SERVER == type) && ((PAL_AF_INET == domain) || (PAL_AF_INET6 == domain) || (PAL_AF_UNSPEC == domain))) // check correct parameters for TCP Server socket
     {
-        internalSocket = new TCPServer(s_pal_networkInterfacesSupported[interfaceNum]);
+        //internalSocket = new TCPServer(s_pal_networkInterfacesSupported[interfaceNum]);
     }
 #endif
     else
