@@ -290,8 +290,8 @@ bool M2MConnectionHandlerPimpl::address_resolver(void)
     }
 #else
     tr_debug("M2MConnectionHandlerPimpl::address_resolver:synchronous DNS");
-    uint16_t status = pal_getAddressInfo(_server_address.c_str(), (palSocketAddress_t*)&_socket_address, &_socket_address_len);
-    if (PAL_SUCCESS != status) {
+    uint16_t status = pal_getAddressInfo(_server_address.c_str(), (socketAddress_t*)&_socket_address, &_socket_address_len);
+    if (0 != status) {
         tr_error("M2MConnectionHandlerPimpl::getAddressInfo failed with 0x%X", status);
         if (!send_event(ESocketDnsError)) {
             tr_error("M2MConnectionHandlerPimpl::address_resolver, error event alloc fail.");
@@ -306,6 +306,12 @@ bool M2MConnectionHandlerPimpl::address_resolver(void)
     }
 #endif
     return ret;
+}
+
+uint8_t M2MConnectionHandlerPimpl::getAddressInfo(const char *url, socketAddress_t *address, socketLength_t* addressLength){
+
+
+	return 0;
 }
 
 void M2MConnectionHandlerPimpl::handle_dns_result(bool success)

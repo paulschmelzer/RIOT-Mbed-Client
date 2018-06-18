@@ -58,6 +58,13 @@ typedef struct socketAddress {
     char              addressData[PAL_NET_MAX_ADDR_SIZE];  /*! Address (based on protocol). */
 } socketAddress_t; /*! Address data structure with enough room to support IPV4 and IPV6. */
 
+typedef enum {
+    PAL_AF_UNSPEC = 0,
+    PAL_AF_INET = 2,    /*! Internet IP Protocol.   */
+    PAL_AF_INET6 = 10, /*! IP version 6.    */
+} palSocketDomain_t;/*! Network domains supported by PAL. */
+
+
 class M2MConnectionHandlerPimpl {
 public:
 
@@ -228,6 +235,8 @@ private:
     * @brief Close and delete socket
     */
     void close_socket();
+
+    uint8_t getAddressInfo(const char *url, socketAddress_t *address, socketLength_t* addressLength);
 
 public:
 

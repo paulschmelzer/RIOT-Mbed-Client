@@ -59,331 +59,331 @@ void palConnectCallBack()
 {
 }
 
-//        class PALSocketWrapper
-//        {
-//        public:
-//            PALSocketWrapper() : initialized(false), activeSocket(NULL), isNonBlockingOnCreation(false), callbackFunction(NULL_FUNCTION), callbackArgument(NULL), selectCallbackFunction(NULL), connectState(PAL_PLAT_SOCKET_NOT_CONNECTED), socketTypeVal(PAL_SOCK_DGRAM), attachCallbackObject(NULL), rxBuffer(0), rxBufferSet(false)
-//        {
-//
-//            }
-//            nsapi_error_t initialize(Socket* socket, palSocketType_t socketType,bool isNonBlocking, palAsyncSocketCallback_t callback, void* argument);
-//            palAsyncSocketCallback_t getCallback( ) const;
-//            void* getCallbackArgument() const ;
-//            bool isNonBlocking() const ;
-//            bool isConnected() const ;
-//            void attachCallback();
-//            Socket* getActiveSocket();
-//            palSocketType_t getSocketType() const;
-//            char getAndResetRxBuffer();
-//            bool isRxBufferSet() const;
-//            palStatus_t setRxBuffer(char data);
-//            void updateCallback(/*palAsyncSocketCallback_t callback, void* argument,*/ palSelectCallbackFunction_t selectCallback);
-//            virtual ~PALSocketWrapper()
-//            {
-//                if (NULL != activeSocket  )
-//                {
-//                    activeSocket->close();
-//                    delete activeSocket;
-//                }
-//            }
-//
-//            // nsapi socket funcitons exposed:
-//            nsapi_error_t close();
-//            nsapi_error_t bind(const SocketAddress &address);
-//            void set_blocking(bool blocking);
-//            void set_timeout(int timeout);
-//            nsapi_error_t setsockopt(int level, int optname, const void *optval, unsigned optlen);
-//            nsapi_error_t getsockopt(int level, int optname, void *optval, unsigned *optlen);
-//            void attach(mbed::Callback<void()> func);
-//            //void sigio(mbed::Callback<void()> func); // switch attach to sigio for verison 5.4
-//            // nsapi UDP socket funcitons exposed:
-//            nsapi_size_or_error_t recvfrom(SocketAddress *address, void *data, nsapi_size_t size);
-//            nsapi_size_or_error_t sendto(const SocketAddress &address, const void *data, nsapi_size_t size);
-//            //nsapi TCP socket funcitons exposed:
-//            nsapi_error_t connect(const SocketAddress &address);
-//            nsapi_size_or_error_t send(const void *data, nsapi_size_t size);
-//            nsapi_size_or_error_t recv(void *data, nsapi_size_t size);
-//            //nsapi TCP server socket funcitons exposed:
-//            nsapi_error_t listen(int backlog = 1);
-//            nsapi_error_t accept(TCPSocket *connection, SocketAddress *address = NULL);
-//
-//
-//        private:
-//            bool initialized;
-//            Socket* activeSocket;
-//            bool isNonBlockingOnCreation;
-//            palAsyncSocketCallback_t callbackFunction;
-//            void* callbackArgument;
-//            palSelectCallbackFunction_t selectCallbackFunction;
-//            palConnectState connectState;
-//            palSocketType_t socketTypeVal;
-//            Callback<void()> attachCallbackObject;
-//            events::EventQueue* shared_event_queue;
-//            char rxBuffer;
-//            bool rxBufferSet;
-//        };
-//
-//        void PALSocketWrapper::updateCallback( palSelectCallbackFunction_t selectCallback )
-//        {
-//            bool shouldSetCallback = false;
-//            if ((NULL == selectCallbackFunction) && (NULL == callbackFunction)) //callback already set - no need to set again
-//            {
-//                shouldSetCallback = true;
-//            }
-//
-//            selectCallbackFunction = selectCallback;
-//
-//            if ((NULL != selectCallbackFunction) || (NULL != callbackFunction))
-//            {
-//                if (shouldSetCallback)
-//                {
-//                    Callback<void()> mycall(this, &PALSocketWrapper::attachCallback);
-//                    activeSocket->sigio(mycall);
-//                }
-//            }
-//            else
-//            {
-//                activeSocket->sigio(NULL);
-//            }
-//        }
-//
-//        Socket* PALSocketWrapper::getActiveSocket()
-//        {
-//            return activeSocket;
-//        }
-//
-//        char PALSocketWrapper::getAndResetRxBuffer()
-//        {
-//            rxBufferSet = false;
-//            return rxBuffer;
-//        }
-//
-//        bool PALSocketWrapper::isRxBufferSet() const
-//        {
-//            return rxBufferSet;
-//        }
-//
-//        palStatus_t PALSocketWrapper::setRxBuffer( char data)
-//        {
-//            PAL_VALIDATE_CONDITION_WITH_ERROR((true == rxBufferSet), PAL_ERR_SOCKET_GENERIC);
-//
-//            rxBuffer = data;
-//            rxBufferSet = true;
-//
-//            return PAL_SUCCESS;
-//        }
-//
-//        palAsyncSocketCallback_t PALSocketWrapper::getCallback() const
-//        {
-//            return callbackFunction;
-//        }
-//
-//        palSocketType_t  PALSocketWrapper::getSocketType() const
-//        {
-//            return socketTypeVal;
-//        }
-//
-//
-//        void * PALSocketWrapper::getCallbackArgument() const
-//        {
-//            return callbackArgument;
-//        }
-//
-//        bool PALSocketWrapper::isNonBlocking() const
-//        {
-//            return isNonBlockingOnCreation;
-//        }
-//
-//        bool PALSocketWrapper::isConnected() const
-//        {
-//            return ((PAL_PLAT_SOCKET_CONNECTED == connectState) && (PAL_SOCK_STREAM == socketTypeVal));
-//        }
-//
-//        void PALSocketWrapper::attachCallback()
-//        {
-//            if (NULL != callbackFunction)
-//            {
-//                // Since the socket callback may be called from interrupt context, depending on the
-//                // network interface used, we need to debounce the client callback to happen from
-//                // a thread context to keep client side implementation platform agnostic.
-//                assert(shared_event_queue);
-//                shared_event_queue->call(callbackFunction, callbackArgument);
-//            }
-//            if (NULL != selectCallbackFunction)
-//            {
-//                // Note: this is not tested yet
-//                assert(shared_event_queue);
-//                shared_event_queue->call(selectCallbackFunction);
-//            }
-//            if (PAL_PLAT_SOCKET_CONNECTING == connectState)
-//            {
-//                connectState = PAL_PLAT_SOCKET_CONNECTED;// if we got a callback while connecting assume we are connected
-//                if (palConnectCallBack == selectCallbackFunction)
-//                {
-//                    selectCallbackFunction = NULL;
-//                }
-//            }
-//        }
-//
-//        nsapi_error_t  PALSocketWrapper::initialize(Socket* socket, palSocketType_t socketType, bool isNonBlocking, palAsyncSocketCallback_t callback, void* argument)
-//        {
-//        // check that we got a valid socket and the socket type is supported
-//            PAL_VALIDATE_CONDITION_WITH_ERROR(((true == initialized) || (NULL == socket) ||
-//                                              ((socketType != PAL_SOCK_STREAM) && (socketType != PAL_SOCK_STREAM_SERVER) &&
-//                                               (socketType != PAL_SOCK_DGRAM))),NSAPI_ERROR_PARAMETER);
-//
-//
-//            // Pre fetch and store the shared queue used for bouncing the callbacks out of interrupt
-//            // context, as the user of it may be ran from interrupt and it can't go and start
-//            // creating worker threads from there.
-//            // Note: the code uses mbed_highprio_event_queue() instead of mbed_event_queue()
-//            // as the high priority queue and its thread is likely there already thanks to
-//            // arm_hal_timer.cpp. Technically the client side does not really care, if the events
-//            // were delayed a bit by other events or not.
-//            shared_event_queue = mbed_highprio_event_queue();
-//            PAL_VALIDATE_CONDITION_WITH_ERROR((shared_event_queue == NULL),NSAPI_ERROR_UNSUPPORTED);
-//
-//            Callback<void()> mycall(this, &PALSocketWrapper::attachCallback);
-//            attachCallbackObject = mycall;
-//            activeSocket = socket;
-//            socketTypeVal = socketType;
-//            isNonBlockingOnCreation = isNonBlocking;
-//            activeSocket->set_blocking(!isNonBlocking);
-//            if (NULL != callback)
-//            {
-//                callbackFunction = callback;
-//                callbackArgument = argument;
-//                activeSocket->sigio(attachCallbackObject);
-//            }
-//
-//            initialized = true;
-//            return NSAPI_ERROR_OK;
-//        }
-//
-//        nsapi_error_t PALSocketWrapper::close()
-//        {
-//            nsapi_error_t status= NSAPI_ERROR_OK;
-//            if (NULL != activeSocket)
-//            {
-//                status = activeSocket->close();
-//                delete activeSocket;
-//                activeSocket = NULL;
-//            }
-//            return  status;
-//        }
-//
-//        nsapi_error_t PALSocketWrapper::bind(const SocketAddress &address)
-//        {
-//            nsapi_error_t status = NSAPI_ERROR_OK;
-//            PAL_VALIDATE_CONDITION_WITH_ERROR((false == initialized), NSAPI_ERROR_PARAMETER);
-//            status= activeSocket->bind(address);
-//            return  status;
-//        }
-//
-//        void PALSocketWrapper::set_blocking(bool blocking)
-//        {
-//            activeSocket->set_blocking(blocking);
-//        }
-//
-//        void PALSocketWrapper::set_timeout(int timeout)
-//        {
-//            activeSocket->set_timeout(timeout);
-//        }
-//
-//        nsapi_error_t PALSocketWrapper::setsockopt(int level, int optname, const void *optval, unsigned optlen)
-//        {
-//            nsapi_error_t status = NSAPI_ERROR_OK;
-//            PAL_VALIDATE_CONDITION_WITH_ERROR((false == initialized),NSAPI_ERROR_PARAMETER);
-//            status = activeSocket->setsockopt(level,  optname, optval,  optlen);
-//            return  status;
-//        }
-//
-//        nsapi_error_t PALSocketWrapper::getsockopt(int level, int optname, void *optval, unsigned *optlen)
-//        {
-//            nsapi_error_t status = NSAPI_ERROR_OK;
-//            PAL_VALIDATE_CONDITION_WITH_ERROR((false == initialized),NSAPI_ERROR_PARAMETER);
-//            status = activeSocket->getsockopt( level,  optname,  optval,  optlen);
-//            return  status;
-//        }
-//
-//        void PALSocketWrapper::attach(mbed::Callback<void()> func)
-//        {
-//            activeSocket->sigio(func);
-//        }
-//        //void sigio(mbed::Callback<void()> func); // switch attach to sigio for verison 5.4
-//        // nsapi UDP socket funcitons exposed:
-//        nsapi_size_or_error_t PALSocketWrapper::recvfrom(SocketAddress *address, void *data, nsapi_size_t size)
-//        {
-//            nsapi_size_or_error_t status = NSAPI_ERROR_OK;
-//            PAL_VALIDATE_CONDITION_WITH_ERROR(((false == initialized) || (PAL_SOCK_DGRAM != socketTypeVal)), NSAPI_ERROR_PARAMETER); // udp sockets only
-//
-//            status = ((UDPSocket*)activeSocket)->recvfrom(address, data,  size);
-//            return  status;
-//        }
-//
-//        nsapi_size_or_error_t PALSocketWrapper::sendto(const SocketAddress &address, const void *data, nsapi_size_t size)
-//        {
-//            nsapi_size_or_error_t status = NSAPI_ERROR_OK;
-//            PAL_VALIDATE_CONDITION_WITH_ERROR(((false == initialized) || (PAL_SOCK_DGRAM != socketTypeVal)), NSAPI_ERROR_PARAMETER); // udp sockets only
-//            status = ((UDPSocket*)activeSocket)->sendto(address, data, size);
-//            return  status;
-//        }
-//
-//        //nsapi TCP socket funcitons exposed:
-//        nsapi_error_t PALSocketWrapper::connect(const SocketAddress &address)
-//        {
-//            nsapi_error_t status = NSAPI_ERROR_OK;
-//            PAL_VALIDATE_CONDITION_WITH_ERROR(((false == initialized) || (PAL_SOCK_STREAM != socketTypeVal)), NSAPI_ERROR_PARAMETER);  // tcp sockets only
-//
-//            connectState = PAL_PLAT_SOCKET_CONNECTING;
-//            updateCallback(palConnectCallBack); // make sure callback is enabled to see if we get callback to signal connections end
-//            status = ((TCPSocket*)activeSocket)->connect(address);
-//            if (status >= 0 || status == NSAPI_ERROR_IS_CONNECTED)
-//            {
-//                connectState = PAL_PLAT_SOCKET_CONNECTED;
-//                updateCallback(NULL); // make sure callback is enabled to see if we get callback to signal connections end
-//            }
-//            else if ((NSAPI_ERROR_WOULD_BLOCK != status) && (NSAPI_ERROR_IN_PROGRESS != status) && (NSAPI_ERROR_ALREADY != status))
-//            {
-//                connectState = PAL_PLAT_SOCKET_NOT_CONNECTED;
-//            }
-//            return  status;
-//        }
-//
-//        nsapi_size_or_error_t PALSocketWrapper::send(const void *data, nsapi_size_t size)
-//        {
-//            nsapi_size_or_error_t status = NSAPI_ERROR_OK;
-//            PAL_VALIDATE_CONDITION_WITH_ERROR(((false == initialized) || (PAL_SOCK_STREAM != socketTypeVal)), NSAPI_ERROR_PARAMETER); // tcp sockets only
-//
-//            status = ((TCPSocket*)activeSocket)->send( data, size);
-//            return  status;
-//        }
-//
-//        nsapi_size_or_error_t PALSocketWrapper::recv(void *data, nsapi_size_t size)
-//        {
-//            nsapi_size_or_error_t status = NSAPI_ERROR_OK;
-//            PAL_VALIDATE_CONDITION_WITH_ERROR(((false == initialized) || (PAL_SOCK_STREAM != socketTypeVal)),NSAPI_ERROR_PARAMETER); // tcp sockets only
-//            status = ((TCPSocket*)activeSocket)->recv(data, size);
-//            return  status;
-//        }
-//        //nsapi TCP server socket funcitons exposed:
-//        nsapi_error_t PALSocketWrapper::listen(int backlog )
-//        {
-//            nsapi_error_t status = NSAPI_ERROR_OK;
-//            PAL_VALIDATE_CONDITION_WITH_ERROR(((false == initialized) || (PAL_SOCK_STREAM_SERVER != socketTypeVal)), NSAPI_ERROR_PARAMETER); // udp sockets only
-//            status = ((TCPServer*)activeSocket)->listen(backlog);
-//            return  status;
-//        }
-//
-//        nsapi_error_t PALSocketWrapper::accept(TCPSocket *connection, SocketAddress *address)
-//        {
-//            nsapi_error_t status = NSAPI_ERROR_OK;
-//            PAL_VALIDATE_CONDITION_WITH_ERROR(((false == initialized) || (PAL_SOCK_STREAM_SERVER != socketTypeVal)),NSAPI_ERROR_PARAMETER); // udp sockets only
-//
-//            status = ((TCPServer*)activeSocket)->accept(connection, address);
-//            return  status;
-//        }
-//
+        class PALSocketWrapper
+        {
+        public:
+            PALSocketWrapper() : initialized(false), activeSocket(NULL), isNonBlockingOnCreation(false), callbackFunction(NULL_FUNCTION), callbackArgument(NULL), selectCallbackFunction(NULL), connectState(PAL_PLAT_SOCKET_NOT_CONNECTED), socketTypeVal(PAL_SOCK_DGRAM), attachCallbackObject(NULL), rxBuffer(0), rxBufferSet(false)
+        {
+
+            }
+            nsapi_error_t initialize(Socket* socket, palSocketType_t socketType,bool isNonBlocking, palAsyncSocketCallback_t callback, void* argument);
+            palAsyncSocketCallback_t getCallback( ) const;
+            void* getCallbackArgument() const ;
+            bool isNonBlocking() const ;
+            bool isConnected() const ;
+            void attachCallback();
+            Socket* getActiveSocket();
+            palSocketType_t getSocketType() const;
+            char getAndResetRxBuffer();
+            bool isRxBufferSet() const;
+            palStatus_t setRxBuffer(char data);
+            void updateCallback(/*palAsyncSocketCallback_t callback, void* argument,*/ palSelectCallbackFunction_t selectCallback);
+            virtual ~PALSocketWrapper()
+            {
+                if (NULL != activeSocket  )
+                {
+                    activeSocket->close();
+                    delete activeSocket;
+                }
+            }
+
+            // nsapi socket funcitons exposed:
+            nsapi_error_t close();
+            nsapi_error_t bind(const SocketAddress &address);
+            void set_blocking(bool blocking);
+            void set_timeout(int timeout);
+            nsapi_error_t setsockopt(int level, int optname, const void *optval, unsigned optlen);
+            nsapi_error_t getsockopt(int level, int optname, void *optval, unsigned *optlen);
+            void attach(mbed::Callback<void()> func);
+            //void sigio(mbed::Callback<void()> func); // switch attach to sigio for verison 5.4
+            // nsapi UDP socket funcitons exposed:
+            nsapi_size_or_error_t recvfrom(SocketAddress *address, void *data, nsapi_size_t size);
+            nsapi_size_or_error_t sendto(const SocketAddress &address, const void *data, nsapi_size_t size);
+            //nsapi TCP socket funcitons exposed:
+            nsapi_error_t connect(const SocketAddress &address);
+            nsapi_size_or_error_t send(const void *data, nsapi_size_t size);
+            nsapi_size_or_error_t recv(void *data, nsapi_size_t size);
+            //nsapi TCP server socket funcitons exposed:
+            nsapi_error_t listen(int backlog = 1);
+            nsapi_error_t accept(TCPSocket *connection, SocketAddress *address = NULL);
+
+
+        private:
+            bool initialized;
+            Socket* activeSocket;
+            bool isNonBlockingOnCreation;
+            palAsyncSocketCallback_t callbackFunction;
+            void* callbackArgument;
+            palSelectCallbackFunction_t selectCallbackFunction;
+            palConnectState connectState;
+            palSocketType_t socketTypeVal;
+            Callback<void()> attachCallbackObject;
+            events::EventQueue* shared_event_queue;
+            char rxBuffer;
+            bool rxBufferSet;
+        };
+
+        void PALSocketWrapper::updateCallback( palSelectCallbackFunction_t selectCallback )
+        {
+            bool shouldSetCallback = false;
+            if ((NULL == selectCallbackFunction) && (NULL == callbackFunction)) //callback already set - no need to set again
+            {
+                shouldSetCallback = true;
+            }
+
+            selectCallbackFunction = selectCallback;
+
+            if ((NULL != selectCallbackFunction) || (NULL != callbackFunction))
+            {
+                if (shouldSetCallback)
+                {
+                    Callback<void()> mycall(this, &PALSocketWrapper::attachCallback);
+                    activeSocket->sigio(mycall);
+                }
+            }
+            else
+            {
+                activeSocket->sigio(NULL);
+            }
+        }
+
+        Socket* PALSocketWrapper::getActiveSocket()
+        {
+            return activeSocket;
+        }
+
+        char PALSocketWrapper::getAndResetRxBuffer()
+        {
+            rxBufferSet = false;
+            return rxBuffer;
+        }
+
+        bool PALSocketWrapper::isRxBufferSet() const
+        {
+            return rxBufferSet;
+        }
+
+        palStatus_t PALSocketWrapper::setRxBuffer( char data)
+        {
+            PAL_VALIDATE_CONDITION_WITH_ERROR((true == rxBufferSet), PAL_ERR_SOCKET_GENERIC);
+
+            rxBuffer = data;
+            rxBufferSet = true;
+
+            return PAL_SUCCESS;
+        }
+
+        palAsyncSocketCallback_t PALSocketWrapper::getCallback() const
+        {
+            return callbackFunction;
+        }
+
+        palSocketType_t  PALSocketWrapper::getSocketType() const
+        {
+            return socketTypeVal;
+        }
+
+
+        void * PALSocketWrapper::getCallbackArgument() const
+        {
+            return callbackArgument;
+        }
+
+        bool PALSocketWrapper::isNonBlocking() const
+        {
+            return isNonBlockingOnCreation;
+        }
+
+        bool PALSocketWrapper::isConnected() const
+        {
+            return ((PAL_PLAT_SOCKET_CONNECTED == connectState) && (PAL_SOCK_STREAM == socketTypeVal));
+        }
+
+        void PALSocketWrapper::attachCallback()
+        {
+            if (NULL != callbackFunction)
+            {
+                // Since the socket callback may be called from interrupt context, depending on the
+                // network interface used, we need to debounce the client callback to happen from
+                // a thread context to keep client side implementation platform agnostic.
+                assert(shared_event_queue);
+                shared_event_queue->call(callbackFunction, callbackArgument);
+            }
+            if (NULL != selectCallbackFunction)
+            {
+                // Note: this is not tested yet
+                assert(shared_event_queue);
+                shared_event_queue->call(selectCallbackFunction);
+            }
+            if (PAL_PLAT_SOCKET_CONNECTING == connectState)
+            {
+                connectState = PAL_PLAT_SOCKET_CONNECTED;// if we got a callback while connecting assume we are connected
+                if (palConnectCallBack == selectCallbackFunction)
+                {
+                    selectCallbackFunction = NULL;
+                }
+            }
+        }
+
+        nsapi_error_t  PALSocketWrapper::initialize(Socket* socket, palSocketType_t socketType, bool isNonBlocking, palAsyncSocketCallback_t callback, void* argument)
+        {
+        // check that we got a valid socket and the socket type is supported
+            PAL_VALIDATE_CONDITION_WITH_ERROR(((true == initialized) || (NULL == socket) ||
+                                              ((socketType != PAL_SOCK_STREAM) && (socketType != PAL_SOCK_STREAM_SERVER) &&
+                                               (socketType != PAL_SOCK_DGRAM))),NSAPI_ERROR_PARAMETER);
+
+
+            // Pre fetch and store the shared queue used for bouncing the callbacks out of interrupt
+            // context, as the user of it may be ran from interrupt and it can't go and start
+            // creating worker threads from there.
+            // Note: the code uses mbed_highprio_event_queue() instead of mbed_event_queue()
+            // as the high priority queue and its thread is likely there already thanks to
+            // arm_hal_timer.cpp. Technically the client side does not really care, if the events
+            // were delayed a bit by other events or not.
+            shared_event_queue = mbed_highprio_event_queue();
+            PAL_VALIDATE_CONDITION_WITH_ERROR((shared_event_queue == NULL),NSAPI_ERROR_UNSUPPORTED);
+
+            Callback<void()> mycall(this, &PALSocketWrapper::attachCallback);
+            attachCallbackObject = mycall;
+            activeSocket = socket;
+            socketTypeVal = socketType;
+            isNonBlockingOnCreation = isNonBlocking;
+            activeSocket->set_blocking(!isNonBlocking);
+            if (NULL != callback)
+            {
+                callbackFunction = callback;
+                callbackArgument = argument;
+                activeSocket->sigio(attachCallbackObject);
+            }
+
+            initialized = true;
+            return NSAPI_ERROR_OK;
+        }
+
+        nsapi_error_t PALSocketWrapper::close()
+        {
+            nsapi_error_t status= NSAPI_ERROR_OK;
+            if (NULL != activeSocket)
+            {
+                status = activeSocket->close();
+                delete activeSocket;
+                activeSocket = NULL;
+            }
+            return  status;
+        }
+
+        nsapi_error_t PALSocketWrapper::bind(const SocketAddress &address)
+        {
+            nsapi_error_t status = NSAPI_ERROR_OK;
+            PAL_VALIDATE_CONDITION_WITH_ERROR((false == initialized), NSAPI_ERROR_PARAMETER);
+            status= activeSocket->bind(address);
+            return  status;
+        }
+
+        void PALSocketWrapper::set_blocking(bool blocking)
+        {
+            activeSocket->set_blocking(blocking);
+        }
+
+        void PALSocketWrapper::set_timeout(int timeout)
+        {
+            activeSocket->set_timeout(timeout);
+        }
+
+        nsapi_error_t PALSocketWrapper::setsockopt(int level, int optname, const void *optval, unsigned optlen)
+        {
+            nsapi_error_t status = NSAPI_ERROR_OK;
+            PAL_VALIDATE_CONDITION_WITH_ERROR((false == initialized),NSAPI_ERROR_PARAMETER);
+            status = activeSocket->setsockopt(level,  optname, optval,  optlen);
+            return  status;
+        }
+
+        nsapi_error_t PALSocketWrapper::getsockopt(int level, int optname, void *optval, unsigned *optlen)
+        {
+            nsapi_error_t status = NSAPI_ERROR_OK;
+            PAL_VALIDATE_CONDITION_WITH_ERROR((false == initialized),NSAPI_ERROR_PARAMETER);
+            status = activeSocket->getsockopt( level,  optname,  optval,  optlen);
+            return  status;
+        }
+
+        void PALSocketWrapper::attach(mbed::Callback<void()> func)
+        {
+            activeSocket->sigio(func);
+        }
+        //void sigio(mbed::Callback<void()> func); // switch attach to sigio for verison 5.4
+        // nsapi UDP socket funcitons exposed:
+        nsapi_size_or_error_t PALSocketWrapper::recvfrom(SocketAddress *address, void *data, nsapi_size_t size)
+        {
+            nsapi_size_or_error_t status = NSAPI_ERROR_OK;
+            PAL_VALIDATE_CONDITION_WITH_ERROR(((false == initialized) || (PAL_SOCK_DGRAM != socketTypeVal)), NSAPI_ERROR_PARAMETER); // udp sockets only
+
+            status = ((UDPSocket*)activeSocket)->recvfrom(address, data,  size);
+            return  status;
+        }
+
+        nsapi_size_or_error_t PALSocketWrapper::sendto(const SocketAddress &address, const void *data, nsapi_size_t size)
+        {
+            nsapi_size_or_error_t status = NSAPI_ERROR_OK;
+            PAL_VALIDATE_CONDITION_WITH_ERROR(((false == initialized) || (PAL_SOCK_DGRAM != socketTypeVal)), NSAPI_ERROR_PARAMETER); // udp sockets only
+            status = ((UDPSocket*)activeSocket)->sendto(address, data, size);
+            return  status;
+        }
+
+        //nsapi TCP socket funcitons exposed:
+        nsapi_error_t PALSocketWrapper::connect(const SocketAddress &address)
+        {
+            nsapi_error_t status = NSAPI_ERROR_OK;
+            PAL_VALIDATE_CONDITION_WITH_ERROR(((false == initialized) || (PAL_SOCK_STREAM != socketTypeVal)), NSAPI_ERROR_PARAMETER);  // tcp sockets only
+
+            connectState = PAL_PLAT_SOCKET_CONNECTING;
+            updateCallback(palConnectCallBack); // make sure callback is enabled to see if we get callback to signal connections end
+            status = ((TCPSocket*)activeSocket)->connect(address);
+            if (status >= 0 || status == NSAPI_ERROR_IS_CONNECTED)
+            {
+                connectState = PAL_PLAT_SOCKET_CONNECTED;
+                updateCallback(NULL); // make sure callback is enabled to see if we get callback to signal connections end
+            }
+            else if ((NSAPI_ERROR_WOULD_BLOCK != status) && (NSAPI_ERROR_IN_PROGRESS != status) && (NSAPI_ERROR_ALREADY != status))
+            {
+                connectState = PAL_PLAT_SOCKET_NOT_CONNECTED;
+            }
+            return  status;
+        }
+
+        nsapi_size_or_error_t PALSocketWrapper::send(const void *data, nsapi_size_t size)
+        {
+            nsapi_size_or_error_t status = NSAPI_ERROR_OK;
+            PAL_VALIDATE_CONDITION_WITH_ERROR(((false == initialized) || (PAL_SOCK_STREAM != socketTypeVal)), NSAPI_ERROR_PARAMETER); // tcp sockets only
+
+            status = ((TCPSocket*)activeSocket)->send( data, size);
+            return  status;
+        }
+
+        nsapi_size_or_error_t PALSocketWrapper::recv(void *data, nsapi_size_t size)
+        {
+            nsapi_size_or_error_t status = NSAPI_ERROR_OK;
+            PAL_VALIDATE_CONDITION_WITH_ERROR(((false == initialized) || (PAL_SOCK_STREAM != socketTypeVal)),NSAPI_ERROR_PARAMETER); // tcp sockets only
+            status = ((TCPSocket*)activeSocket)->recv(data, size);
+            return  status;
+        }
+        //nsapi TCP server socket funcitons exposed:
+        nsapi_error_t PALSocketWrapper::listen(int backlog )
+        {
+            nsapi_error_t status = NSAPI_ERROR_OK;
+            PAL_VALIDATE_CONDITION_WITH_ERROR(((false == initialized) || (PAL_SOCK_STREAM_SERVER != socketTypeVal)), NSAPI_ERROR_PARAMETER); // udp sockets only
+            status = ((TCPServer*)activeSocket)->listen(backlog);
+            return  status;
+        }
+
+        nsapi_error_t PALSocketWrapper::accept(TCPSocket *connection, SocketAddress *address)
+        {
+            nsapi_error_t status = NSAPI_ERROR_OK;
+            PAL_VALIDATE_CONDITION_WITH_ERROR(((false == initialized) || (PAL_SOCK_STREAM_SERVER != socketTypeVal)),NSAPI_ERROR_PARAMETER); // udp sockets only
+
+            status = ((TCPServer*)activeSocket)->accept(connection, address);
+            return  status;
+        }
+
 
 
 
