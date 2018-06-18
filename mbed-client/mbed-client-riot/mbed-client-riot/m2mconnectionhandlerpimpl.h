@@ -25,7 +25,15 @@
 #include "mbed-client/m2minterface.h"
 #include "mbed-client/m2mconnectionobserver.h"
 #include "mbed-client/m2mconnectionsecurity.h"
-#include "pal.h"
+
+#include "net/gnrc/netif.h"
+#include "net/sock/udp.h"
+#include "net/af.h"
+#include "net/protnum.h"
+#include "net/ipv6/addr.h"
+#include "net/sock.h"
+
+//#include "pal.h"
 
 
 class M2MConnectionSecurity;
@@ -36,7 +44,19 @@ class M2MSecurity;
  * @brief M2MConnectionHandlerPimpl.
  * This class handles the socket connection for LWM2M Client
  */
+#define PAL_IPV4_ADDRESS_SIZE 4
+#define PAL_IPV6_ADDRESS_SIZE 16
+#define PAL_NET_MAX_ADDR_SIZE 32
 
+typedef uint8_t ipV4Addr_t[PAL_IPV4_ADDRESS_SIZE];
+typedef uint8_t ipV6Addr_t[PAL_IPV6_ADDRESS_SIZE];
+
+typedef uint32_t socketLength_t;
+
+typedef struct socketAddress {
+    unsigned short    addressType;    /*! Address family for the socket. */
+    char              addressData[PAL_NET_MAX_ADDR_SIZE];  /*! Address (based on protocol). */
+} socketAddress_t; /*! Address data structure with enough room to support IPV4 and IPV6. */
 
 class M2MConnectionHandlerPimpl {
 public:
@@ -280,16 +300,16 @@ private:
     M2MConnectionObserver::SocketAddress        _address;
 
     // _address._address will point to one of these two
-    palIpV4Addr_t                               _ipV4Addr;
-    palIpV6Addr_t                               _ipV6Addr;
+    ipV4Addr_t                               	_ipV4Addr;
+    ipV6Addr_t                               	_ipV6Addr;
 
-    palSocket_t                                 _socket;
+    sock_udp_ep_t                               _socket;
     M2MConnectionObserver::ServerType           _server_type;
     uint16_t                                    _server_port;
     uint16_t                                    _listen_port;
     uint32_t                                    _net_iface;
-    palSocketLength_t                           _socket_address_len;
-    volatile palSocketAddress_t                 _socket_address;
+    socketLength_t                          	_socket_address_len; /*! The length of data. */
+    volatile socketAddress_t                 	_socket_address;
     static int8_t                               _tasklet_id;
     String                                      _server_address;
 

@@ -24,7 +24,7 @@
 #include "mbed-client/m2msecurity.h"
 #include "mbed-client/m2mconnectionhandler.h"
 
-#include "pal.h"
+
 
 #include "eventOS_scheduler.h"
 
@@ -180,6 +180,7 @@ M2MConnectionHandlerPimpl::M2MConnectionHandlerPimpl(M2MConnectionHandler* base,
  _server_port(0),
  _listen_port(0),
  _net_iface(0),
+ _socket_address_len(0),
  _socket_state(ESocketStateDisconnected),
  _handshake_retry(0),
  _suppressable_event_in_flight(false),
@@ -192,14 +193,11 @@ M2MConnectionHandlerPimpl::M2MConnectionHandlerPimpl(M2MConnectionHandler* base,
     }
 #endif
 
-    if (PAL_SUCCESS != pal_init()) {
-        tr_error("PAL init failed.");
-    }
 
     memset(&_address, 0, sizeof _address);
     memset((void*)&_socket_address, 0, sizeof _socket_address);
-    memset(&_ipV4Addr, 0, sizeof(palIpV4Addr_t));
-    memset(&_ipV6Addr, 0, sizeof(palIpV6Addr_t));
+    memset(&_ipV4Addr, 0, sizeof(ipV4Addr_t));
+    memset(&_ipV6Addr, 0, sizeof(ipV6Addr_t));
     ns_list_init(&_linked_list_send_data);
 
     // Usage of connection_handler is not going to work with multiserver solution. Static address will be overridden with latest instance.
@@ -222,7 +220,6 @@ M2MConnectionHandlerPimpl::~M2MConnectionHandlerPimpl()
     close_socket();
     delete _security_impl;
     _security_impl = NULL;
-    pal_destroy();
     tr_debug("~M2MConnectionHandlerPimpl() - OUT");
 }
 
@@ -276,7 +273,7 @@ extern "C" void address_resolver_cb(const char* url, palSocketAddress_t* address
 
 bool M2MConnectionHandlerPimpl::address_resolver(void)
 {
-    palStatus_t status;
+
     bool ret = false;
 
 #if MBED_CONF_MBED_CLIENT_DNS_USE_THREAD
@@ -293,7 +290,7 @@ bool M2MConnectionHandlerPimpl::address_resolver(void)
     }
 #else
     tr_debug("M2MConnectionHandlerPimpl::address_resolver:synchronous DNS");
-    status = pal_getAddressInfo(_server_address.c_str(), (palSocketAddress_t*)&_socket_address, &_socket_address_len);
+    uint16_t status = pal_getAddressInfo(_server_address.c_str(), (palSocketAddress_t*)&_socket_address, &_socket_address_len);
     if (PAL_SUCCESS != status) {
         tr_error("M2MConnectionHandlerPimpl::getAddressInfo failed with 0x%X", status);
         if (!send_event(ESocketDnsError)) {
@@ -462,7 +459,7 @@ void M2MConnectionHandlerPimpl::socket_connect_handler()
                     return;
                 }
 #else
-                tr_error("socket_connect_handler() - TCP not configured"
+                tr_error("socket_connect_handler() - TCP not configured");
 #endif //PAL_NET_TCP_AND_TLS_SUPPORT
             } else {
                 tr_info("M2MConnectionHandlerPimpl::socket_connect_handler - Using UDP");

@@ -620,7 +620,7 @@ PAL_PRIVATE palStatus_t socketAddressToPalSockAddr(SocketAddress& input, palSock
 palStatus_t pal_plat_socket(palSocketDomain_t domain, palSocketType_t type, bool nonBlockingSocket, uint32_t interfaceNum, palSocket_t* socket)
 {
     int result = PAL_SUCCESS;
-    sock_udp_ep_t sock = SOCK_IPV4_EP_ANY;
+    sock_udp_ep_t* sock = SOCK_IPV4_EP_ANY;
 
     PAL_VALIDATE_ARGUMENTS((NULL == socket))
 
@@ -631,13 +631,15 @@ palStatus_t pal_plat_socket(palSocketDomain_t domain, palSocketType_t type, bool
 
     if ((s_pal_numberOFInterfaces > interfaceNum) && (PAL_SOCK_DGRAM == type) && ((PAL_AF_INET == domain) || (PAL_AF_UNSPEC == domain))) // check correct parameters for UDP socket
     {
-        sock = SOCK_IPV4_EP_ANY;
+        sock->family = AF_INET;
+        sock->netif = SOCK_ADDR_ANY_NETIF;
     }
 
 #if defined(SOCK_HAS_IPV6) || defined(DOXYGEN)
     if ((s_pal_numberOFInterfaces > interfaceNum) && (PAL_SOCK_DGRAM == type) && (PAL_AF_INET6 == domain)) // check correct parameters for UDP socket
         {
-           sock = SOCK_IPV6_EP_ANY;
+    		sock->family = AF_INET6;
+    		sock->netif = SOCK_ADDR_ANY_NETIF;
         }
 #endif
 
