@@ -290,7 +290,7 @@ bool M2MConnectionHandlerPimpl::address_resolver(void)
     }
 #else
     tr_debug("M2MConnectionHandlerPimpl::address_resolver:synchronous DNS");
-    uint16_t status = pal_getAddressInfo(_server_address.c_str(), (socketAddress_t*)&_socket_address, &_socket_address_len);
+    uint16_t status = getAddressInfo(_server_address.c_str(), (socketAddress_t*)&_socket_address, &_socket_address_len);
     if (0 != status) {
         tr_error("M2MConnectionHandlerPimpl::getAddressInfo failed with 0x%X", status);
         if (!send_event(ESocketDnsError)) {
@@ -310,6 +310,25 @@ bool M2MConnectionHandlerPimpl::address_resolver(void)
 
 uint8_t M2MConnectionHandlerPimpl::getAddressInfo(const char *url, socketAddress_t *address, socketLength_t* addressLength){
 
+	address->addressType = PAL_AF_INET;
+
+	ipv4_addr_t addr;
+
+	if(ipv4_addr_from_str(&addr,url) == NULL){
+		printf("Malformated URL");
+		return 1;
+	}
+
+	ipV4Addr* addr2;
+	addr2->addr = addr;
+
+	memcpy(&address->addressData,addr2,sizeof(ipV4Addr));
+
+	*addressLength = sizeof(ipv4_addr_t) + sizeof(unsigned short);
+
+	#if defined(SOCK_HAS_IPV6) || defined(DOXYGEN)
+		address->addressType = PAL_AF_INET6;
+	#endif
 
 	return 0;
 }
@@ -359,9 +378,38 @@ bool M2MConnectionHandlerPimpl::resolve_server_address(const String& server_addr
     return address_resolver();
 }
 
+uint8_t M2MConnectionHandlerPimpl::setSockAddrPort(socketAddress_t* address, uint16_t port){
+
+	if(address->addressType == PAL_AF_INET){
+		ipV4Addr* addr = (ipV4Addr*) &(address->addressData);
+		addr->port = port;
+
+		return 0;
+	}
+
+	return 1;
+}
+
+uint8_t M2MConnectionHandlerPimpl::getSockAddrIPV4Addr(const socketAddress_t* address, ipV4Addr_t ipV4Addr_){
+
+	if(address->addressType == PAL_AF_INET){
+		ipV4Addr* addr = (ipV4Addr*) &(address->addressData);
+		ipV4Addr_[0] =addr->addr.u8[0];
+		ipV4Addr_[1] =addr->addr.u8[1];
+		ipV4Addr_[2] =addr->addr.u8[2];
+		ipV4Addr_[3] =addr->addr.u8[3];
+		return 0;
+	}
+	return 1;
+}
+
+uint8_t M2MConnectionHandlerPimpl::getSockAddrIPV6Addr(const socketAddress_t* address, ipV6Addr_t ipV6Addr_){
+	return 1;
+}
+
 void M2MConnectionHandlerPimpl::socket_connect_handler()
 {
-    palStatus_t status;
+    uint8_t status;
     int32_t security_instance_id = _security->get_security_instance_id(M2MSecurity::M2MServer);
     if (_server_type == M2MConnectionObserver::Bootstrap) {
         security_instance_id = _security->get_security_instance_id(M2MSecurity::Bootstrap);
@@ -384,17 +432,17 @@ void M2MConnectionHandlerPimpl::socket_connect_handler()
             // Initialize the socket to stable state
             close_socket();
 
-            status = pal_setSockAddrPort((palSocketAddress_t*)&_socket_address, _server_port);
+            status = setSockAddrPort((socketAddress_t*)&_socket_address, _server_port);
 
-            if (PAL_SUCCESS != status) {
+            if (0 != status) {
                 tr_error("M2MConnectionHandlerPimpl::socket_connect_handler - setSockAddrPort err: %d", (int)status);
             } else {
                 tr_debug("address family: %d", (int)_socket_address.addressType);
             }
 
             if (_socket_address.addressType == PAL_AF_INET) {
-                status = pal_getSockAddrIPV4Addr((palSocketAddress_t*)&_socket_address,_ipV4Addr);
-                if (PAL_SUCCESS != status) {
+                status = getSockAddrIPV4Addr((socketAddress_t*)&_socket_address,_ipV4Addr);
+                if (0 != status) {
                     tr_error("M2MConnectionHandlerPimpl::socket_connect_handler - sockAddr4, err: %d", (int)status);
                     _observer.socket_error(M2MConnectionHandler::DNS_RESOLVING_ERROR);
                     return;
@@ -407,8 +455,8 @@ void M2MConnectionHandlerPimpl::socket_connect_handler()
                 _address._length = PAL_IPV4_ADDRESS_SIZE;
                 _address._port = _server_port;
             } else if (_socket_address.addressType == PAL_AF_INET6) {
-                status = pal_getSockAddrIPV6Addr((palSocketAddress_t*)&_socket_address,_ipV6Addr);
-                if (PAL_SUCCESS != status) {
+                status = getSockAddrIPV6Addr((socketAddress_t*)&_socket_address,_ipV6Addr);
+                if (0 != status) {
                     tr_error("M2MConnectionHandlerPimpl::socket_connect_handler - sockAddr6, err: %d", (int)status);
                     _observer.socket_error(M2MConnectionHandler::DNS_RESOLVING_ERROR);
                     return;
@@ -661,6 +709,20 @@ void M2MConnectionHandlerPimpl::send_socket_data()
     } else {
         _observer.data_sent();
     }
+}
+
+uint8_t M2MConnectionHandlerPimpl::sendTo(sock_udp_t socket, const void* buffer, size_t length, const socketAddress_t* to, socketLength_t toLength, size_t* bytesSent){
+	sock_udp_ep_t remote;
+
+	if(to->addressType == PAL_AF_INET){
+		remote.family = AF_INET;
+	} else if(to->addressType == PAL_AF_INET6){
+		remote.family = AF_INET6;
+	}
+	ipV4Addr* ep = (ipV4Addr*) &(to->addressData);
+	remote.port = ep->port;
+	remote.addr = ep->addr;
+	sock_udp_send(&socket,buffer,length,&remote);
 }
 
 bool M2MConnectionHandlerPimpl::start_listening_for_data()

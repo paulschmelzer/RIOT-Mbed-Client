@@ -31,7 +31,9 @@
 #include "net/af.h"
 #include "net/protnum.h"
 #include "net/ipv6/addr.h"
+#include "net/ipv4/addr.h"
 #include "net/sock.h"
+#include <net/udp.h>
 
 //#include "pal.h"
 
@@ -58,6 +60,10 @@ typedef struct socketAddress {
     char              addressData[PAL_NET_MAX_ADDR_SIZE];  /*! Address (based on protocol). */
 } socketAddress_t; /*! Address data structure with enough room to support IPV4 and IPV6. */
 
+typedef struct ipV4Addr{
+	ipv4_addr_t addr;
+	uint16_t port;
+};
 typedef enum {
     PAL_AF_UNSPEC = 0,
     PAL_AF_INET = 2,    /*! Internet IP Protocol.   */
@@ -237,6 +243,13 @@ private:
     void close_socket();
 
     uint8_t getAddressInfo(const char *url, socketAddress_t *address, socketLength_t* addressLength);
+    uint8_t setSockAddrPort(socketAddress_t* address, uint16_t port);
+    uint8_t getSockAddrIPV4Addr(const socketAddress_t* address, ipV4Addr_t ipV4Addr_);
+    //TODO IMPL IPV6
+    uint8_t getSockAddrIPV6Addr(const socketAddress_t* address, ipV6Addr_t ipV6Addr_);
+
+    uint8_t sendTo(sock_udp_t socket, const void* buffer, size_t length, const socketAddress_t* to, socketLength_t toLength, size_t* bytesSent);
+
 
 public:
 
@@ -312,7 +325,7 @@ private:
     ipV4Addr_t                               	_ipV4Addr;
     ipV6Addr_t                               	_ipV6Addr;
 
-    sock_udp_ep_t                               _socket;
+    sock_udp_t                               	_socket;
     M2MConnectionObserver::ServerType           _server_type;
     uint16_t                                    _server_port;
     uint16_t                                    _listen_port;
