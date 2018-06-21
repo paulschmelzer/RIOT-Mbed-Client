@@ -249,7 +249,7 @@ private:
     uint8_t getSockAddrIPV6Addr(const socketAddress_t* address, ipV6Addr_t ipV6Addr_);
 
     uint8_t sendTo(sock_udp_t socket, const void* buffer, size_t length, const socketAddress_t* to, socketLength_t toLength, size_t* bytesSent);
-
+    uint8_t receiveFrom(sock_udp_t socket, void* buffer, size_t length, socketAddress_t* from, socketLength_t* fromLength, size_t* bytesReceived);
 
 public:
 
