@@ -16,10 +16,11 @@
 // limitations under the License.
 // ----------------------------------------------------------------------------
 
-#include "platform/arm_hal_interrupt.h"
+#include "arm_hal_interrupt.h"
 
 #include "arm_hal_interrupt_private.h"
-#include "pal.h"
+//#include "pal.h"
+#include <stdint.h>
 
 #include <assert.h>
 

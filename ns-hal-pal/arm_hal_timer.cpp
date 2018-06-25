@@ -19,17 +19,19 @@
 // Include before mbed.h to properly get UINT*_C()
 #include "ns_types.h"
 
-#include "pal.h"
-#include "pal_rtos.h"
+//#include "pal.h"
+//#include "pal_rtos.h"
 
-#include "platform/arm_hal_timer.h"
-#include "platform/arm_hal_interrupt.h"
+#include "arm_hal_timer.h"
+#include "arm_hal_interrupt.h"
+
+#include "xtimer.h"
 
 #include <assert.h>
 
 // Low precision platform tick timer variables
 static void (*tick_timer_callback)(void);
-static palTimerID_t tick_timer_id;
+static xtimer_t* tick_timer_id;
 #define TICK_TIMER_ID   1
 
 void timer_callback(void const *funcArgument)
@@ -48,11 +50,13 @@ extern "C" int8_t ns_timer_sleep(void);
 // timer was not enabled already
 static void tick_timer_create(void)
 {
-    palStatus_t status;
-    status = pal_init();
-    assert(PAL_SUCCESS == status);
-    status = pal_osTimerCreate(timer_callback, NULL, palOsTimerPeriodic, &tick_timer_id);
-    assert(PAL_SUCCESS == status);
+
+   //pal_osTimerCreate(timer_callback, NULL, palOsTimerPeriodic, &tick_timer_id);
+	tick_timer_id = (xtimer_t*) malloc(sizeof(xtimer_t));
+	tick_timer_id->callback = (xtimer_callback_t) timer_callback;
+	tick_timer_id->arg = NULL;
+	tick_timer_id->next = NULL;
+
     
 }
 

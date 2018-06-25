@@ -16,21 +16,19 @@
 // limitations under the License.
 // ----------------------------------------------------------------------------
 
-#include <assert.h>
+
 #include "ns_types.h"
-#include "platform/arm_hal_random.h"
-#include "pal.h"
+#include "arm_hal_random.h"
 
 void arm_random_module_init(void)
 {
-    palStatus_t status = pal_init();
-    assert(status == PAL_SUCCESS);
+
 }
 
 uint32_t arm_random_seed_get(void)
 {
-    uint32_t result = 0;
-    palStatus_t status = pal_osRandom32bit(&result);
-    assert(status == PAL_SUCCESS);
+	//TODO RANDOM GENERATOR
+    uint32_t result = 5234252;
+    //palStatus_t status = pal_osRandom32bit(&result);
     return result;
 }
