@@ -16,7 +16,7 @@
 #include <stdint.h>
 #include <limits.h>
 #include "randLIB.h"
-#include "platform/arm_hal_random.h"
+#include "arm_hal_random.h"
 
 /**
  * This library is made for getting random numbers for timing needs in

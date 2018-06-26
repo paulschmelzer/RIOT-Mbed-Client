@@ -93,7 +93,13 @@
  /home/paul/RIOT/core/include/debug.h \
  /home/paul/RIOT/core/include/sched.h \
  /home/paul/RIOT/core/include/thread.h /home/paul/RIOT/core/include/cib.h \
- /home/paul/RIOT/core/include/assert.h /home/paul/RIOT/core/include/msg.h
+ /home/paul/RIOT/core/include/assert.h /home/paul/RIOT/core/include/msg.h \
+ /home/paul/RIOT/cpu/native/include/netdev_tap_params.h \
+ /home/paul/RIOT/cpu/native/include/netdev_tap.h \
+ /home/paul/RIOT/drivers/include/net/netdev.h \
+ /home/paul/RIOT/sys/include/iolist.h \
+ /home/paul/RIOT/sys/include/net/netopt.h \
+ /home/paul/RIOT/sys/include/net/ethernet/hdr.h /usr/include/net/if.h
 
 /usr/include/stdc-predef.h:
 
@@ -414,3 +420,17 @@
 /home/paul/RIOT/core/include/assert.h:
 
 /home/paul/RIOT/core/include/msg.h:
+
+/home/paul/RIOT/cpu/native/include/netdev_tap_params.h:
+
+/home/paul/RIOT/cpu/native/include/netdev_tap.h:
+
+/home/paul/RIOT/drivers/include/net/netdev.h:
+
+/home/paul/RIOT/sys/include/iolist.h:
+
+/home/paul/RIOT/sys/include/net/netopt.h:
+
+/home/paul/RIOT/sys/include/net/ethernet/hdr.h:
+
+/usr/include/net/if.h:

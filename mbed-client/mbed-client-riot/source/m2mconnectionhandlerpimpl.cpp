@@ -176,7 +176,7 @@ M2MConnectionHandlerPimpl::M2MConnectionHandlerPimpl(M2MConnectionHandler* base,
  _security_impl(sec),
  _security(NULL),
  _binding_mode(mode),
- _socket(0),
+// _socket(NULL),
  _server_type(M2MConnectionObserver::LWM2MServer),
  _server_port(0),
  _listen_port(0),
@@ -309,7 +309,7 @@ bool M2MConnectionHandlerPimpl::address_resolver(void)
     return ret;
 }
 
-uint8_t M2MConnectionHandlerPimpl::getAddressInfo(const char *url, socketAddress_t *address, socketLength_t* addressLength){
+int8_t M2MConnectionHandlerPimpl::getAddressInfo(const char *url, socketAddress_t *address, socketLength_t* addressLength){
 
 	address->addressType = PAL_AF_INET;
 
@@ -379,7 +379,7 @@ bool M2MConnectionHandlerPimpl::resolve_server_address(const String& server_addr
     return address_resolver();
 }
 
-uint8_t M2MConnectionHandlerPimpl::setSockAddrPort(socketAddress_t* address, uint16_t port){
+int8_t M2MConnectionHandlerPimpl::setSockAddrPort(socketAddress_t* address, uint16_t port){
 
 	if(address->addressType == PAL_AF_INET){
 		ipV4Addr* addr = (ipV4Addr*) &(address->addressData);
@@ -391,7 +391,7 @@ uint8_t M2MConnectionHandlerPimpl::setSockAddrPort(socketAddress_t* address, uin
 	return 1;
 }
 
-uint8_t M2MConnectionHandlerPimpl::getSockAddrIPV4Addr(const socketAddress_t* address, ipV4Addr_t ipV4Addr_){
+int8_t M2MConnectionHandlerPimpl::getSockAddrIPV4Addr(const socketAddress_t* address, ipV4Addr_t ipV4Addr_){
 
 	if(address->addressType == PAL_AF_INET){
 		ipV4Addr* addr = (ipV4Addr*) &(address->addressData);
@@ -404,7 +404,7 @@ uint8_t M2MConnectionHandlerPimpl::getSockAddrIPV4Addr(const socketAddress_t* ad
 	return 1;
 }
 
-uint8_t M2MConnectionHandlerPimpl::getSockAddrIPV6Addr(const socketAddress_t* address, ipV6Addr_t ipV6Addr_){
+int8_t M2MConnectionHandlerPimpl::getSockAddrIPV6Addr(const socketAddress_t* address, ipV6Addr_t ipV6Addr_){
 	return 1;
 }
 
@@ -667,7 +667,7 @@ void M2MConnectionHandlerPimpl::send_socket_data()
         // Unsecure send
         else {
             bytes_sent = 0;
-            uint8_t ret;
+            int8_t ret;
             if (is_tcp_connection()) {
 #ifdef PAL_NET_TCP_AND_TLS_SUPPORT
                 ret = pal_send(_socket,
@@ -713,7 +713,7 @@ void M2MConnectionHandlerPimpl::send_socket_data()
     }
 }
 
-uint8_t M2MConnectionHandlerPimpl::sendTo(sock_udp_t socket, const void* buffer, size_t length, const socketAddress_t* to, socketLength_t toLength, size_t* bytesSent){
+int8_t M2MConnectionHandlerPimpl::sendTo(sock_udp_t socket, const void* buffer, size_t length, const socketAddress_t* to, socketLength_t toLength, size_t* bytesSent){
 	sock_udp_ep_t remote;
 
 	if(to->addressType == PAL_AF_INET){
@@ -723,7 +723,9 @@ uint8_t M2MConnectionHandlerPimpl::sendTo(sock_udp_t socket, const void* buffer,
 	}
 	ipV4Addr* ep = (ipV4Addr*) &(to->addressData);
 	remote.port = ep->port;
-	remote.addr = ep->addr;
+	memcpy(remote.addr.ipv4,ep->addr.u8,4);
+	memcpy(&(remote.addr.ipv4_u32),&(ep->addr.u32),4);
+
 	*bytesSent = sock_udp_send(&socket,buffer,length,&remote);
 
 	if (*bytesSent < length - 10){
@@ -884,7 +886,7 @@ void M2MConnectionHandlerPimpl::receive_handler()
     }
 }
 
-uint8_t M2MConnectionHandlerPimpl::receiveFrom(sock_udp_t socket, void* buffer, size_t length, socketAddress_t* from, socketLength_t* fromLength, size_t* bytesReceived){
+int8_t M2MConnectionHandlerPimpl::receiveFrom(sock_udp_t socket, void* buffer, size_t length, socketAddress_t* from, socketLength_t* fromLength, size_t* bytesReceived){
 //	sock_udp_ep_t remote;
 
 
@@ -931,51 +933,37 @@ bool M2MConnectionHandlerPimpl::init_socket()
     memset(&interface_address4, 0, sizeof(interface_address4));
     memset(&interface_address6, 0, sizeof(interface_address6));
 
-//    if (is_tcp_connection()) {
-//#ifdef PAL_NET_TCP_AND_TLS_SUPPORT
-//        socket_type = PAL_SOCK_STREAM;
-//#else
-//        // Somebody has built code without TCP support but tries to use it.
-//        // Perhaps a "assert(false)" would be sufficient.
-//        tr_error("M2MConnectionHandlerPimpl::init_socket() - TCP config error");
+
+
+//    status = pal_asynchronousSocketWithArgument((palSocketDomain_t)_socket_address.addressType,
+//                                                socket_type, true, _net_iface, &socket_event_handler,
+//                                                this, &_socket);
+//
+//    if (PAL_SUCCESS != status) {
+//        tr_error("M2MConnectionHandlerPimpl::init_socket() - socket create error : %d", (int)status);
 //        _observer.socket_error(M2MConnectionHandler::SOCKET_ABORT);
-//        return;
-//#endif //PAL_NET_TCP_AND_TLS_SUPPORT
+//        return false;
 //    }
+//
+//    if (_socket_address.addressType == PAL_AF_INET) {
+//        status = pal_setSockAddrIPV4Addr(&bind_address, interface_address4);
+//    } else if (_socket_address.addressType == PAL_AF_INET6) {
+//        status = pal_setSockAddrIPV6Addr(&bind_address, interface_address6);
+//    } else {
+//        tr_warn("M2MConnectionHandlerPimpl::init_socket() - stack type: %d", (int)_socket_address.addressType);
+//    }
+//    if (PAL_SUCCESS != status) {
+//        tr_error("M2MConnectionHandlerPimpl::init_socket - setSockAddrIPV err: %d", (int)status);
+//        return false;
+//    }
+//    status = pal_setSockAddrPort(&bind_address, _listen_port);
+//    if (PAL_SUCCESS != status) {
+//        tr_error("M2MConnectionHandlerPimpl::init_socket - setSockAddrPort err: %d", (int)status);
+//        return false;
+//    }
+//    pal_bind(_socket, &bind_address, sizeof(bind_address));
 
-//    uint32_t interface_count;
-//    pal_getNumberOfNetInterfaces(&interface_count);
-//    pal_getNetInterfaceInfo(_net_iface, &interface_info);
-
-    status = pal_asynchronousSocketWithArgument((palSocketDomain_t)_socket_address.addressType,
-                                                socket_type, true, _net_iface, &socket_event_handler,
-                                                this, &_socket);
-
-    if (PAL_SUCCESS != status) {
-        tr_error("M2MConnectionHandlerPimpl::init_socket() - socket create error : %d", (int)status);
-        _observer.socket_error(M2MConnectionHandler::SOCKET_ABORT);
-        return false;
-    }
-
-    if (_socket_address.addressType == PAL_AF_INET) {
-        status = pal_setSockAddrIPV4Addr(&bind_address, interface_address4);
-    } else if (_socket_address.addressType == PAL_AF_INET6) {
-        status = pal_setSockAddrIPV6Addr(&bind_address, interface_address6);
-    } else {
-        tr_warn("M2MConnectionHandlerPimpl::init_socket() - stack type: %d", (int)_socket_address.addressType);
-    }
-    if (PAL_SUCCESS != status) {
-        tr_error("M2MConnectionHandlerPimpl::init_socket - setSockAddrIPV err: %d", (int)status);
-        return false;
-    }
-    status = pal_setSockAddrPort(&bind_address, _listen_port);
-    if (PAL_SUCCESS != status) {
-        tr_error("M2MConnectionHandlerPimpl::init_socket - setSockAddrPort err: %d", (int)status);
-        return false;
-    }
-    pal_bind(_socket, &bind_address, sizeof(bind_address));
-
-    _security_impl->set_socket(_socket, (palSocketAddress_t*)&_socket_address);
+//    _security_impl->set_socket(_socket, (palSocketAddress_t*)&_socket_address);
 
     return true;
 }
@@ -990,12 +978,12 @@ void M2MConnectionHandlerPimpl::close_socket()
 {
     _suppressable_event_in_flight = false;
 
-    if (_socket) {
+    if (1) {
         // At least on mbed-os the pal_close() will perform callbacks even during it
         // is called, which we will ignore when this state is set.
         _socket_state = ESocketStateCloseBeingCalled;
         sock_udp_close(&_socket);
-        _socket = 0;
+        //free(_socket);
     }
 
     // make sure the socket connection statemachine is reset too.

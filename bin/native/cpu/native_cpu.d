@@ -59,13 +59,20 @@
  /home/paul/RIOT/core/include/native_sched.h \
  /home/paul/RIOT/core/include/clist.h /home/paul/RIOT/core/include/list.h \
  /home/paul/RIOT/cpu/native/include/cpu.h \
+ /home/paul/RIOT/cpu/native/include/netdev_tap.h \
+ /home/paul/RIOT/drivers/include/net/netdev.h \
+ /home/paul/RIOT/sys/include/iolist.h \
+ /home/paul/RIOT/sys/include/net/netopt.h \
+ /home/paul/RIOT/sys/include/net/ethernet/hdr.h \
+ /home/paul/RIOT/core/include/byteorder.h /usr/include/net/if.h \
+ /usr/include/sys/socket.h /usr/include/bits/types/struct_iovec.h \
+ /usr/include/bits/socket.h /usr/include/bits/socket_type.h \
+ /usr/include/bits/sockaddr.h /usr/include/asm/socket.h \
+ /usr/include/asm-generic/socket.h /usr/include/asm/sockios.h \
+ /usr/include/asm-generic/sockios.h \
+ /usr/include/bits/types/struct_osockaddr.h \
  /home/paul/RIOT/cpu/native/include/native_internal.h \
- /usr/include/netdb.h /usr/include/netinet/in.h /usr/include/sys/socket.h \
- /usr/include/bits/types/struct_iovec.h /usr/include/bits/socket.h \
- /usr/include/bits/socket_type.h /usr/include/bits/sockaddr.h \
- /usr/include/asm/socket.h /usr/include/asm-generic/socket.h \
- /usr/include/asm/sockios.h /usr/include/asm-generic/sockios.h \
- /usr/include/bits/types/struct_osockaddr.h /usr/include/bits/in.h \
+ /usr/include/netdb.h /usr/include/netinet/in.h /usr/include/bits/in.h \
  /usr/include/rpc/netdb.h /usr/include/bits/netdb.h \
  /usr/include/ifaddrs.h /usr/include/time.h /usr/include/bits/time.h \
  /usr/include/bits/types/struct_tm.h \
@@ -282,11 +289,19 @@
 
 /home/paul/RIOT/cpu/native/include/cpu.h:
 
-/home/paul/RIOT/cpu/native/include/native_internal.h:
+/home/paul/RIOT/cpu/native/include/netdev_tap.h:
 
-/usr/include/netdb.h:
+/home/paul/RIOT/drivers/include/net/netdev.h:
 
-/usr/include/netinet/in.h:
+/home/paul/RIOT/sys/include/iolist.h:
+
+/home/paul/RIOT/sys/include/net/netopt.h:
+
+/home/paul/RIOT/sys/include/net/ethernet/hdr.h:
+
+/home/paul/RIOT/core/include/byteorder.h:
+
+/usr/include/net/if.h:
 
 /usr/include/sys/socket.h:
 
@@ -307,6 +322,12 @@
 /usr/include/asm-generic/sockios.h:
 
 /usr/include/bits/types/struct_osockaddr.h:
+
+/home/paul/RIOT/cpu/native/include/native_internal.h:
+
+/usr/include/netdb.h:
+
+/usr/include/netinet/in.h:
 
 /usr/include/bits/in.h:
 

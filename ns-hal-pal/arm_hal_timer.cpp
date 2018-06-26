@@ -19,8 +19,7 @@
 // Include before mbed.h to properly get UINT*_C()
 #include "ns_types.h"
 
-//#include "pal.h"
-//#include "pal_rtos.h"
+
 
 #include "arm_hal_timer.h"
 #include "arm_hal_interrupt.h"
@@ -28,17 +27,22 @@
 #include "xtimer.h"
 
 #include <assert.h>
+#include <stdlib.h>
 
 // Low precision platform tick timer variables
 static void (*tick_timer_callback)(void);
 static xtimer_t* tick_timer_id;
+static uint32_t period = 1000;
+
 #define TICK_TIMER_ID   1
 
-void timer_callback(void const *funcArgument)
+void timer_callback(void *funcArgument)
 {
     (void)funcArgument;
-    if (tick_timer_callback != NULL) {
+    if (tick_timer_callback != NULL && tick_timer_id != NULL) {
+    	xtimer_set(tick_timer_id,period);
         tick_timer_callback();
+
     }
 }
 
@@ -53,7 +57,7 @@ static void tick_timer_create(void)
 
    //pal_osTimerCreate(timer_callback, NULL, palOsTimerPeriodic, &tick_timer_id);
 	tick_timer_id = (xtimer_t*) malloc(sizeof(xtimer_t));
-	tick_timer_id->callback = (xtimer_callback_t) timer_callback;
+	tick_timer_id->callback = timer_callback;
 	tick_timer_id->arg = NULL;
 	tick_timer_id->next = NULL;
 
@@ -72,8 +76,10 @@ int8_t platform_tick_timer_register(void (*tick_timer_cb_handler)(void))
 
 int8_t platform_tick_timer_start(uint32_t period_ms)
 {
+	period = period_ms;
     int8_t retval = -1;
-    if ((tick_timer_id != 0) && (PAL_SUCCESS == pal_osTimerStart(tick_timer_id, period_ms))) {
+    if (tick_timer_id != 0) {
+    	xtimer_set(tick_timer_id,period_ms);
         retval = 0;
     }
     return retval;
@@ -82,13 +88,13 @@ int8_t platform_tick_timer_start(uint32_t period_ms)
 int8_t platform_tick_timer_stop(void)
 {
     int8_t retval = -1;
-    if ((tick_timer_id != 0) && (PAL_SUCCESS == pal_osTimerStop(tick_timer_id))) {
+    if (tick_timer_id != 0){
+    	xtimer_remove(tick_timer_id);
         retval = 0;
     }
 
-    // release PAL side resources
-    pal_osTimerDelete(&tick_timer_id);
-    pal_destroy();
+    free(tick_timer_id);
+    tick_timer_id = 0;
 
     return retval;
 }

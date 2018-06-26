@@ -35,12 +35,12 @@
  /usr/include/bits/types/__FILE.h /usr/include/bits/types/FILE.h \
  /usr/include/bits/libio.h /usr/include/bits/_G_config.h \
  /usr/include/bits/types/__mbstate_t.h /usr/include/bits/stdio_lim.h \
- /usr/include/bits/sys_errlist.h /usr/include/ifaddrs.h \
- /usr/include/sys/socket.h /usr/include/bits/types/struct_iovec.h \
- /usr/include/bits/socket.h /usr/include/bits/socket_type.h \
- /usr/include/bits/sockaddr.h /usr/include/asm/socket.h \
- /usr/include/asm-generic/socket.h /usr/include/asm/sockios.h \
- /usr/include/asm-generic/sockios.h \
+ /usr/include/bits/sys_errlist.h /usr/include/sys/time.h \
+ /usr/include/ifaddrs.h /usr/include/sys/socket.h \
+ /usr/include/bits/types/struct_iovec.h /usr/include/bits/socket.h \
+ /usr/include/bits/socket_type.h /usr/include/bits/sockaddr.h \
+ /usr/include/asm/socket.h /usr/include/asm-generic/socket.h \
+ /usr/include/asm/sockios.h /usr/include/asm-generic/sockios.h \
  /usr/include/bits/types/struct_osockaddr.h /usr/include/sys/stat.h \
  /usr/include/bits/stat.h /home/paul/RIOT/cpu/native/include/cpu.h \
  /home/paul/RIOT/core/include/irq.h \
@@ -85,9 +85,8 @@
  /usr/include/rpc/netdb.h /usr/include/bits/netdb.h /usr/include/time.h \
  /usr/include/bits/time.h /usr/include/bits/timex.h \
  /usr/include/bits/types/struct_tm.h \
- /usr/include/bits/types/struct_itimerspec.h /usr/include/sys/time.h \
- /usr/include/sys/uio.h /usr/include/bits/uio-ext.h \
- /home/paul/RIOT/core/include/kernel_types.h \
+ /usr/include/bits/types/struct_itimerspec.h /usr/include/sys/uio.h \
+ /usr/include/bits/uio-ext.h /home/paul/RIOT/core/include/kernel_types.h \
  /home/paul/RIOT/core/include/sched.h \
  /home/paul/RIOT/core/include/bitarithm.h \
  /home/paul/RIOT/cpu/native/include/cpu_conf.h \
@@ -235,6 +234,8 @@
 /usr/include/bits/stdio_lim.h:
 
 /usr/include/bits/sys_errlist.h:
+
+/usr/include/sys/time.h:
 
 /usr/include/ifaddrs.h:
 
@@ -393,8 +394,6 @@
 /usr/include/bits/types/struct_tm.h:
 
 /usr/include/bits/types/struct_itimerspec.h:
-
-/usr/include/sys/time.h:
 
 /usr/include/sys/uio.h:
 

@@ -33,7 +33,7 @@
 #include "net/ipv6/addr.h"
 #include "net/ipv4/addr.h"
 #include "net/sock.h"
-#include <net/udp.h>
+#include "net/udp.h"
 
 //#include "pal.h"
 
@@ -242,14 +242,14 @@ private:
     */
     void close_socket();
 
-    uint8_t getAddressInfo(const char *url, socketAddress_t *address, socketLength_t* addressLength);
-    uint8_t setSockAddrPort(socketAddress_t* address, uint16_t port);
-    uint8_t getSockAddrIPV4Addr(const socketAddress_t* address, ipV4Addr_t ipV4Addr_);
+    int8_t getAddressInfo(const char *url, socketAddress_t *address, socketLength_t* addressLength);
+    int8_t setSockAddrPort(socketAddress_t* address, uint16_t port);
+    int8_t getSockAddrIPV4Addr(const socketAddress_t* address, ipV4Addr_t ipV4Addr_);
     //TODO IMPL IPV6
-    uint8_t getSockAddrIPV6Addr(const socketAddress_t* address, ipV6Addr_t ipV6Addr_);
+    int8_t getSockAddrIPV6Addr(const socketAddress_t* address, ipV6Addr_t ipV6Addr_);
 
-    uint8_t sendTo(sock_udp_t socket, const void* buffer, size_t length, const socketAddress_t* to, socketLength_t toLength, size_t* bytesSent);
-    uint8_t receiveFrom(sock_udp_t socket, void* buffer, size_t length, socketAddress_t* from, socketLength_t* fromLength, size_t* bytesReceived);
+    int8_t sendTo(sock_udp_t socket, const void* buffer, size_t length, const socketAddress_t* to, socketLength_t toLength, size_t* bytesSent);
+    int8_t receiveFrom(sock_udp_t socket, void* buffer, size_t length, socketAddress_t* from, socketLength_t* fromLength, size_t* bytesReceived);
 
 public:
 

@@ -18,6 +18,7 @@ QUIET ?= 1
 
 
 FEATURES_REQUIRED += cpp
+#USEMODULE += cpp11-compat
 
 CXXEXFLAGS += -fno-exceptions -fno-rtti
 
@@ -32,10 +33,16 @@ DIRS += mbed-client/mbed-client-coap/source
 DIRS += mbed-client/mbed-client-riot/source
 DIRS += Util
 DIRS += sal-stack-nanostack-eventloop/source
-DIRS += mbed-client-pal/Source
+DIRS += ns-hal-pal
 
 USEMODULE += gnrc_netdev_default
 USEMODULE += auto_init_gnrc_netif
+USEMODULE += gnrc_udp
+USEMODULE += gnrc_ipv6_default
+USEMODULE += gnrc_sock
+USEMODULE += sock_udp
+USEMODULE += xtimer
+USEMODULE += sema
 
 
 USEMODULE += M2M
@@ -44,7 +51,8 @@ USEMODULE += MCOAP
 USEMODULE += M2MRIOT
 USEMODULE += M2MUTIL
 USEMODULE += M2MEventLoop
-USEMODULE += PAL
+USEMODULE += M2MHAL
+
 
 LINKFLAGS += "-Wl,--print-memory-usage"
 

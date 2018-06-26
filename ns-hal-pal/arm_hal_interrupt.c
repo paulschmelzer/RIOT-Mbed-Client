@@ -22,32 +22,30 @@
 //#include "pal.h"
 #include <stdint.h>
 
+#include <mutex.h>
+
 #include <assert.h>
 
 
 static uint8_t sys_irq_disable_counter;
 
-static palMutexID_t critical_mutex_id;
+static mutex_t critical_mutex_id;
 
 void platform_critical_init(void)
 {
-    palStatus_t status;
-    status = pal_osMutexCreate(&critical_mutex_id);
-    assert(PAL_SUCCESS == status);
+    mutex_init(&critical_mutex_id);
 }
 
 void platform_enter_critical(void)
 {
-    palStatus_t status;
-    status = pal_osMutexWait(critical_mutex_id, UINT32_MAX);
-    assert(PAL_SUCCESS == status);
+
+    mutex_lock(&critical_mutex_id);
+
     sys_irq_disable_counter++;
 }
 
 void platform_exit_critical(void)
 {
-    palStatus_t status;
     --sys_irq_disable_counter;
-    status = pal_osMutexRelease(critical_mutex_id);
-    assert(PAL_SUCCESS == status);
+    mutex_unlock(&critical_mutex_id);
 }
