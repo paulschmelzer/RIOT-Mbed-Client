@@ -22,6 +22,8 @@
 extern "C" {
 #endif
 
+
+
 #ifndef NS_EXCLUDE_HIGHRES_TIMER
 /**
  * \brief This function perform timer init.

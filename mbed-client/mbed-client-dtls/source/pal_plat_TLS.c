@@ -13,7 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
-#include "pal.h"
+//#include "pal.h"
+#include "pal_types.h"
+#include "pal_configuration.h"
+#include "pal_macros.h"
+#include "pal_errors.h"
 #include "pal_plat_TLS.h"
 #include "mbedtls/ssl.h"
 #include "mbedtls/entropy.h"
@@ -21,6 +25,16 @@
 #include "mbedtls/ssl_internal.h"
 #include "stdlib.h"
 #include "string.h"
+
+#include "net/gnrc/netif.h"
+#include "net/sock/udp.h"
+#include "net/af.h"
+#include "net/protnum.h"
+#include "net/ipv6/addr.h"
+#include "net/ipv4/addr.h"
+#include "net/sock.h"
+#include "net/udp.h"
+#include "xtimer.h"
 //TODO #include "sotp.h"
 
 
@@ -84,8 +98,8 @@ typedef struct palTLSConf {
 }palTLSConf_t;
 
 
-
-
+int8_t receiveFrom(sock_udp_t socket, void* buffer, size_t length, socketAddress_t* from, socketLength_t* fromLength, size_t* bytesReceived);
+int8_t sendTo(sock_udp_t socket, const void* buffer, size_t length, const socketAddress_t* to, socketLength_t toLength, size_t* bytesSent);
 
 
 PAL_PRIVATE palStatus_t translateTLSErrToPALError(int32_t error) 
@@ -892,7 +906,7 @@ palStatus_t pal_plat_SetLoggingCb(palTLSConfHandle_t palTLSConf, palLogFunc_f pa
 PAL_PRIVATE uint64_t palTimingGetTimer(uint64_t *start_ticks, int reset)
 {
 	uint64_t delta_ms;
-	uint64_t ticks = pal_osKernelSysTick();
+	uint64_t ticks = xtimer_now64().ticks64;
 
 	if (reset)
 	{
@@ -901,7 +915,9 @@ PAL_PRIVATE uint64_t palTimingGetTimer(uint64_t *start_ticks, int reset)
 	}
 	else
 	{
-		delta_ms = pal_osKernelSysMilliSecTick(ticks - *start_ticks);
+		xtimer_ticks64_t tick;
+		tick.ticks64 = ticks - *start_ticks;
+		delta_ms = (xtimer_usec_from_ticks64(tick)) / 1000;
 	}
 
 	return delta_ms;
@@ -964,7 +980,13 @@ int pal_plat_entropySourceTLS( void *data, unsigned char *output, size_t len, si
 	palStatus_t status = PAL_SUCCESS;
 	(void)data;
 
-	status = pal_osRandomBuffer((uint8_t*) output, len);
+	//status = pal_osRandomBuffer((uint8_t*) output, len); TODO ENTROPY
+
+
+	if(len > 0){
+		output[0] = 23;
+	}
+
 	if (PAL_SUCCESS == status)
 	{
 		if (NULL != olen)
@@ -993,11 +1015,11 @@ PAL_PRIVATE int palBIOSend(palTLSSocketHandle_t socket, const unsigned char *buf
 
 	if (PAL_TLS_MODE == localSocket->transportationMode)
 	{
-		status = pal_send(localSocket->socket, buf, len, &sentDataSize);
+		//status = pal_send(localSocket->socket, buf, len, &sentDataSize); TODO TLS
 	}
 	else if (PAL_DTLS_MODE == localSocket->transportationMode)
 	{
-		status = pal_sendTo(localSocket->socket, buf, len, localSocket->socketAddress, localSocket->addressLength, &sentDataSize);
+		status = sendTo(localSocket->socket, buf, len, localSocket->socketAddress, localSocket->addressLength, &sentDataSize);
 	}
 	else
 	{
@@ -1027,6 +1049,28 @@ finish:
 	return status;
 }
 
+int8_t sendTo(sock_udp_t socket, const void* buffer, size_t length, const socketAddress_t* to, socketLength_t toLength, size_t* bytesSent){
+	sock_udp_ep_t remote;
+
+	if(to->addressType == PAL_AF_INET){
+		remote.family = AF_INET;
+	} else if(to->addressType == PAL_AF_INET6){
+		remote.family = AF_INET6;
+	}
+	ipV4Addr* ep = (ipV4Addr*) &(to->addressData);
+	remote.port = ep->port;
+	memcpy(remote.addr.ipv4,ep->addr.u8,4);
+	memcpy(&(remote.addr.ipv4_u32),&(ep->addr.u32),4);
+
+	*bytesSent = sock_udp_send(&socket,buffer,length,&remote);
+
+	if (*bytesSent < length - 10){
+		return 1;
+	}
+
+	return 0;
+}
+
 PAL_PRIVATE int palBIORecv(palTLSSocketHandle_t socket, unsigned char *buf, size_t len)
 {
 	palStatus_t status = PAL_SUCCESS;
@@ -1041,19 +1085,19 @@ PAL_PRIVATE int palBIORecv(palTLSSocketHandle_t socket, unsigned char *buf, size
 
 	if (PAL_TLS_MODE == localSocket->transportationMode)
 	{
-		status = pal_recv(localSocket->socket, buf, len, &recievedDataSize);
-		if (PAL_SUCCESS == status)
-		{
-			status = recievedDataSize;
-		}
-		else if (PAL_ERR_SOCKET_WOULD_BLOCK == status)
-		{
-			status = MBEDTLS_ERR_SSL_WANT_READ;
-		}
+//		status = pal_recv(localSocket->socket, buf, len, &recievedDataSize);
+//		if (PAL_SUCCESS == status)
+//		{
+//			status = recievedDataSize;
+//		}
+//		else if (PAL_ERR_SOCKET_WOULD_BLOCK == status)
+//		{
+//			status = MBEDTLS_ERR_SSL_WANT_READ;
+//		}
 	}
 	else if (PAL_DTLS_MODE == localSocket->transportationMode)
 	{
-		status = pal_receiveFrom(localSocket->socket, buf, len, localSocket->socketAddress, &localSocket->addressLength, &recievedDataSize);
+		status = receiveFrom(localSocket->socket, buf, len, localSocket->socketAddress, &localSocket->addressLength, &recievedDataSize);
 		if (PAL_SUCCESS == status)
 		{
 			if (0 != recievedDataSize)
@@ -1080,11 +1124,33 @@ finish:
 	return status;
 }
 
+int8_t receiveFrom(sock_udp_t socket, void* buffer, size_t length, socketAddress_t* from, socketLength_t* fromLength, size_t* bytesReceived){
+//	sock_udp_ep_t remote;
+
+
+	*bytesReceived = sock_udp_recv(&socket,buffer,length,1*1000000U,NULL);
+
+//	if(remote.family == AF_INET){
+//			from->addressType = PAL_AF_INET;
+//			} else if(remote.family == AF_INET6){
+//				from->addressType = PAL_AF_INET6;
+//			}
+//
+//	from->addressData
+
+	if(*bytesReceived < 1){
+		return 1;
+	}
+
+	return 0;
+
+}
+
 PAL_PRIVATE int palBIORecv_timeout(palTLSSocketHandle_t socket, unsigned char *buf, size_t len, uint32_t timeout)
 {	
 	palStatus_t status = PAL_SUCCESS;
 	size_t recievedDataSize = 0;
-	uint32_t localTimeOut = timeout;
+	//uint32_t localTimeOut = timeout;
 	palTLSSocket_t* localSocket = (palTLSSocket_t*)socket;
 	bool isNonBlocking = false;
 
@@ -1094,7 +1160,7 @@ PAL_PRIVATE int palBIORecv_timeout(palTLSSocketHandle_t socket, unsigned char *b
 		goto finish;
 	}
 	
-	status = pal_isNonBlocking(localSocket->socket, &isNonBlocking);
+	//status = pal_isNonBlocking(localSocket->socket, &isNonBlocking); TODO BLOCKING
 	if (PAL_SUCCESS != status)
 	{
 		goto finish;
@@ -1102,28 +1168,28 @@ PAL_PRIVATE int palBIORecv_timeout(palTLSSocketHandle_t socket, unsigned char *b
 
 	if (PAL_TLS_MODE == localSocket->transportationMode)
 	{
-		status = pal_recv(localSocket->socket, buf, len, &recievedDataSize);
-		if (PAL_SUCCESS == status)
-		{
-			status = recievedDataSize;
-		}
-		else if (PAL_ERR_SOCKET_WOULD_BLOCK == status)
-		{
-			status = MBEDTLS_ERR_SSL_WANT_READ;
-		}
+//		status = pal_recv(localSocket->socket, buf, len, &recievedDataSize);
+//		if (PAL_SUCCESS == status)
+//		{
+//			status = recievedDataSize;
+//		}
+//		else if (PAL_ERR_SOCKET_WOULD_BLOCK == status)
+//		{
+//			status = MBEDTLS_ERR_SSL_WANT_READ;
+//		}
 	}
 	else if (PAL_DTLS_MODE == localSocket->transportationMode)
 	{
 		if (false == isNonBlocking) // timeout is relevant only if socket is blocking
 		{
-			status = pal_setSocketOptions(localSocket->socket, PAL_SO_RCVTIMEO, &localTimeOut, sizeof(localTimeOut));
+			//status = pal_setSocketOptions(localSocket->socket, PAL_SO_RCVTIMEO, &localTimeOut, sizeof(localTimeOut)); TODO TIMEOUT
 			if (PAL_SUCCESS != status)
 			{
 				goto finish;
 			}
 		}
 
-		status = pal_receiveFrom(localSocket->socket, buf, len, localSocket->socketAddress, &localSocket->addressLength, &recievedDataSize);
+		status = receiveFrom(localSocket->socket, buf, len, localSocket->socketAddress, &localSocket->addressLength, &recievedDataSize);
 		
 		if (PAL_SUCCESS == status)
 		{

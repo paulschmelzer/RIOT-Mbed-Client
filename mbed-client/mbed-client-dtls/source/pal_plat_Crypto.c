@@ -16,9 +16,11 @@
 #include "stdlib.h"
 #include "string.h"
 #include "time.h"
-#include "pal.h"
+#include "pal_configuration.h"
+#include "pal_types.h"
+#include "pal_macros.h"
+#include "pal_errors.h"
 #include "pal_plat_Crypto.h"
-#include "pal_plat_rtos.h"
 #include "mbedtls/aes.h"
 #if (PAL_ENABLE_X509 == 1)
 #include "mbedtls/x509_crt.h"

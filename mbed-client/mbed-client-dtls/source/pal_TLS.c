@@ -15,13 +15,19 @@
  *******************************************************************************/
 
 
-#include "pal.h"
+#include "pal_macros.h"
+#include "pal_types.h"
 #include "pal_plat_TLS.h"
-#include "sotp.h"
+#include "pal_errors.h"
+#include "pal_Crypto.h"
+#include "pal_configuration.h"
+#include "stdbool.h"
+#include "mutex.h"
+
 
 PAL_PRIVATE uint8_t g_storedCertSerial[PAL_CERT_ID_SIZE] __attribute__ ((aligned(4))) = {0};
 PAL_PRIVATE bool g_trustedServerValid = false;
-PAL_PRIVATE palMutexID_t g_palTLSHandshakeMutex = NULLPTR;
+PAL_PRIVATE mutex_t g_palTLSHandshakeMutex;
 
 typedef struct palTLSService
 {
@@ -39,7 +45,7 @@ typedef struct palTLSConfService
 palStatus_t pal_initTLSLibrary(void)
 {
 	palStatus_t status = PAL_SUCCESS;
-	status = pal_osMutexCreate(&g_palTLSHandshakeMutex);
+	mutex_init(&g_palTLSHandshakeMutex);
     if(PAL_SUCCESS != status)
 	{
 		PAL_LOG(ERR, "Failed to Create TLS handshake Mutex error: %" PRId32 ".", status);
@@ -54,7 +60,7 @@ palStatus_t pal_initTLSLibrary(void)
 palStatus_t pal_cleanupTLS(void)
 {
 	palStatus_t status = PAL_SUCCESS;
-	status = pal_osMutexDelete(&g_palTLSHandshakeMutex);
+	//status = pal_osMutexDelete(&g_palTLSHandshakeMutex); TODO MUTEX DELETE
     if(PAL_SUCCESS != status)
 	{
 		PAL_LOG(ERR, "Failed to Delete TLS handshake Mutex error: %" PRId32 ".", status);
@@ -73,7 +79,7 @@ palStatus_t pal_initTLS(palTLSConfHandle_t palTLSConf, palTLSHandle_t* palTLSHan
 
 	PAL_VALIDATE_ARGUMENTS ((NULLPTR == palTLSConf || NULLPTR == palTLSHandle));
 
-	mutexStatus = pal_osMutexWait(g_palTLSHandshakeMutex, PAL_RTOS_WAIT_FOREVER);
+	mutex_lock(&g_palTLSHandshakeMutex);
 	if (PAL_SUCCESS != mutexStatus)
 	{
 		PAL_LOG(ERR, "Failed to get TLS context init Mutex error: %" PRId32 ".", mutexStatus);
@@ -99,7 +105,7 @@ palStatus_t pal_initTLS(palTLSConfHandle_t palTLSConf, palTLSHandle_t* palTLSHan
 finish:
 	if (PAL_SUCCESS == mutexStatus)
 	{
-		mutexStatus = pal_osMutexRelease(g_palTLSHandshakeMutex);
+		mutex_unlock(&g_palTLSHandshakeMutex);
 		if (PAL_SUCCESS != mutexStatus)
 		{
 			PAL_LOG(ERR, "Failed to release TLS context init Mutex error: %" PRId32 ".", mutexStatus);
@@ -128,7 +134,7 @@ palStatus_t pal_freeTLS(palTLSHandle_t* palTLSHandle)
 
 	PAL_VALIDATE_ARGUMENTS (NULLPTR == palTLSHandle || NULLPTR == *palTLSHandle);
 
-	mutexStatus = pal_osMutexWait(g_palTLSHandshakeMutex, PAL_RTOS_WAIT_FOREVER);
+	mutex_lock(&g_palTLSHandshakeMutex);
 	if (PAL_SUCCESS != mutexStatus)
 	{
 		PAL_LOG(ERR, "Failed to get TLS context init Mutex error: %" PRId32 ".", mutexStatus);
@@ -143,7 +149,7 @@ palStatus_t pal_freeTLS(palTLSHandle_t* palTLSHandle)
 		*palTLSHandle = NULLPTR;
 	}
 
-	mutexStatus = pal_osMutexRelease(g_palTLSHandshakeMutex);
+	mutex_unlock(&g_palTLSHandshakeMutex);
 	if (PAL_SUCCESS != mutexStatus)
 	{
 		PAL_LOG(ERR, "Failed to release TLS context init Mutex error: %" PRId32 ".", mutexStatus);

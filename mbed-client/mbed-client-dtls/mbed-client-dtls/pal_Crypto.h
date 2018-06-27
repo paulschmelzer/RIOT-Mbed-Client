@@ -17,10 +17,11 @@
 #ifndef _PAL_CRYPTO_H_
 #define _PAL_CRYPTO_H_
 
+#include "pal_types.h"
 
-#ifndef _PAL_H
-    #error "Please do not include this file directly, use pal.h instead"
-#endif
+//#ifndef _PAL_H
+//    #error "Please do not include this file directly, use pal.h instead"
+//#endif
 
 /*! \file pal_Crypto.h
 *  \brief PAL cryptographic.

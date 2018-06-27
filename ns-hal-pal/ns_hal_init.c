@@ -25,7 +25,7 @@
 #include "arm_hal_interrupt_private.h"
 #include "ns_event_loop.h"
 #include "eventOS_scheduler.h"
-#include "platform/arm_hal_timer.h"
+#include "arm_hal_timer.h"
 #include "ns_trace.h"
 
 

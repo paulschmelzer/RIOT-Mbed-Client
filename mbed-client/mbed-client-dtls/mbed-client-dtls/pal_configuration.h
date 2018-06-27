@@ -20,11 +20,11 @@
 #include "limits.h"
 
 
-#ifdef PAL_USER_DEFINED_CONFIGURATION
-    #include PAL_USER_DEFINED_CONFIGURATION
-#else
-    #include "sotp_fs.h"
-#endif
+//#ifdef PAL_USER_DEFINED_CONFIGURATION
+//    #include PAL_USER_DEFINED_CONFIGURATION
+//#else
+//    #include "sotp_fs.h"
+//#endif
 
 
 /*! \brief If needed any board specific configuration please set this define
@@ -60,14 +60,15 @@
 *       4. The configuration for flash memory usage.
 *       5. The configuration for the root of trust.
 */
-
-
+#define PAL_NET_TCP_AND_TLS_SUPPORT false
+#define PAL_USE_SECURE_TIME false
+#define PAL_SUPPORT_IP_V6 false
 /*
  * Network configuration
  */
 //! PAL configuration options
 #ifndef PAL_NET_TCP_AND_TLS_SUPPORT
-    #define PAL_NET_TCP_AND_TLS_SUPPORT         true/* Add PAL support for TCP. */
+    #define PAL_NET_TCP_AND_TLS_SUPPORT         false/* Add PAL support for TCP. */
 #endif
 
 #ifndef PAL_NET_ASYNCHRONOUS_SOCKET_API

@@ -23,7 +23,7 @@ extern "C" {
 #endif
 
 //for PAL_LOG prints
-#include "pal.h"
+
 #include "mbed-trace/mbed_trace.h"
 #include "assert.h"
 #include <limits.h>

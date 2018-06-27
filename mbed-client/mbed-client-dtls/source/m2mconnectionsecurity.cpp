@@ -61,5 +61,5 @@ void M2MConnectionSecurity::set_entropy_callback(entropy_cb callback)
 
 void M2MConnectionSecurity::set_socket(void *socket, void *address)
 {
-    _private_impl->set_socket((palSocket_t) socket, (palSocketAddress_t*) address);
+    _private_impl->set_socket((sock_udp_t) &socket, (socketAddress_t*) address);
 }

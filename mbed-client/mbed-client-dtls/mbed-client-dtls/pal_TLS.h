@@ -17,9 +17,9 @@
 #ifndef _PAL_DTLS_H_
 #define _PAL_DTLS_H_
 
-#ifndef _PAL_H
-    #error "Please do not include this file directly, use pal.h instead"
-#endif
+//#ifndef _PAL_H
+//    #error "Please do not include this file directly, use pal.h instead"
+//#endif
 
 /*! \file pal_TLS.h
 *  \brief PAL TLS/DTLS.
@@ -27,9 +27,27 @@
 *   It provides TLS/DTLS handshake functionalities, read/write from peer in a secure way.
 */
 
+#include "dataTypes.h"
+#include "net/gnrc/netif.h"
+#include "net/sock/udp.h"
+#include "net/af.h"
+#include "net/protnum.h"
+#include "net/ipv6/addr.h"
+#include "net/ipv4/addr.h"
+#include "net/sock.h"
 /***************************************************/
 /**** PAL DTLS data structures *********************/
 /***************************************************/
+
+typedef uint32_t palSocketLength_t; /*! The length of data. */
+typedef void* palSocket_t; /*! PAL socket handle type. */
+
+#define  PAL_NET_MAX_ADDR_SIZE 32 // check if we can make this more efficient
+
+typedef struct palSocketAddress {
+    unsigned short    addressType;    /*! Address family for the socket. */
+    char              addressData[PAL_NET_MAX_ADDR_SIZE];  /*! Address (based on protocol). */
+} palSocketAddress_t; /*! Address data structure with enough room to support IPV4 and IPV6. */
 
 // Index in the static array of the TLSs.
 typedef uintptr_t palTLSHandle_t;
@@ -43,9 +61,9 @@ typedef enum palTLSTranportMode{
 }palTLSTransportMode_t;
 
 typedef struct palTLSSocket{
-    palSocket_t socket;
-    palSocketAddress_t* socketAddress;
-    palSocketLength_t addressLength;
+    sock_udp_t socket;
+    socketAddress_t* socketAddress;
+    socketLength_t addressLength;
     palTLSTransportMode_t transportationMode;
 }palTLSSocket_t;
 

@@ -19,7 +19,7 @@
 #include "ns_timer.h"
 #include "eventOS_callback_timer.h"
 #include "arm_hal_interrupt.h"
-#include "platform/arm_hal_timer.h"
+#include "arm_hal_timer.h"
 #include "nsdynmemLIB.h"
 
 #ifndef NS_EXCLUDE_HIGHRES_TIMER

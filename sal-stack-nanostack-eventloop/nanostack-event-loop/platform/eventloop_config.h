@@ -24,27 +24,27 @@
  */
 
 /* Use platform-provided low-resolution tick timer for eventloop (requires "platform_tick_timer" API) */
-#undef NS_EVENTLOOP_USE_TICK_TIMER
+#define NS_EVENTLOOP_USE_TICK_TIMER
 /* Exclude high resolution timer from build (removes need for "platform_timer" API) */
-#undef NS_EXCLUDE_HIGHRES_TIMER
+#define NS_EXCLUDE_HIGHRES_TIMER
 
 /*
  * mbedOS 5 specific configuration flag mapping to internal flags
  */
-#ifdef MBED_CONF_NANOSTACK_EVENTLOOP_USE_PLATFORM_TICK_TIMER
-#define NS_EVENTLOOP_USE_TICK_TIMER     1
-#endif
+//#ifdef MBED_CONF_NANOSTACK_EVENTLOOP_USE_PLATFORM_TICK_TIMER
+//#define NS_EVENTLOOP_USE_TICK_TIMER     1
+//#endif
 
-#ifdef MBED_CONF_NANOSTACK_EVENTLOOP_EXCLUDE_HIGHRES_TIMER
-#define NS_EXCLUDE_HIGHRES_TIMER        1
-#endif
+//#ifdef MBED_CONF_NANOSTACK_EVENTLOOP_EXCLUDE_HIGHRES_TIMER
+//#define NS_EXCLUDE_HIGHRES_TIMER        1
+//#endif
 
 /*
  * For mbedOS 3 and minar use platform tick timer by default, highres timers should come from eventloop adaptor
  */
-#ifdef YOTTA_CFG_MINAR
-#define NS_EVENTLOOP_USE_TICK_TIMER     1
-#endif
+//#ifdef YOTTA_CFG_MINAR
+//#define NS_EVENTLOOP_USE_TICK_TIMER     1
+//#endif
 
 /*
  * Include the user config file if defined
