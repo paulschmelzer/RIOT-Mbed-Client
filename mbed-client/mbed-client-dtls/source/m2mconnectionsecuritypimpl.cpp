@@ -27,21 +27,30 @@
 #define __STDC_FORMAT_MACROS
 #endif
 
-#include "mbed-client/m2mconnectionhandler.h"
-#include "../mbed-client-dtls/m2mconnectionsecuritypimpl.h"
-#include "mbed-client/m2msecurity.h"
-#include "mbed-trace/mbed_trace.h"
-#include "pal_TLS.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 #include "pal_Crypto.h"
 #include "pal_types.h"
 #include "pal_macros.h"
 #include "pal_errors.h"
 #include "pal_configuration.h"
+#ifdef __cplusplus
+}
+#endif
+
+#include "pal_TLS.h"
+
+#include "mbed-client/m2mconnectionhandler.h"
+#include "../mbed-client-dtls/m2mconnectionsecuritypimpl.h"
+#include "mbed-client/m2msecurity.h"
+#include "mbed-trace/mbed_trace.h"
 #include "m2mdevice.h"
 #include "m2minterfacefactory.h"
 #include <string.h>
 
-#define TRACE_GROUP "mClt"
+
 
 M2MConnectionSecurityPimpl::M2MConnectionSecurityPimpl(M2MConnectionSecurity::SecurityMode mode)
     :_init_done(M2MConnectionSecurityPimpl::INIT_NOT_STARTED),
@@ -91,7 +100,9 @@ int M2MConnectionSecurityPimpl::init(const M2MSecurity *security, uint16_t secur
 
     palTLSTransportMode_t mode = PAL_DTLS_MODE;
     if(_sec_mode == M2MConnectionSecurity::TLS){
+    	#ifndef PAL_NET_TCP_AND_TLS_SUPPORT
         mode = PAL_TLS_MODE;
+		#endif
     }
 
     if(PAL_SUCCESS != pal_initTLSConfiguration(&_conf, mode)){
@@ -296,14 +307,16 @@ void M2MConnectionSecurityPimpl::set_entropy_callback(entropy_cb callback)
 
 }
 
-void M2MConnectionSecurityPimpl::set_socket(palSocket_t socket, palSocketAddress_t *address)
+void M2MConnectionSecurityPimpl::set_socket(sock_udp_t* socket, socketAddress_t *address)
 {
     _tls_socket.socket = socket;
     _tls_socket.socketAddress = address;
-    _tls_socket.addressLength = sizeof(palSocketAddress_t);
+    _tls_socket.addressLength = sizeof(socketAddress_t);
 
     if(_sec_mode == M2MConnectionSecurity::TLS){
+#ifndef PAL_NET_TCP_AND_TLS_SUPPORT
         _tls_socket.transportationMode = PAL_TLS_MODE;
+#endif
     }
     else{
         _tls_socket.transportationMode = PAL_DTLS_MODE;

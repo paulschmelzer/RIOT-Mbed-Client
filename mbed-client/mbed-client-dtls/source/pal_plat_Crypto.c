@@ -16,10 +16,19 @@
 #include "stdlib.h"
 #include "string.h"
 #include "time.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include "pal_configuration.h"
 #include "pal_types.h"
 #include "pal_macros.h"
 #include "pal_errors.h"
+#ifdef __cplusplus
+}
+#endif
+
 #include "pal_plat_Crypto.h"
 #include "mbedtls/aes.h"
 #if (PAL_ENABLE_X509 == 1)
@@ -38,6 +47,7 @@
 #include "mbedtls/ecdh.h"
 #include "mbedtls/oid.h"
 #include "mbedtls/platform_time.h"
+
 
 
 typedef mbedtls_ccm_context palCCM_t;

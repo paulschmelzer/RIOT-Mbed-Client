@@ -14,17 +14,30 @@
  * limitations under the License.
  *******************************************************************************/
 //#include "pal.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 #include "pal_types.h"
 #include "pal_configuration.h"
 #include "pal_macros.h"
 #include "pal_errors.h"
+
+
+#ifdef __cplusplus
+}
+#endif
 #include "pal_plat_TLS.h"
+
 #include "mbedtls/ssl.h"
 #include "mbedtls/entropy.h"
 #include "mbedtls/ctr_drbg.h"
 #include "mbedtls/ssl_internal.h"
+
+
 #include "stdlib.h"
 #include "string.h"
+
 
 #include "net/gnrc/netif.h"
 #include "net/sock/udp.h"
@@ -98,8 +111,8 @@ typedef struct palTLSConf {
 }palTLSConf_t;
 
 
-int8_t receiveFrom(sock_udp_t socket, void* buffer, size_t length, socketAddress_t* from, socketLength_t* fromLength, size_t* bytesReceived);
-int8_t sendTo(sock_udp_t socket, const void* buffer, size_t length, const socketAddress_t* to, socketLength_t toLength, size_t* bytesSent);
+int8_t receiveFrom(sock_udp_t* socket, void* buffer, size_t length, socketAddress_t* from, socketLength_t* fromLength, size_t* bytesReceived);
+int8_t sendTo(sock_udp_t* socket, const void* buffer, size_t length, const socketAddress_t* to, socketLength_t toLength, size_t* bytesSent);
 
 
 PAL_PRIVATE palStatus_t translateTLSErrToPALError(int32_t error) 
@@ -859,7 +872,7 @@ palStatus_t pal_plat_sslSetIOCallBacks(palTLSConfHandle_t palTLSConf, palTLSSock
 
 	localConfigCtx->palIOCtx = palIOCtx;
 
-	status = pal_isNonBlocking(palIOCtx->socket, &isNonBlocking);
+	//status = pal_isNonBlocking(palIOCtx->socket, &isNonBlocking); TODO BLOCKING
 	if (PAL_SUCCESS != status)
 	{
 		return status;
@@ -1049,7 +1062,7 @@ finish:
 	return status;
 }
 
-int8_t sendTo(sock_udp_t socket, const void* buffer, size_t length, const socketAddress_t* to, socketLength_t toLength, size_t* bytesSent){
+int8_t sendTo(sock_udp_t* socket, const void* buffer, size_t length, const socketAddress_t* to, socketLength_t toLength, size_t* bytesSent){
 	sock_udp_ep_t remote;
 
 	if(to->addressType == PAL_AF_INET){
@@ -1062,7 +1075,7 @@ int8_t sendTo(sock_udp_t socket, const void* buffer, size_t length, const socket
 	memcpy(remote.addr.ipv4,ep->addr.u8,4);
 	memcpy(&(remote.addr.ipv4_u32),&(ep->addr.u32),4);
 
-	*bytesSent = sock_udp_send(&socket,buffer,length,&remote);
+	*bytesSent = sock_udp_send(socket,buffer,length,&remote);
 
 	if (*bytesSent < length - 10){
 		return 1;
@@ -1124,11 +1137,11 @@ finish:
 	return status;
 }
 
-int8_t receiveFrom(sock_udp_t socket, void* buffer, size_t length, socketAddress_t* from, socketLength_t* fromLength, size_t* bytesReceived){
+int8_t receiveFrom(sock_udp_t* socket, void* buffer, size_t length, socketAddress_t* from, socketLength_t* fromLength, size_t* bytesReceived){
 //	sock_udp_ep_t remote;
 
 
-	*bytesReceived = sock_udp_recv(&socket,buffer,length,1*1000000U,NULL);
+	*bytesReceived = sock_udp_recv(socket,buffer,length,1*1000000U,NULL);
 
 //	if(remote.family == AF_INET){
 //			from->addressType = PAL_AF_INET;

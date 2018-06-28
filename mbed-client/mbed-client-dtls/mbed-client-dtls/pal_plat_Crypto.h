@@ -17,7 +17,13 @@
 #ifndef _PAL_PLAT_CRYPTO_H_
 #define _PAL_PLAT_CRYPTO_H_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 #include "pal_Crypto.h"
+#ifdef __cplusplus
+}
+#endif
 
 /*! \file pal_plat_Crypto.h
 *  \brief PAL cryptographic - platform.

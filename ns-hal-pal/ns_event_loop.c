@@ -32,7 +32,7 @@
 
 
 
-static void event_loop_thread(const void *arg);
+static void *event_loop_thread(void *arg);
 
 char thread_stack[THREAD_STACKSIZE_DEFAULT];
 
@@ -82,10 +82,8 @@ void eventOS_scheduler_idle(void)
     eventOS_scheduler_mutex_wait();
 }
 
-static void event_loop_thread(const void *arg)
+static void *event_loop_thread(void *arg)
 {
-
-    tr_debug("event_loop_thread create");
 
     event_stop_loop = false;
 
@@ -109,6 +107,9 @@ static void event_loop_thread(const void *arg)
     // signal the ns_event_loop_thread_stop() that it can continue 
     sema_post(&event_stop_sema_id);
 
+    void* p;
+
+    return p;
 }
 
 void ns_event_loop_thread_create(void)
@@ -128,7 +129,7 @@ void ns_event_loop_thread_create(void)
 
     mutex_init(&event_mutex_id);
 
-
+    //thread_task_func_t
     //pal_osThreadCreateWithAlloc(event_loop_thread, NULL, PAL_osPriorityNormal, MBED_CONF_NS_HAL_PAL_EVENT_LOOP_THREAD_STACK_SIZE, NULL, &event_thread_id);
     event_thread_id = thread_create(thread_stack,sizeof(thread_stack),3,THREAD_CREATE_STACKTEST,event_loop_thread,NULL,"M2M_Evtq");
 }

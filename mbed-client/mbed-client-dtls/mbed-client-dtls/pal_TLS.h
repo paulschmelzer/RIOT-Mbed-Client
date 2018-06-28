@@ -35,9 +35,16 @@
 #include "net/ipv6/addr.h"
 #include "net/ipv4/addr.h"
 #include "net/sock.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#include "pal_errors.h"
 /***************************************************/
 /**** PAL DTLS data structures *********************/
 /***************************************************/
+
 
 typedef uint32_t palSocketLength_t; /*! The length of data. */
 typedef void* palSocket_t; /*! PAL socket handle type. */
@@ -61,7 +68,7 @@ typedef enum palTLSTranportMode{
 }palTLSTransportMode_t;
 
 typedef struct palTLSSocket{
-    sock_udp_t socket;
+    sock_udp_t* socket;
     socketAddress_t* socketAddress;
     socketLength_t addressLength;
     palTLSTransportMode_t transportationMode;
@@ -267,5 +274,9 @@ palStatus_t pal_sslSetDebugging(palTLSConfHandle_t palTLSConf,uint8_t turnOn);
 \return PAL_SUCCESS on success. A negative value indicating a specific error code in case of failure.
 */
 palStatus_t pal_sslDebugging(uint8_t turnOn);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // _PAL_DTLS_H_

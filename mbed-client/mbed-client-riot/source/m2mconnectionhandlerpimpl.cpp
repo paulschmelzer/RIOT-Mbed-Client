@@ -320,10 +320,10 @@ int8_t M2MConnectionHandlerPimpl::getAddressInfo(const char *url, socketAddress_
 		return 1;
 	}
 
-	ipV4Addr* addr2;
-	addr2->addr = addr;
+	ipV4Addr addr2;
+	addr2.addr = addr;
 
-	memcpy(&address->addressData,addr2,sizeof(ipV4Addr));
+	memcpy(&address->addressData,(ipV4Addr*)&addr2,sizeof(ipV4Addr));
 
 	*addressLength = sizeof(ipv4_addr_t) + sizeof(unsigned short);
 

@@ -34,7 +34,6 @@ DIRS += mbed-client/mbed-client-riot/source
 DIRS += Util
 DIRS += sal-stack-nanostack-eventloop/source
 DIRS += ns-hal-pal
-DIRS += mbedtls
 DIRS += mbed-client/mbed-client-dtls/source
 
 USEMODULE += gnrc_netdev_default
@@ -47,6 +46,7 @@ USEMODULE += xtimer
 USEMODULE += sema
 
 
+
 USEMODULE += M2M
 USEMODULE += COAP
 USEMODULE += MCOAP
@@ -54,7 +54,6 @@ USEMODULE += M2MRIOT
 USEMODULE += M2MUTIL
 USEMODULE += M2MEventLoop
 USEMODULE += M2MHAL
-USEMODULE += MBEDTLS
 USEMODULE += M2MSec
 
 

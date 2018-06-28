@@ -13,11 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *******************************************************************************/
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 #include "pal_types.h"
 #include "pal_macros.h"
 #include "pal_errors.h"
 #include "pal_configuration.h"
 #include "pal_plat_Crypto.h"
+#ifdef __cplusplus
+}
+#endif
 
 
 palStatus_t pal_initAes(palAesHandle_t *aes)

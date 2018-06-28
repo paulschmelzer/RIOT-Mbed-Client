@@ -17,7 +17,11 @@
 #ifndef _PAL_CRYPTO_H_
 #define _PAL_CRYPTO_H_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 #include "pal_types.h"
+
 
 //#ifndef _PAL_H
 //    #error "Please do not include this file directly, use pal.h instead"
@@ -734,5 +738,9 @@ palStatus_t pal_ECDSASign(palCurveHandle_t grp, palMDType_t mdType, palECKeyHand
 palStatus_t pal_ECDSAVerify(palECKeyHandle_t pubKey, unsigned char* dgst, uint32_t dgstLen, 
 									unsigned char* sig, size_t sigLen, bool* verified);
 
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif //_PAL_CRYPTO_H_

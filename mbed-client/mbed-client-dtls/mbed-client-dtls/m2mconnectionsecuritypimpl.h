@@ -24,28 +24,18 @@
 #include "mbed-client/m2mconfig.h"
 
 
-#include "../../mbed-client-coap/nsdl-c/sn_nsdl.h"
-#include "ns_types.h"
-#include "ns_list.h"
-#include "eventOS_event.h"
-#include "mbed-client/m2mconfig.h"
-#include "mbed-client/m2mconstants.h"
-#include "mbed-client/m2minterface.h"
-#include "mbed-client/m2mconnectionobserver.h"
-#include "mbed-client/m2mconnectionsecurity.h"
-
-#include "net/gnrc/netif.h"
-#include "net/sock/udp.h"
-#include "net/af.h"
-#include "net/protnum.h"
-#include "net/ipv6/addr.h"
-#include "net/ipv4/addr.h"
-#include "net/sock.h"
-#include "net/udp.h"
-
-
-
 #include "pal_TLS.h"
+
+
+//#include "net/sock/udp.h"
+//#include "net/af.h"
+//#include "net/protnum.h"
+//#include "net/ipv6/addr.h"
+//#include "net/ipv4/addr.h"
+//#include "net/sock.h"
+//#include "net/udp.h"
+
+
 
 #include <time.h>
 
@@ -139,7 +129,7 @@ public:
      * \param address Pointer to the address of the server.
      * \return Indicates whether the data is read successfully or not.
      */
-    void set_socket(sock_udp_t socket, socketAddress_t *address);
+    void set_socket(sock_udp_t* socket, socketAddress_t *address);
 
 private:
 

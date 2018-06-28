@@ -14,15 +14,23 @@
  * limitations under the License.
  *******************************************************************************/
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #include "pal_macros.h"
 #include "pal_types.h"
-#include "pal_plat_TLS.h"
 #include "pal_errors.h"
 #include "pal_Crypto.h"
 #include "pal_configuration.h"
-#include "stdbool.h"
+
+#ifdef __cplusplus
+}
+#endif
+
+#include "pal_plat_TLS.h"
 #include "mutex.h"
+
 
 
 PAL_PRIVATE uint8_t g_storedCertSerial[PAL_CERT_ID_SIZE] __attribute__ ((aligned(4))) = {0};
